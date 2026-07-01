@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AAL 세계관 시안 3안 · Creverse AI Tutor</title>
+<style>
+  :root{
+    --bg:#0d1322; --panel:#161f36; --panel2:#1d2846; --ink:#eaeef8; --muted:#98a4c4;
+    --line:#2a3555; --accent:#5b8cff; --gold:#FFC24B; --mint:#37D6B3; --coral:#ff8a7a; --purple:#b78cff;
+    --chip:#22315a;
+  }
+  *{box-sizing:border-box;} html,body{height:100%;}
+  body{margin:0;background:var(--bg);color:var(--ink);overflow:hidden;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo","Malgun Gothic",sans-serif;line-height:1.65;}
+  .deck{position:fixed;inset:0;}
+  .slide{position:absolute;inset:0;display:none;flex-direction:column;padding:46px 60px 88px;overflow-y:auto;}
+  .slide.active{display:flex;animation:fade .35s ease;}
+  @keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  @media(max-width:760px){.slide{padding:30px 22px 84px;}}
+  .kick{color:var(--mint);font-weight:700;letter-spacing:.14em;font-size:12px;text-transform:uppercase;}
+  h1{font-size:38px;font-weight:800;letter-spacing:-.5px;margin:12px 0 10px;line-height:1.2;}
+  h2{font-size:26px;font-weight:800;margin:6px 0 4px;display:flex;gap:12px;align-items:center;}
+  h2 .tag{font-size:13px;font-weight:800;padding:4px 10px;border-radius:8px;}
+  .sub{color:var(--muted);font-size:16px;max-width:820px;}
+  .big{font-size:20px;color:#eef2fb;font-weight:600;border-left:3px solid var(--gold);padding-left:16px;margin:14px 0;}
+  .grid{display:grid;gap:16px;margin-top:6px;} .g2{grid-template-columns:1fr 1fr;} .g3{grid-template-columns:1fr 1fr 1fr;}
+  @media(max-width:760px){.g2,.g3{grid-template-columns:1fr;}h1{font-size:28px;}h2{font-size:21px;}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px 22px;}
+  .card h3{margin:0 0 8px;font-size:15px;color:#dfe6f7;}
+  ul{margin:6px 0;padding-left:20px;} li{margin:6px 0;font-size:14.5px;}
+  .muted{color:var(--muted);} .gold{color:var(--gold);} .mint{color:var(--mint);} .coral{color:var(--coral);} .pur{color:var(--purple);}
+  table{width:100%;border-collapse:collapse;margin-top:12px;font-size:14px;border-radius:12px;overflow:hidden;}
+  th,td{padding:11px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;}
+  th{background:var(--panel2);color:#cdd8f5;font-size:13px;}
+  tr:last-child td{border-bottom:none;}
+  .hero{background:radial-gradient(1200px 500px at 20% -10%,rgba(91,140,255,.18),transparent),radial-gradient(900px 500px at 90% 10%,rgba(255,194,75,.12),transparent);}
+  .emoji{font-size:64px;margin:6px 0;}
+  .stars{color:var(--gold);letter-spacing:2px;}
+  .pillrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+  .pill{background:var(--chip);border:1px solid var(--line);color:#c7d2f0;padding:5px 12px;border-radius:999px;font-size:12.5px;}
+  /* nav */
+  .nav{position:fixed;left:0;right:0;bottom:0;height:60px;display:flex;align-items:center;justify-content:space-between;
+    padding:0 22px;background:rgba(10,15,26,.9);border-top:1px solid var(--line);backdrop-filter:blur(8px);z-index:30;}
+  .nav button{background:var(--panel2);border:1px solid var(--line);color:var(--ink);border-radius:10px;
+    padding:9px 16px;font-size:14px;cursor:pointer;font-weight:700;}
+  .nav button:hover{background:var(--chip);} .nav button:disabled{opacity:.35;cursor:default;}
+  .dots{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;}
+  .dot{width:9px;height:9px;border-radius:50%;background:#33406a;cursor:pointer;}
+  .dot.on{background:var(--gold);transform:scale(1.25);}
+  .count{position:fixed;top:16px;right:22px;font-size:12.5px;color:var(--muted);z-index:30;}
+  .foot{position:fixed;top:16px;left:22px;font-size:12px;color:var(--muted);z-index:30;letter-spacing:.05em;}
+  .rec{background:linear-gradient(90deg,rgba(55,214,179,.12),transparent);border:1px solid rgba(55,214,179,.3);border-radius:14px;padding:16px 18px;margin-top:12px;}
+</style>
+</head>
+<body>
+<div class="foot">AAL · 세계관 시안</div>
+<div class="count"><span id="cur">1</span> / <span id="tot">6</span></div>
+<div class="deck" id="deck">
+
+  <!-- 1 COVER -->
+  <section class="slide active hero">
+    <div class="kick">Creverse AI Tutor · 브랜딩팀</div>
+    <h1>세계관 시안 3안<br><span class="gold">Worldview Concepts</span></h1>
+    <p class="sub">문해력 튜터의 게이미피케이션·성장 가시화를 하나로 꿰는 세계관 방향 3가지. 상위 은유 <b class="gold">"Lumen — 읽어서 밝힌다"</b>는 세 안 모두에 얹을 수 있는 공통 자산.</p>
+    <div class="pillrow">
+      <span class="pill">A · 문명의 진화 🏛️→🚀</span>
+      <span class="pill">B · 세계 탐험 보드 🌍</span>
+      <span class="pill">C · 마을에서 도시로 🏝️→🏙️</span>
+    </div>
+    <p class="muted" style="margin-top:26px;font-size:13px;">← → 방향키 · 하단 버튼 · 점을 눌러 이동</p>
+  </section>
+
+  <!-- 2 시안 A -->
+  <section class="slide">
+    <h2><span class="tag" style="background:rgba(255,194,75,.18);color:var(--gold)">시안 A</span> 문명의 진화 — Ages of Lumen</h2>
+    <p class="big">고대 원시문명에서 시작해 문자·도시·기술·우주 문명으로 <b class="gold">발전</b>한다. 읽어낼수록 나의 문명이 다음 시대로 진화.</p>
+    <div class="grid g2">
+      <div class="card"><h3>🎮 성장 가시화</h3>
+        <ul><li>시대(Age) 진급: 불 🔥 → 문자 📜 → 도시 🏛️ → 기계 ⚙️ → 우주 🚀</li><li>"내가 문명을 끌어올린다"는 강한 진보감</li></ul></div>
+      <div class="card"><h3>🧭 3축 매핑</h3>
+        <ul><li><span class="coral">의미</span> = 언어·문자의 발명</li><li><span class="accent">논리</span> = 건축·법·기술 체계</li><li><span class="pur">지식</span> = 문명 간 지혜의 축적</li></ul></div>
+      <div class="card"><h3>✅ 장점</h3>
+        <ul><li>진보 서사 강함 → 장기 동기·성취감</li><li>역사·지식 주제와 자연 결합</li><li>확장: 국어·수학 = 새 기술분과</li></ul></div>
+      <div class="card"><h3>⚠️ 리스크</h3>
+        <ul><li>선형 진보 → 자유 탐험감 약함</li><li>초기 원시 단계가 "낮은 수준"으로 느껴질 수</li><li>정복·경쟁 톤 배제 필요</li></ul></div>
+    </div>
+    <p class="muted" style="margin-top:10px">vs CHALK: 우주도시(공간 축적)와 달리 <b class="mint">"시간·진화" 축</b>으로 차별.</p>
+  </section>
+
+  <!-- 3 시안 B -->
+  <section class="slide">
+    <h2><span class="tag" style="background:rgba(55,214,179,.18);color:var(--mint)">시안 B</span> 세계 탐험 보드 — Grand Voyage</h2>
+    <p class="big">전 세계를 돌며 각 지역의 "텍스트 세계"를 밝힌다. 지역 → 지역으로 나아가며 대륙을 수집(부루마블형).</p>
+    <div class="grid g2">
+      <div class="card"><h3>🎮 성장 가시화</h3>
+        <ul><li>방문·개척한 지역 수, 세계지도가 밝아짐</li><li>여권·스탬프·랜드마크 수집</li></ul></div>
+      <div class="card"><h3>🧭 3축 매핑</h3>
+        <ul><li><span class="coral">의미</span> = 현지 언어·표현</li><li><span class="accent">논리</span> = 여정 경로·문제 해결</li><li><span class="pur">지식</span> = 지역 문화·배경지식</li></ul></div>
+      <div class="card"><h3>✅ 장점</h3>
+        <ul><li>다양성·수집 재미</li><li><b class="mint">글로벌(대만·베트남) 정체성과 직접 부합</b></li><li>지역=주제 → 원거리 전이 측정과 궁합</li></ul></div>
+      <div class="card"><h3>⚠️ 리스크</h3>
+        <ul><li>보드게임 주사위=운 요소가 "실력"과 충돌 → 실력 기반 이동으로 설계</li><li>깊이보다 넓이로 흐를 위험</li></ul></div>
+    </div>
+    <p class="muted" style="margin-top:10px">vs CHALK: 지식 축적형과 달리 <b class="mint">"세계 탐험·다양성"</b> → 글로벌 소구 강점.</p>
+  </section>
+
+  <!-- 4 시안 C -->
+  <section class="slide">
+    <h2><span class="tag" style="background:rgba(183,140,255,.18);color:var(--pur)">시안 C</span> 마을에서 도시로 — Story Isles</h2>
+    <p class="big">허허벌판 섬에서 시작해, 읽어내며 건물·마을을 짓고 섬과 섬을 다리로 <b class="pur">연결</b>해 도시로 키운다(심시티형).</p>
+    <div class="grid g2">
+      <div class="card"><h3>🎮 성장 가시화</h3>
+        <ul><li>내 섬/도시가 자라고 섬들이 연결됨</li><li>건물=습득 스킬, 다리=지식 연결</li></ul></div>
+      <div class="card"><h3>🧭 3축 매핑</h3>
+        <ul><li><span class="coral">의미</span> = 건물(어휘·구문)</li><li><span class="accent">논리</span> = 도로·다리(연결·구조)</li><li><span class="pur">지식</span> = 지구·도시 구획(스키마)</li></ul></div>
+      <div class="card"><h3>✅ 장점</h3>
+        <ul><li><b class="mint">건설·연결 은유가 문해력의 "연결·재구성"과 정확히 일치</b></li><li>자유도·소유감 큼</li><li>상상력·서사력 확장 여지</li></ul></div>
+      <div class="card"><h3>⚠️ 리스크</h3>
+        <ul><li><b class="coral">CHALK "두뇌 우주도시"와 톤이 가장 근접 → 차별화 부담</b></li><li>건설 관리가 학습 시간 잠식하지 않도록 절제</li></ul></div>
+    </div>
+    <p class="muted" style="margin-top:10px">채택 시: "도시 소유"가 아니라 <b class="mint">"지식의 연결(다리)"</b>에 초점을 둬 차별.</p>
+  </section>
+
+  <!-- 5 비교 매트릭스 -->
+  <section class="slide">
+    <div class="kick">한눈에 비교</div>
+    <h1>비교 매트릭스</h1>
+    <table>
+      <tr><th>기준</th><th class="gold">A 문명진화</th><th class="mint">B 세계탐험</th><th class="pur">C 마을연결</th></tr>
+      <tr><td>핵심 은유</td><td>시간·진보</td><td>공간·다양성</td><td>건설·연결</td></tr>
+      <tr><td>성장 체감</td><td class="stars">★★★</td><td class="stars">★★☆</td><td class="stars">★★★</td></tr>
+      <tr><td>글로벌 정체성</td><td class="stars">★★☆</td><td class="stars">★★★</td><td class="stars">★★☆</td></tr>
+      <tr><td>문해력 은유 적합</td><td class="stars">★★☆</td><td class="stars">★★☆</td><td class="stars">★★★</td></tr>
+      <tr><td>CHALK 차별성</td><td class="stars">★★★</td><td class="stars">★★★</td><td class="stars">★☆☆</td></tr>
+      <tr><td>확장(국어·수학)</td><td>새 기술분과</td><td>새 대륙</td><td>새 섬/구획</td></tr>
+      <tr><td>주의점</td><td>선형·초기 저동기</td><td>운 요소 배제</td><td>CHALK 유사성</td></tr>
+    </table>
+  </section>
+
+  <!-- 6 권고 -->
+  <section class="slide hero">
+    <div class="kick">브랜딩팀 · 검증팀 권고</div>
+    <h1>권고 & 결정 요청</h1>
+    <div class="rec">
+      <ul>
+        <li><b class="mint">글로벌 정체성 + 차별성</b> 최우선 → <b class="mint">B (세계 탐험)</b></li>
+        <li><b class="gold">문해력 은유 정합 + 성장 체감</b> → <b class="gold">A (문명 진화)</b> 또는 <b class="pur">C (마을 연결)</b></li>
+        <li>검증팀: <b class="coral">C는 CHALK와 톤이 가장 근접</b>해 차별화 부담 → <b>A·B가 차별성에서 유리</b></li>
+      </ul>
+    </div>
+    <p class="sub" style="margin-top:14px">세 안 모두 상위 은유 <b class="gold">"Lumen(빛)"</b>과 결합 가능 — A=시대를 밝히는 불꽃, B=지도를 밝히는 등불, C=섬을 밝히는 등대.</p>
+    <p class="big" style="border-color:var(--mint)">결정 요청: A / B / C 중 채택(또는 하이브리드). 선택 후 페르소나·비주얼·성장맵을 해당 세계관으로 정합.</p>
+  </section>
+
+</div>
+
+<div class="nav">
+  <button id="prev">← 이전</button>
+  <div class="dots" id="dots"></div>
+  <button id="next">다음 →</button>
+</div>
+
+<script>
+  const slides=[...document.querySelectorAll('.slide')];
+  const dotsWrap=document.getElementById('dots');
+  const cur=document.getElementById('cur'), tot=document.getElementById('tot');
+  let i=0; tot.textContent=slides.length;
+  slides.forEach((_,idx)=>{const d=document.createElement('div');d.className='dot'+(idx===0?' on':'');d.onclick=()=>go(idx);dotsWrap.appendChild(d);});
+  const dots=[...dotsWrap.children];
+  function go(n){i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach((s,idx)=>s.classList.toggle('active',idx===i));
+    dots.forEach((d,idx)=>d.classList.toggle('on',idx===i));
+    cur.textContent=i+1;
+    document.getElementById('prev').disabled=(i===0);
+    document.getElementById('next').disabled=(i===slides.length-1);
+    slides[i].scrollTop=0;
+  }
+  document.getElementById('prev').onclick=()=>go(i-1);
+  document.getElementById('next').onclick=()=>go(i+1);
+  document.addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key==='PageDown'){go(i+1);}
+    if(e.key==='ArrowLeft'||e.key==='PageUp'){go(i-1);}
+  });
+  go(0);
+</script>
+</body>
+</html>
