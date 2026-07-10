@@ -16,6 +16,8 @@
   .deck{position:fixed;inset:0;}
   .slide{position:absolute;inset:0;display:none;flex-direction:column;padding:46px 60px 88px;overflow-y:auto;}
   .slide.active{display:flex;animation:fade .35s ease;}
+  .slide>*:first-child{margin-top:auto;} .slide>*:last-child{margin-bottom:auto;}
+  .slide>h1,.slide>h2{width:100%;}
   @keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
   @media(max-width:760px){.slide{padding:30px 22px 84px;}}
   .kick{color:var(--mint);font-weight:700;letter-spacing:.14em;font-size:12px;text-transform:uppercase;}
@@ -54,8 +56,16 @@
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <linearGradient id="dawn" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#FF8A5B"/><stop offset="1" stop-color="#FFC24B"/></linearGradient>
+</defs>
+<symbol id="mark" viewBox="0 0 100 78">
+  <g stroke="#FFC24B" stroke-width="3.4" stroke-linecap="round"><line x1="50" y1="12" x2="50" y2="2"/><line x1="24" y1="20" x2="18" y2="12"/><line x1="76" y1="20" x2="82" y2="12"/></g>
+  <path d="M22 56 A28 28 0 0 1 78 56 Z" fill="url(#dawn)"/>
+  <line x1="12" y1="56" x2="88" y2="56" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+</symbol></svg>
 <div class="foot">AAL · 세계관 시안</div>
-<div class="count"><span id="cur">1</span> / <span id="tot">6</span></div>
+<div class="count"><span id="cur">1</span> / <span id="tot">7</span></div>
 <div class="deck" id="deck">
 
   <!-- 1 COVER -->
@@ -71,9 +81,79 @@
     <p class="muted" style="margin-top:26px;font-size:13px;">← → 방향키 · 하단 버튼 · 점을 눌러 이동</p>
   </section>
 
-  <!-- 2 시안 A -->
+  <!-- 2 SUMMARY (3-column) -->
   <section class="slide">
-    <h2><span class="tag" style="background:rgba(255,194,75,.18);color:var(--gold)">시안 A</span> 문명의 진화 — Ages of Lumen</h2>
+    <div class="kick">한눈 요약</div>
+    <h1 style="margin-bottom:4px;">세계관 시안 후보 <span style="font-size:18px;color:var(--muted);font-weight:600;">(작업중)</span></h1>
+    <p class="sub" style="margin-bottom:6px;">각 컬럼 상단 엠블럼은 안의 '느낌'을 표현한 개념 로고입니다.</p>
+    <div class="grid g3" style="align-items:stretch;">
+      <!-- A -->
+      <div class="card" style="border-top:3px solid var(--gold);display:flex;flex-direction:column;gap:8px;">
+        <div style="display:flex;justify-content:center;">
+          <svg width="86" height="86" viewBox="0 0 100 100" aria-label="Sapiens 여명 로고 엠블럼">
+            <circle cx="50" cy="50" r="47" fill="#1d2846" stroke="#FFC24B" stroke-width="2"/>
+            <use href="#mark" x="24" y="26" width="52" height="41" style="color:#EDE3CC"/>
+          </svg>
+        </div>
+        <h2 style="text-align:center;font-size:20px;margin:0;"><span class="gold">A</span> 문명의 진화</h2>
+        <div class="muted" style="text-align:center;font-size:12.5px;margin-top:-4px;">Sapiens</div>
+        <div style="font-size:13px;"><b>은유</b> 시간·진보 — 원시→문자→도시→기계→우주</div>
+        <div style="font-size:13px;"><b>성장</b> 시대 진급으로 강한 진보감</div>
+        <div style="font-size:13px;"><b>3축</b> 의미=문자 · 논리=기술체계 · 지식=문명지혜</div>
+        <div style="font-size:12.5px;color:var(--mint);margin-top:auto;">＋ CHALK 차별 강 · 성장 체감 강</div>
+        <div style="font-size:12.5px;color:#ffb0bb;">－ 선형·초기 저동기 주의</div>
+        <div style="margin-top:4px;"><span class="pill" style="background:rgba(255,194,75,.15);border-color:rgba(255,194,75,.4);color:#FFC24B;">✓ Round 1 채택</span></div>
+      </div>
+      <!-- B -->
+      <div class="card" style="border-top:3px solid var(--mint);display:flex;flex-direction:column;gap:8px;">
+        <div style="display:flex;justify-content:center;">
+          <svg width="86" height="86" viewBox="0 0 100 100" aria-label="세계 탐험 엠블럼">
+            <circle cx="50" cy="50" r="47" fill="#1d2846" stroke="#37D6B3" stroke-width="2"/>
+            <circle cx="50" cy="52" r="24" fill="none" stroke="#5B8CFF" stroke-width="2.4"/>
+            <ellipse cx="50" cy="52" rx="10" ry="24" fill="none" stroke="#5B8CFF" stroke-width="2.4"/>
+            <line x1="26" y1="52" x2="74" y2="52" stroke="#5B8CFF" stroke-width="2.4"/>
+            <path d="M50 20 C57 28, 57 34, 50 40 C43 34, 43 28, 50 20 Z" fill="#37D6B3"/>
+            <circle cx="50" cy="29" r="3.4" fill="#1d2846"/>
+          </svg>
+        </div>
+        <h2 style="text-align:center;font-size:20px;margin:0;"><span class="mint">B</span> 세계 탐험 보드</h2>
+        <div class="muted" style="text-align:center;font-size:12.5px;margin-top:-4px;">Grand Voyage</div>
+        <div style="font-size:13px;"><b>은유</b> 공간·다양성 — 지역→지역 탐험·수집</div>
+        <div style="font-size:13px;"><b>성장</b> 세계지도가 밝아짐·스탬프 수집</div>
+        <div style="font-size:13px;"><b>3축</b> 의미=현지언어 · 논리=여정 · 지식=지역문화</div>
+        <div style="font-size:12.5px;color:var(--mint);margin-top:auto;">＋ 글로벌 정체성 강 · 다양성</div>
+        <div style="font-size:12.5px;color:#ffb0bb;">－ 운 요소 배제 필요</div>
+        <div style="margin-top:4px;"><span class="pill">시안 보존</span></div>
+      </div>
+      <!-- C -->
+      <div class="card" style="border-top:3px solid var(--purple);display:flex;flex-direction:column;gap:8px;">
+        <div style="display:flex;justify-content:center;">
+          <svg width="86" height="86" viewBox="0 0 100 100" aria-label="마을 연결 엠블럼">
+            <circle cx="50" cy="50" r="47" fill="#1d2846" stroke="#B78CFF" stroke-width="2"/>
+            <path d="M20 66 q10 -8 20 0" fill="none" stroke="#37D6B3" stroke-width="2.6" stroke-linecap="round"/>
+            <path d="M60 66 q10 -8 20 0" fill="none" stroke="#37D6B3" stroke-width="2.6" stroke-linecap="round"/>
+            <path d="M40 60 q10 -10 20 0" fill="none" stroke="#FFC24B" stroke-width="2.6"/>
+            <rect x="26" y="44" width="9" height="16" rx="1.5" fill="#B78CFF"/>
+            <rect x="37" y="38" width="9" height="22" rx="1.5" fill="#5B8CFF"/>
+            <rect x="64" y="42" width="9" height="18" rx="1.5" fill="#B78CFF"/>
+          </svg>
+        </div>
+        <h2 style="text-align:center;font-size:20px;margin:0;"><span class="pur">C</span> 마을에서 도시로</h2>
+        <div class="muted" style="text-align:center;font-size:12.5px;margin-top:-4px;">Story Isles</div>
+        <div style="font-size:13px;"><b>은유</b> 건설·연결 — 섬→건물·다리→도시</div>
+        <div style="font-size:13px;"><b>성장</b> 내 섬·도시가 자라고 연결됨</div>
+        <div style="font-size:13px;"><b>3축</b> 의미=건물 · 논리=다리 · 지식=구획</div>
+        <div style="font-size:12.5px;color:var(--mint);margin-top:auto;">＋ 문해력 은유 정합(연결=재구성)</div>
+        <div style="font-size:12.5px;color:#ffb0bb;">－ CHALK 우주도시와 톤 근접</div>
+        <div style="margin-top:4px;"><span class="pill">시안 보존</span></div>
+      </div>
+    </div>
+    <p class="sub" style="margin-top:12px;font-size:13.5px;">공통 상위 은유 <b class="gold">Lumen(빛)</b> — A=시대를 밝히는 불꽃 · B=지도를 밝히는 등불 · C=섬을 밝히는 등대. 상세는 다음 슬라이드 →</p>
+  </section>
+
+  <!-- 3 시안 A -->
+  <section class="slide">
+    <h2><span class="tag" style="background:rgba(255,194,75,.18);color:var(--gold)">시안 A</span> 문명의 진화 — Sapiens</h2>
     <p class="big">고대 원시문명에서 시작해 문자·도시·기술·우주 문명으로 <b class="gold">발전</b>한다. 읽어낼수록 나의 문명이 다음 시대로 진화.</p>
     <div class="grid g2">
       <div class="card"><h3>🎮 성장 가시화</h3>

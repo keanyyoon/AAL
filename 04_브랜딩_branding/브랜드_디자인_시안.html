@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sapiens · 브랜드 디자인 시안</title>
+<style>
+  :root{
+    --ink900:#0F1A33; --ink700:#1B2A4A; --panel:#16213d; --panel2:#1d2a49; --line:#2c3a5e;
+    --ink:#eef2fb; --muted:#9aa8ca; --gold:#FFC24B; --ember:#FF8A5B; --parch:#EDE3CC;
+    --mint:#37D6B3; --coral:#FF8A7A; --blue:#5B8CFF; --purple:#B78CFF;
+  }
+  *{box-sizing:border-box;} html,body{height:100%;}
+  body{margin:0;background:var(--ink900);color:var(--ink);overflow:hidden;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo","Malgun Gothic",sans-serif;line-height:1.6;font-size:15px;}
+  .deck{position:fixed;inset:0;}
+  .slide{position:absolute;inset:0;display:none;flex-direction:column;padding:44px 58px 84px;overflow-y:auto;}
+  .slide.active{display:flex;animation:fade .32s ease;}
+  .slide>*:first-child{margin-top:auto;} .slide>*:last-child{margin-bottom:auto;}
+  @keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;}}
+  @media(max-width:760px){.slide{padding:26px 20px 82px;}}
+  .kick{color:var(--gold);font-weight:700;letter-spacing:.16em;font-size:12px;text-transform:uppercase;}
+  h1{font-family:"Fraunces","Noto Serif KR",Georgia,serif;font-size:44px;font-weight:800;letter-spacing:-.5px;margin:12px 0 8px;line-height:1.15;}
+  h2{font-family:"Fraunces",Georgia,serif;font-size:26px;font-weight:800;margin:2px 0 8px;}
+  h3{font-size:14px;margin:0 0 8px;color:#dfe6f7;}
+  .sub{color:var(--muted);font-size:16px;max-width:820px;}
+  .grid{display:grid;gap:16px;} .g2{grid-template-columns:1fr 1fr;} .g3{grid-template-columns:1fr 1fr 1fr;}
+  @media(max-width:760px){.g2,.g3{grid-template-columns:1fr;}h1{font-size:30px;}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;}
+  .logobox{border-radius:14px;display:flex;align-items:center;justify-content:center;padding:26px;min-height:150px;}
+  .on-dark{background:var(--ink900);} .on-light{background:var(--parch);}
+  .swatch{border-radius:12px;height:76px;display:flex;align-items:flex-end;padding:8px 10px;font-size:11px;font-weight:700;border:1px solid rgba(255,255,255,.08);}
+  .type-serif{font-family:"Fraunces","Noto Serif KR",Georgia,serif;}
+  .muted{color:var(--muted);} .gold{color:var(--gold);} .mint{color:var(--mint);} .ember{color:var(--ember);}
+  ul{margin:6px 0;padding-left:18px;} li{margin:5px 0;font-size:13.6px;}
+  .legend{font-size:12px;color:var(--muted);margin-top:10px;}
+  .pillrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;}
+  .pill{background:#22315a;border:1px solid var(--line);color:#c9d4f0;padding:5px 12px;border-radius:999px;font-size:12px;}
+  .hero{background:radial-gradient(1100px 520px at 20% -10%,rgba(255,194,75,.14),transparent),radial-gradient(900px 520px at 90% 10%,rgba(91,140,255,.12),transparent);}
+  .wm{font-family:"Fraunces","Noto Serif KR",Georgia,serif;font-weight:800;letter-spacing:.02em;}
+  .nav{position:fixed;left:0;right:0;bottom:0;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;background:rgba(9,14,26,.92);border-top:1px solid var(--line);backdrop-filter:blur(8px);z-index:30;}
+  .nav button{background:var(--panel2);border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:8px 15px;font-size:13.5px;cursor:pointer;font-weight:700;}
+  .nav button:hover{background:#22315a;} .nav button:disabled{opacity:.35;}
+  .dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:60%;}
+  .dot{width:8px;height:8px;border-radius:50%;background:#33406a;cursor:pointer;} .dot.on{background:var(--gold);transform:scale(1.3);}
+  .count{position:fixed;top:14px;right:20px;font-size:12px;color:var(--muted);z-index:30;}
+  .foot{position:fixed;top:14px;left:20px;font-size:12px;color:var(--muted);z-index:30;letter-spacing:.05em;}
+</style>
+</head>
+<body>
+<div class="foot">Sapiens · 브랜드 디자인</div>
+<div class="count"><span id="cur">1</span> / <span id="tot">9</span></div>
+
+<!-- reusable SVG defs -->
+<svg width="0" height="0" style="position:absolute"><defs>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD98A"/><stop offset="1" stop-color="#FF8A5B"/></linearGradient>
+  <linearGradient id="dawn" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#FF8A5B"/><stop offset="1" stop-color="#FFC24B"/></linearGradient>
+</defs></svg>
+
+<div class="deck" id="deck">
+
+  <!-- 1 COVER -->
+  <section class="slide active hero">
+    <div class="kick">Creverse AI Tutor · 브랜딩팀</div>
+    <h1><span class="gold">Sapiens</span><br>브랜드 디자인 시안</h1>
+    <p class="sub">서비스명 가안 <b>Sapiens</b>(생각하는 인간) · 세계관 A(문명의 진화) · 테마 <b class="gold">Dawn of Civilization</b> — 밤에서 여명으로 진화하는 따뜻한 지적 문명.</p>
+    <!-- primary lockup preview -->
+    <div style="margin-top:22px;display:flex;align-items:center;gap:14px;">
+      <svg width="52" height="52" viewBox="0 0 48 48"><path d="M24 5 C31 15, 28 22, 24 29 C20 22, 17 15, 24 5 Z" fill="url(#gold)"/><circle cx="24" cy="24" r="4" fill="#0F1A33"/></svg>
+      <span class="wm" style="font-size:38px;">Sapiens</span>
+    </div>
+    <p class="muted" style="margin-top:22px;font-size:13px;">← → 방향키 · 하단 버튼 · 점 이동</p>
+  </section>
+
+  <!-- 2 THEME -->
+  <section class="slide">
+    <div class="kick">테마</div>
+    <h1>Dawn of Civilization</h1>
+    <p class="sub">하이테크(CHALK)와 캐주얼(Duolingo) 사이의 빈 자리 = <b class="gold">따뜻한 지적 문명</b>.</p>
+    <div class="grid g2" style="margin-top:14px;">
+      <div class="card"><h3>4가지 원칙</h3><ul>
+        <li><b>밤 → 여명</b>: 딥 네이비에서 골드 빛이 번지는 성장 은유</li>
+        <li><b>따뜻한 지성</b>: 클래식 문명 모티프를 모던 미니멀로</li>
+        <li><b>몰입의 대비</b>: 읽기는 저자극, 성취는 빛·컬러 개방</li>
+        <li><b>연령 존중</b>: 11~15세를 어리게 취급 안 함 + 안전</li>
+      </ul></div>
+      <div class="card"><h3>세계관 진급 = 시대 아이콘</h3>
+        <div style="font-size:30px;letter-spacing:8px;margin:8px 0;">🔥 📜 🏛️ ⚙️ 🚀</div>
+        <p class="muted" style="font-size:13px;">불 → 문자 → 도시 → 기계 → 우주. 읽어낼수록 나의 문명이 다음 시대로.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 LOGO A -->
+  <section class="slide">
+    <h2>로고 시안 A — Ember(불꽃) 심볼</h2>
+    <p class="sub">문명의 첫 기술 '불' + Lumen(빛). 세리프 워드마크에 골드 불꽃 심볼.</p>
+    <div class="grid g2" style="margin-top:12px;">
+      <div class="logobox on-dark">
+        <span style="display:flex;align-items:center;gap:12px;">
+          <svg width="46" height="46" viewBox="0 0 48 48"><path d="M24 5 C31 15, 28 22, 24 29 C20 22, 17 15, 24 5 Z" fill="url(#gold)"/><circle cx="24" cy="24" r="4" fill="#0F1A33"/></svg>
+          <span class="wm" style="font-size:34px;color:#EDE3CC;">Sapiens</span>
+        </span>
+      </div>
+      <div class="logobox on-light">
+        <span style="display:flex;align-items:center;gap:12px;">
+          <svg width="46" height="46" viewBox="0 0 48 48"><path d="M24 5 C31 15, 28 22, 24 29 C20 22, 17 15, 24 5 Z" fill="url(#gold)"/><circle cx="24" cy="24" r="4" fill="#fff"/></svg>
+          <span class="wm" style="font-size:34px;color:#1B2A4A;">Sapiens</span>
+        </span>
+      </div>
+    </div>
+    <p class="legend">✅ 따뜻함·성취·빛 직결 · 앱 아이콘용 심볼 단독 사용 용이 · ⚠️ 불꽃은 흔한 모티프 → 형태 독창성 필요.</p>
+  </section>
+
+  <!-- 4 LOGO B -->
+  <section class="slide">
+    <h2>로고 시안 B — Ascend(상승 기둥) 모노그램</h2>
+    <p class="sub">고대 기둥 + 상승하는 계단으로 만든 'S'. 문명의 진보·성장.</p>
+    <div class="grid g2" style="margin-top:12px;">
+      <div class="logobox on-dark">
+        <span style="display:flex;align-items:center;gap:14px;">
+          <svg width="48" height="48" viewBox="0 0 48 48">
+            <rect x="10" y="30" width="9" height="10" rx="2" fill="#5B8CFF"/>
+            <rect x="20" y="22" width="9" height="18" rx="2" fill="#37D6B3"/>
+            <rect x="30" y="12" width="9" height="28" rx="2" fill="url(#gold)"/>
+          </svg>
+          <span class="wm" style="font-size:34px;color:#EDE3CC;">Sapiens</span>
+        </span>
+      </div>
+      <div class="logobox on-light">
+        <span style="display:flex;align-items:center;gap:14px;">
+          <svg width="48" height="48" viewBox="0 0 48 48">
+            <rect x="10" y="30" width="9" height="10" rx="2" fill="#5B8CFF"/>
+            <rect x="20" y="22" width="9" height="18" rx="2" fill="#37D6B3"/>
+            <rect x="30" y="12" width="9" height="28" rx="2" fill="#FF8A5B"/>
+          </svg>
+          <span class="wm" style="font-size:34px;color:#1B2A4A;">Sapiens</span>
+        </span>
+      </div>
+    </div>
+    <p class="legend">✅ "성장·진급"의 시각화가 성장맵과 정합 · 3축 컬러 자연 결합 · ⚠️ 막대 상승은 차트 느낌 → 기둥 디테일로 문명감 강화.</p>
+  </section>
+
+  <!-- 5 LOGO C -->
+  <section class="slide">
+    <h2>로고 시안 C — Dawn(여명) 마크</h2>
+    <p class="sub">지평선 위로 떠오르는 빛 = 문명의 새벽·"밝혀짐". 워드마크 상단 배치형.</p>
+    <div class="grid g2" style="margin-top:12px;">
+      <div class="logobox on-dark">
+        <span style="text-align:center;">
+          <svg width="90" height="52" viewBox="0 0 90 52">
+            <path d="M20 40 A25 25 0 0 1 70 40 Z" fill="url(#dawn)"/>
+            <line x1="10" y1="40" x2="80" y2="40" stroke="#EDE3CC" stroke-width="2.5" stroke-linecap="round"/>
+            <g stroke="#FFC24B" stroke-width="2" stroke-linecap="round"><line x1="45" y1="6" x2="45" y2="0"/><line x1="20" y1="14" x2="16" y2="9"/><line x1="70" y1="14" x2="74" y2="9"/></g>
+          </svg>
+          <div class="wm" style="font-size:32px;color:#EDE3CC;letter-spacing:.06em;">Sapiens</div>
+        </span>
+      </div>
+      <div class="logobox on-light">
+        <span style="text-align:center;">
+          <svg width="90" height="52" viewBox="0 0 90 52">
+            <path d="M20 40 A25 25 0 0 1 70 40 Z" fill="url(#dawn)"/>
+            <line x1="10" y1="40" x2="80" y2="40" stroke="#1B2A4A" stroke-width="2.5" stroke-linecap="round"/>
+            <g stroke="#FF8A5B" stroke-width="2" stroke-linecap="round"><line x1="45" y1="6" x2="45" y2="0"/><line x1="20" y1="14" x2="16" y2="9"/><line x1="70" y1="14" x2="74" y2="9"/></g>
+          </svg>
+          <div class="wm" style="font-size:32px;color:#1B2A4A;letter-spacing:.06em;">Sapiens</div>
+        </span>
+      </div>
+    </div>
+    <p class="legend">✅ "밝혀짐"=성장 은유 직결·따뜻·서정적 · ⚠️ 일출 모티프 흔함 → 지평선/광선 형태로 차별.</p>
+  </section>
+
+  <!-- 6 COLOR -->
+  <section class="slide">
+    <div class="kick">컬러 토큰</div>
+    <h1>Palette</h1>
+    <div class="grid g3" style="margin-top:10px;">
+      <div class="swatch" style="background:#0F1A33;color:#EDE3CC;">Ink 900 · #0F1A33<br><span class="muted" style="color:#9aa8ca">배경(밤)</span></div>
+      <div class="swatch" style="background:#1B2A4A;color:#EDE3CC;">Ink 700 · #1B2A4A<br><span style="color:#9aa8ca">서피스</span></div>
+      <div class="swatch" style="background:#EDE3CC;color:#1B2A4A;">Parchment · #EDE3CC<br>뉴트럴(양피지)</div>
+      <div class="swatch" style="background:#FFC24B;color:#3a2a06;">Lumen Gold · #FFC24B<br>빛·성취·브랜드</div>
+      <div class="swatch" style="background:#FF8A5B;color:#3a1806;">Ember · #FF8A5B<br>불꽃·강조</div>
+      <div class="swatch" style="background:#37D6B3;color:#053a2c;">Mint · #37D6B3<br>완료·긍정</div>
+      <div class="swatch" style="background:#FF8A7A;color:#3a1010;">의미 · #FF8A7A</div>
+      <div class="swatch" style="background:#5B8CFF;color:#06183a;">논리 · #5B8CFF</div>
+      <div class="swatch" style="background:#B78CFF;color:#1a0a3a;">지식 · #B78CFF</div>
+    </div>
+    <p class="legend">라이트=Parchment 배경/Ink 텍스트, 다크=Ink 배경/Parchment 텍스트 (토큰 스왑) · 본문 대비 4.5:1↑ · 3축은 색+형태 병행.</p>
+  </section>
+
+  <!-- 7 TYPE -->
+  <section class="slide">
+    <div class="kick">타이포그래피</div>
+    <h1>Type System</h1>
+    <div class="grid g2" style="margin-top:10px;">
+      <div class="card">
+        <h3>디스플레이 · 헤딩 (세리프)</h3>
+        <div class="type-serif" style="font-size:34px;font-weight:800;">Sapiens</div>
+        <div class="type-serif" style="font-size:22px;">문명을 밝히는 읽기</div>
+        <p class="legend">Fraunces / Noto Serif KR — 문명·지성감</p>
+      </div>
+      <div class="card">
+        <h3>본문 · UI (산세리프)</h3>
+        <div style="font-size:22px;font-weight:700;">Read to think. 스스로 생각한다.</div>
+        <div style="font-size:15px;">오늘의 지문을 읽고, 스스로 실마리를 찾아보자. The octopus hides by changing how it looks.</div>
+        <p class="legend">Inter + Pretendard — 가독·다국어(KR·TW·VN)</p>
+      </div>
+    </div>
+    <p class="legend">지문(읽기)은 가독 최우선(넉넉한 행간·자간). 헤딩 세리프 ↔ 본문 산세리프 대비로 "고전×모던".</p>
+  </section>
+
+  <!-- 8 APPLIED UI -->
+  <section class="slide">
+    <div class="kick">적용 예시</div>
+    <h1>In Product</h1>
+    <div class="grid g2" style="margin-top:10px;">
+      <div class="card" style="background:linear-gradient(180deg,#0F1A33,#16213d);">
+        <h3 style="color:var(--gold);">세션 · 홈(내 문명)</h3>
+        <div style="display:flex;align-items:center;gap:10px;margin:8px 0;">
+          <svg width="30" height="30" viewBox="0 0 48 48"><path d="M24 5 C31 15, 28 22, 24 29 C20 22, 17 15, 24 5 Z" fill="url(#gold)"/><circle cx="24" cy="24" r="4" fill="#0F1A33"/></svg>
+          <span class="wm" style="font-size:20px;">Sapiens</span>
+          <span class="pill" style="margin-left:auto;">🔥 시대: 문자기</span>
+        </div>
+        <div style="font-size:13px;color:#c7d2ea;">"오늘의 땅을 밝혀보자, 지호." — 길잡이(시대의 현자)</div>
+        <div class="pillrow"><span class="pill">🔥 스트릭 4일</span><span class="pill" style="background:rgba(255,194,75,.14);border-color:rgba(255,194,75,.4);color:#FFC24B">+120 Lumen</span></div>
+      </div>
+      <div class="card on-light" style="color:#1B2A4A;">
+        <h3 style="color:#8a6a12;">학부모 리포트 카드</h3>
+        <div style="font-size:14px;">지호가 <b>문자기(B1) 지문</b>을 스스로 이해했어요 ✨</div>
+        <div style="height:8px;background:#d9cdae;border-radius:99px;margin:10px 0;overflow:hidden;"><i style="display:block;height:100%;width:72%;background:linear-gradient(90deg,#37D6B3,#FFC24B);"></i></div>
+        <div style="font-size:12px;color:#5b5236;">고난이도 이해율 72% · 논리 축 성장 주도 · CEFR B1</div>
+      </div>
+    </div>
+    <p class="legend">읽기 화면=저자극(다크), 성취·리포트=빛/parchment 개방. 시대 배지가 세계관 진급을 표현.</p>
+  </section>
+
+  <!-- 9 NEXT -->
+  <section class="slide hero">
+    <div class="kick">결정 & 다음 단계</div>
+    <h1>무엇을 정할까</h1>
+    <div class="grid g2">
+      <div class="card"><h3 class="gold">지금 결정 요청</h3><ul>
+        <li><b>로고 시안</b> A(불꽃) / B(상승 기둥) / C(여명) 중 선택</li>
+        <li><b>테마 "Dawn of Civilization"</b> 및 컬러·타이포 토큰 승인</li>
+        <li>서비스명 <b>Sapiens</b> 가안 확정 여부 (상표·도메인 검토 병행)</li>
+      </ul></div>
+      <div class="card"><h3 class="gold">다음 단계</h3><ul>
+        <li>선택 로고 정교화(그리드·여백·최소크기·앱아이콘)</li>
+        <li>UX 디자인 시스템에 토큰 반영 → 중충실도 프로토타입</li>
+        <li>페르소나(시대의 현자) 캐릭터 비주얼</li>
+        <li>Sapiens 상표·도메인(.com/.ai) 예비 검토</li>
+      </ul></div>
+    </div>
+    <p class="legend">브랜딩팀 권고: 세계관 A(진급)와 가장 정합적인 건 <b class="gold">B(상승 기둥)</b>, 정서·따뜻함은 <b class="gold">C(여명)</b>. A는 앱아이콘 확장 용이.</p>
+  </section>
+
+</div>
+
+<div class="nav">
+  <button id="prev">← 이전</button>
+  <div class="dots" id="dots"></div>
+  <button id="next">다음 →</button>
+</div>
+<script>
+  const slides=[...document.querySelectorAll('.slide')];
+  const dotsWrap=document.getElementById('dots');
+  const cur=document.getElementById('cur'), tot=document.getElementById('tot');
+  let i=0; tot.textContent=slides.length;
+  slides.forEach((_,idx)=>{const d=document.createElement('div');d.className='dot'+(idx===0?' on':'');d.onclick=()=>go(idx);dotsWrap.appendChild(d);});
+  const dots=[...dotsWrap.children];
+  function go(n){i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach((s,idx)=>s.classList.toggle('active',idx===i));
+    dots.forEach((d,idx)=>d.classList.toggle('on',idx===i));
+    cur.textContent=i+1;
+    document.getElementById('prev').disabled=(i===0);
+    document.getElementById('next').disabled=(i===slides.length-1);
+    slides[i].scrollTop=0;
+  }
+  document.getElementById('prev').onclick=()=>go(i-1);
+  document.getElementById('next').onclick=()=>go(i+1);
+  document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='PageDown'){go(i+1);e.preventDefault();}if(e.key==='ArrowLeft'||e.key==='PageUp'){go(i-1);e.preventDefault();}});
+  go(0);
+</script>
+</body>
+</html>
