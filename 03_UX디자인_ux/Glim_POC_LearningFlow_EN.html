@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Glim · POC — 세션 선택 → 학습 씬 (Mars)</title>
+<title>Glim · POC — Session Picker → Learning Scene (Mars)</title>
 <style>
   :root{
     --bg0:#03050B; --bg1:#060911; --surface:rgba(16,21,36,.62); --surface2:rgba(22,28,46,.75);
@@ -54,7 +54,7 @@
   .hero{flex:1;min-width:0;background:var(--surface2);border:1px solid var(--line2);border-radius:18px;padding:24px;backdrop-filter:blur(10px);
     box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 18px 44px rgba(0,0,0,.4);display:flex;flex-direction:column;gap:12px;min-height:250px;cursor:pointer;transition:border-color .2s,box-shadow .2s;}
   .hero:hover{border-color:rgba(255,178,90,.5);box-shadow:0 0 26px rgba(255,178,90,.18);}
-  .hero.mars-card{background:linear-gradient(180deg, rgba(4,7,14,.42) 0%, rgba(4,7,14,.62) 55%, rgba(3,5,11,.86) 100%), url('카드001.jpeg') center/cover no-repeat;border-color:rgba(255,178,90,.34);}
+  .hero.mars-card{background:linear-gradient(180deg, rgba(4,7,14,.42) 0%, rgba(4,7,14,.62) 55%, rgba(3,5,11,.86) 100%), url('card001.jpeg') center/cover no-repeat;border-color:rgba(255,178,90,.34);}
   .hero.mars-card .ico{background:rgba(10,14,26,.45);border-color:rgba(255,255,255,.18);}
   .hero.moon-card{background:linear-gradient(180deg, rgba(4,7,14,.42) 0%, rgba(4,7,14,.62) 55%, rgba(3,5,11,.86) 100%), url('moon.jpeg') center/cover no-repeat;border-color:rgba(143,211,255,.3);}
   .hero.moon-card .ico{background:rgba(10,14,26,.45);border-color:rgba(255,255,255,.18);}
@@ -216,7 +216,7 @@
 </style>
 </head>
 <body>
-  <div class="cap">Glim · POC — 세션 선택에서 Mars 카드를 누르면 학습 씬이 시작됩니다</div>
+  <div class="cap">Glim · POC — tap the Mars card on the picker to start the learning scene</div>
   <div class="tablet"><div class="screen">
     <div id="sky"></div><div class="beam"></div>
 
@@ -225,35 +225,35 @@
       <div class="topbar">
         <div class="brand"><span class="b-planet">🪐</span>Glim</div>
         <div class="who">
-          <span class="notif" title="알림"><span class="dish">📡</span><span class="ndot"></span></span>
-          <span>영민 · <span class="ct">✦ 731</span></span>
+          <span class="notif" title="Notifications"><span class="dish">📡</span><span class="ndot"></span></span>
+          <span>Youngmin · <span class="ct">✦ 731</span></span>
         </div>
       </div>
-      <div class="sec">오늘의 컨텐츠</div>
+      <div class="sec">Today's Picks</div>
       <div class="heroRow">
         <div class="hero mars-card" onclick="startLearn()">
           <div class="ico">🛰</div>
           <div class="title">The Hard Landing on <em>Mars.</em></div>
-          <div class="meta">화성 탐사 · 의미 · 논리 · 약 12분</div>
-          <div class="foot"><div class="foot-left"><span class="tag">고난이도 도전</span><span class="stars"><i class="s on">✦</i><i class="s on">✦</i><i class="s on">✦</i><i class="s on">✦</i><i class="s">✦</i></span></div><span class="exp">Exp. +12</span></div>
+          <div class="meta">Mars Exploration · Meaning · Logic · ~12 min</div>
+          <div class="foot"><div class="foot-left"><span class="tag">High Challenge</span><span class="stars"><i class="s on">✦</i><i class="s on">✦</i><i class="s on">✦</i><i class="s on">✦</i><i class="s">✦</i></span></div><span class="exp">Exp. +12</span></div>
         </div>
         <div class="hero moon-card">
           <div class="ico">🌗</div>
           <div class="title">Why the Moon Has <em>Phases.</em></div>
-          <div class="meta">천문 · 의미 · 논리(추론) · 약 11분</div>
-          <div class="foot"><div class="foot-left"><span class="tag">도전적인 미션</span><span class="stars"><i class="s on">✦</i><i class="s on">✦</i><i class="s on">✦</i><i class="s">✦</i><i class="s">✦</i></span></div><span class="exp">Exp. +9</span></div>
+          <div class="meta">Astronomy · Meaning · Logic (Inference) · ~11 min</div>
+          <div class="foot"><div class="foot-left"><span class="tag">Challenging Mission</span><span class="stars"><i class="s on">✦</i><i class="s on">✦</i><i class="s on">✦</i><i class="s">✦</i><i class="s">✦</i></span></div><span class="exp">Exp. +9</span></div>
         </div>
       </div>
-      <div class="sec gap2">다른 컨텐츠 고르기</div>
+      <div class="sec gap2">Explore More</div>
       <div class="carousel">
-        <div class="card"><div class="cico">⚽</div><div class="ct">The Perfect <em>Kick.</em></div><div class="field">스포츠 · 9분</div><div class="row"><span class="stars"><i class="s on">✦</i><i class="s on">✦</i><i class="s">✦</i><i class="s">✦</i><i class="s">✦</i></span><span class="cexp">+6</span></div></div>
-        <div class="card"><div class="cico">🎬</div><div class="ct">Behind the <em>Screen.</em></div><div class="field">영화·미디어 · 12분</div><div class="row"><span class="stars"><i class="s on">✦</i><i class="s on">✦</i><i class="s on">✦</i><i class="s">✦</i><i class="s">✦</i></span><span class="cexp">+9</span></div></div>
-        <div class="card"><div class="cico">🍜</div><div class="ct">Street <em>Food.</em></div><div class="field">음식·문화 · 8분</div><div class="row"><span class="stars"><i class="s on">✦</i><i class="s on">✦</i><i class="s">✦</i><i class="s">✦</i><i class="s">✦</i></span><span class="cexp">+6</span></div></div>
-        <div class="card"><div class="cico">🕵️</div><div class="ct">The Missing <em>Painting.</em></div><div class="field">미스터리 · 15분</div><div class="row"><span class="stars"><i class="s on">✦</i><i class="s on">✦</i><i class="s on">✦</i><i class="s on">✦</i><i class="s">✦</i></span><span class="cexp">+12</span></div></div>
-        <div class="card"><div class="cico">🎸</div><div class="ct">How Music <em>Moves Us.</em></div><div class="field">음악·예술 · 11분</div><div class="row"><span class="stars"><i class="s on">✦</i><i class="s on">✦</i><i class="s on">✦</i><i class="s">✦</i><i class="s">✦</i></span><span class="cexp">+9</span></div></div>
-        <div class="card"><div class="cico">🏛</div><div class="ct">Lost <em>Cities.</em></div><div class="field">역사 · 12분</div><div class="row"><span class="stars"><i class="s on">✦</i><i class="s on">✦</i><i class="s">✦</i><i class="s">✦</i><i class="s">✦</i></span><span class="cexp">+6</span></div></div>
-        <div class="card"><div class="cico">💰</div><div class="ct">Why Money <em>Works.</em></div><div class="field">경제 · 13분</div><div class="row"><span class="stars"><i class="s on">✦</i><i class="s on">✦</i><i class="s on">✦</i><i class="s">✦</i><i class="s">✦</i></span><span class="cexp">+9</span></div></div>
-        <div class="card"><div class="cico">🐘</div><div class="ct">Animal <em>Minds.</em></div><div class="field">동물·자연 · 10분</div><div class="row"><span class="stars"><i class="s on">✦</i><i class="s on">✦</i><i class="s">✦</i><i class="s">✦</i><i class="s">✦</i></span><span class="cexp">+6</span></div></div>
+        <div class="card"><div class="cico">⚽</div><div class="ct">The Perfect <em>Kick.</em></div><div class="field">Sports · 9 min</div><div class="row"><span class="stars"><i class="s on">✦</i><i class="s on">✦</i><i class="s">✦</i><i class="s">✦</i><i class="s">✦</i></span><span class="cexp">+6</span></div></div>
+        <div class="card"><div class="cico">🎬</div><div class="ct">Behind the <em>Screen.</em></div><div class="field">Film & Media · 12 min</div><div class="row"><span class="stars"><i class="s on">✦</i><i class="s on">✦</i><i class="s on">✦</i><i class="s">✦</i><i class="s">✦</i></span><span class="cexp">+9</span></div></div>
+        <div class="card"><div class="cico">🍜</div><div class="ct">Street <em>Food.</em></div><div class="field">Food & Culture · 8 min</div><div class="row"><span class="stars"><i class="s on">✦</i><i class="s on">✦</i><i class="s">✦</i><i class="s">✦</i><i class="s">✦</i></span><span class="cexp">+6</span></div></div>
+        <div class="card"><div class="cico">🕵️</div><div class="ct">The Missing <em>Painting.</em></div><div class="field">Mystery · 15 min</div><div class="row"><span class="stars"><i class="s on">✦</i><i class="s on">✦</i><i class="s on">✦</i><i class="s on">✦</i><i class="s">✦</i></span><span class="cexp">+12</span></div></div>
+        <div class="card"><div class="cico">🎸</div><div class="ct">How Music <em>Moves Us.</em></div><div class="field">Music & Arts · 11 min</div><div class="row"><span class="stars"><i class="s on">✦</i><i class="s on">✦</i><i class="s on">✦</i><i class="s">✦</i><i class="s">✦</i></span><span class="cexp">+9</span></div></div>
+        <div class="card"><div class="cico">🏛</div><div class="ct">Lost <em>Cities.</em></div><div class="field">History · 12 min</div><div class="row"><span class="stars"><i class="s on">✦</i><i class="s on">✦</i><i class="s">✦</i><i class="s">✦</i><i class="s">✦</i></span><span class="cexp">+6</span></div></div>
+        <div class="card"><div class="cico">💰</div><div class="ct">Why Money <em>Works.</em></div><div class="field">Economics · 13 min</div><div class="row"><span class="stars"><i class="s on">✦</i><i class="s on">✦</i><i class="s on">✦</i><i class="s">✦</i><i class="s">✦</i></span><span class="cexp">+9</span></div></div>
+        <div class="card"><div class="cico">🐘</div><div class="ct">Animal <em>Minds.</em></div><div class="field">Animals & Nature · 10 min</div><div class="row"><span class="stars"><i class="s on">✦</i><i class="s on">✦</i><i class="s">✦</i><i class="s">✦</i><i class="s">✦</i></span><span class="cexp">+6</span></div></div>
       </div>
       <!-- Siri-style AI intro -->
       <div class="siri" id="siri">
@@ -267,7 +267,7 @@
       <div class="lbg" id="lbg"></div>
       <div class="lrn">
         <div class="lbar">
-          <span class="back" onclick="goPick()">⟵ 나가기</span>
+          <span class="back" onclick="goPick()">⟵ Previous</span>
           <span class="steps" id="steps">
             <span class="node" data-i="1">1</span><span class="link" data-l="1"></span>
             <span class="node" data-i="2">2</span><span class="link" data-l="2"></span>
@@ -302,7 +302,7 @@
           <div class="stt" id="stt"></div>
           <div class="cap" id="lcap"></div>
           <div class="bar"></div>
-          <button class="glit" id="glit" title="말하기">✦</button>
+          <button class="glit" id="glit" title="Speak">✦</button>
         </div>
       </div>
     </div>
@@ -310,23 +310,23 @@
     <!-- ===== DONE · Learning Report ===== -->
     <div class="done" id="done">
       <div class="big">✦</div>
-      <h2>오늘도 스스로 <em>빛</em>을 켰어</h2>
+      <h2>You lit your own <em>light</em> again</h2>
       <div class="rstat">
-        <span class="rpill">Exp. +12</span><span class="rpill">🔥 스트릭 5일</span><span class="rpill">✦ 별 2개 점등</span>
+        <span class="rpill">Exp. +12</span><span class="rpill">🔥 5-day streak</span><span class="rpill">✦ 2 stars lit</span>
       </div>
       <div class="rcard">
-        <div class="rlabel">오늘의 학습 리포트</div>
-        <div class="rrow"><div class="rico a">✓</div><div><b>오늘 배운 것</b><div class="rt2">조건에 따라 착륙 방법이 갈리는 구조(<em>depending on how heavy</em>)를 스스로 파악했어.</div></div></div>
-        <div class="rrow"><div class="rico b">↑</div><div><b>좋아진 점</b><div class="rt2">근거 제시 — 지난번 1개 → <b style="color:var(--mint)">오늘 3개</b>. 답을 스스로 근거로 도달했어.</div></div></div>
-        <div class="rrow"><div class="rico c">→</div><div><b>조금 더 보강할 부분</b><div class="rt2">추론한 이유를 한 문장으로 정리해 말하기 — 다음 탐험에서 함께 해보자.</div></div></div>
+        <div class="rlabel">Today's Learning Report</div>
+        <div class="rrow"><div class="rico a">✓</div><div><b>What you learned</b><div class="rt2">You figured out how the landing method changes <em>depending on how heavy</em> the rover is.</div></div></div>
+        <div class="rrow"><div class="rico b">↑</div><div><b>What improved</b><div class="rt2">Evidence given — 1 last time → <b style="color:var(--mint)">3 today</b>. You reached the answer with your own reasoning.</div></div></div>
+        <div class="rrow"><div class="rico c">→</div><div><b>To work on next</b><div class="rt2">Sum up your reasoning in one sentence — we will try it together next time.</div></div></div>
       </div>
       <div style="display:flex;gap:10px;justify-content:center;margin-top:6px;">
-        <button class="btn" onclick="goPick()">홈으로</button>
+        <button class="btn" onclick="goPick()">Home</button>
       </div>
     </div>
 
   </div></div>
-  <p class="note">POC · Mars 학습 씬: 1-pane(지문+문항) · 하단 대화(좌측 sphere = AI) · 마이크 버튼 없음(음성 상시) · 소크라틱 스캐폴딩(정답 미제공·자기설명·유관 힌트) · 도달 시 별이 켜지고 Exp 획득.</p>
+  <p class="note">POC · Mars learning scene: one-pane reading + question · bottom voice dialogue (ASR->STT) · no mic button · Socratic scaffolding (no direct answers, self-explanation, contingent hints) · stars light up and Exp is earned on completion.</p>
 
 <script>
   // starfield
@@ -346,10 +346,10 @@
     const line=(t)=>{ siriCap.textContent=t; siriCap.classList.add('show'); };
     const hide=()=>siriCap.classList.remove('show');
     // 1) "(intro line 1)" (show 3s -> fade out)
-    introTimers.push(setTimeout(()=>line('영민아, 지금 네 실력에 딱 맞게 살짝 도전적인 지문을 준비했어.'), 500));
+    introTimers.push(setTimeout(()=>line('Youngmin, I picked a passage just a little above your level today.'), 500));
     introTimers.push(setTimeout(hide, 3500));            // hold 3s then fade out
     // 2) (fade in) content intro — show ~5s -> fade out
-    introTimers.push(setTimeout(()=>line('주제는 네가 좋아하는 우주 탐험이야 — 이 중에서 하나 골라볼까?'), 4200));
+    introTimers.push(setTimeout(()=>line('The theme is space exploration, your favorite. Pick one from these!'), 4200));
     introTimers.push(setTimeout(hide, 9800));            // ~5s hold then fade out
     introTimers.push(setTimeout(()=>siri.classList.add('idle'), 10600)); // dim after speaking
   }
@@ -379,19 +379,19 @@
   // script: each star tap advances one turn — user STT -> Agent reply
   const TURNS=[
     { me:"Umm... maybe it lands with airbags?",
-      ai:'좋은 시작이야 :) 그런데 airbags는 <span class="lead">light</span> rover용이었지? heavy면 어떨까? 표시된 부분을 다시 볼래?',
+      ai:'Nice start! Airbags are for a <span class="lead">light</span> rover — what about a <span class="lead">heavy</span> one? Look again at the highlighted part.',
       fx:()=>{ reveal('m-dep'); reveal('m-light'); reveal('m-ab'); } },
     { me:"Oh— a heavy rover uses the sky crane.",
-      ai:'맞아 ✦ 그런데 <span class="lead">왜</span> 그렇게 생각했어? 글의 어디가 그렇게 말하지?',
+      ai:'Right! But <span class="lead">why</span> do you think so? Where in the text does it say that?',
       fx:()=>{ reveal('m-heavy'); reveal('m-sky'); setStep(2); } },
     { me:"It says it's too heavy for airbags, so a crane lowers it.",
-      ai:'정확해. 근거로 스스로 도달했어 ✦ 이번엔 조금 더 깊이 가보자.',
+      ai:'Exactly — you got there with evidence. Now let us go a bit deeper.',
       fx:()=>{ setStep(3); qlabel.textContent='Question 2 · Inference'; qtext.textContent='Why is landing on Mars so difficult?'; } },
     { me:"Hmm, is it because Mars is really far away?",
-      ai:'거리도 관계는 있지만, <span class="lead">착륙 자체</span>는? 화성의 공기에 대한 문장을 다시 볼래?',
+      ai:'Distance matters, but what about the <span class="lead">landing itself</span>? Re-read the line about Mars thin air.',
       fx:()=>{ reveal('m-air'); } },
     { me:"The air is so thin that it can't slow the spacecraft down.",
-      ai:'완벽해 ✦ 사실을 근거로 원인까지 스스로 추론했어.',
+      ai:'Perfect! You reasoned from the facts all the way to the cause.',
       fx:()=>{ setStep(5); lt.push(setTimeout(finish, 1600)); } }
   ];
 
