@@ -1,6 +1,6 @@
-.DS_Store
-*.tmp
-~$*
-Thumbs.db
 
+*.tmp
 *.zip
+.DS_Store
+Thumbs.db
+~$*
