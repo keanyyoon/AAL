@@ -133,16 +133,17 @@
   .rico.a{background:rgba(255,194,75,.18);color:var(--gold);} .rico.b{background:rgba(55,214,179,.18);color:var(--mint);} .rico.c{background:rgba(91,140,255,.18);color:var(--blue);}
   .rrow b{font-size:13.5px;} .rrow .rt2{font-size:13px;color:#c7d0ea;margin-top:2px;line-height:1.5;}
   .rstat{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:6px 0 16px;}
-  .rpill{font-family:var(--mono);font-size:12.5px;background:rgba(255,194,75,.12);border:1px solid rgba(255,194,75,.4);color:var(--gold);border-radius:999px;padding:6px 12px;}
+  .rpill{display:inline-flex;align-items:center;justify-content:center;gap:5px;line-height:1;font-family:var(--mono);font-size:12.5px;background:rgba(255,194,75,.12);border:1px solid rgba(255,194,75,.4);color:var(--gold);border-radius:999px;padding:8px 14px;}
   .btn{border:none;border-radius:12px;padding:13px 24px;font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;color:#2a1c05;background:linear-gradient(180deg,#FFE7A8,#FFB25A);box-shadow:0 0 22px 2px rgba(255,178,90,.4);}
   .note{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:14px;text-align:center;letter-spacing:.03em;max-width:1000px;line-height:1.6;}
   /* Siri-style intro glow (pre-learning bottom) */
   .siri{position:absolute;left:0;right:0;bottom:0;z-index:4;pointer-events:none;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:150px;}
-  .siri .cap{font-size:16px;font-weight:300;color:#EAEDF6;margin-bottom:8px;text-align:center;padding:0 24px;opacity:0;transform:translateY(6px);transition:opacity .6s ease, transform .6s ease;text-shadow:0 2px 20px rgba(0,0,0,.75);position:relative;z-index:1;}
+  .siri .cap{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;text-transform:none;letter-spacing:normal;font-size:18.5px;font-weight:300;color:#EAEDF6;margin-bottom:8px;text-align:center;padding:0 24px;opacity:0;transform:translateY(6px);transition:opacity .6s ease, transform .6s ease;text-shadow:0 2px 20px rgba(0,0,0,.75);position:relative;z-index:1;}
   /* user speech (ASR->STT): bright cyan, bold, quotes */
-  .siri .stt{font-size:16.5px;font-weight:800;color:#79E4FF;text-align:center;padding:0 24px;margin-bottom:4px;opacity:0;transform:translateY(6px);transition:opacity .45s ease, transform .45s ease;text-shadow:0 0 16px rgba(120,220,255,.55),0 2px 16px rgba(0,0,0,.7);position:relative;z-index:1;letter-spacing:.01em;}
+  .siri .stt{font-size:19px;font-weight:800;color:#79E4FF;text-align:center;padding:0 24px;margin-bottom:4px;opacity:0;transform:translateY(6px);transition:opacity .45s ease, transform .45s ease, font-size .5s ease, margin-bottom .5s ease;text-shadow:0 0 16px rgba(120,220,255,.55),0 2px 16px rgba(0,0,0,.7);position:relative;z-index:1;letter-spacing:.01em;}
   .siri .stt.show{opacity:1;transform:none;}
-  .siri .stt .asr{display:block;font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.22em;color:#5aa0c0;text-shadow:none;margin-bottom:3px;text-transform:uppercase;}
+  /* after user speaks, their line shrinks and slides up as the Agent replies */
+  .siri .stt.small{font-size:14.5px;font-weight:700;opacity:.72;margin-bottom:10px;}
   .siri .cap.show{opacity:1;transform:translateY(0);}
   .siri .bar{position:relative;width:100%;height:66px;}
   .siri .bar::before{content:"";position:absolute;inset:0;filter:blur(16px);opacity:1;
@@ -213,6 +214,13 @@
     animation:glit 2.2s ease-in-out infinite;}
   @keyframes glit{0%,100%{transform:scale(.85) rotate(0deg);opacity:.82;}50%{transform:scale(1.18) rotate(8deg);opacity:1;}}
   .siri .glit.hidden{display:none;}
+  /* celebration confetti canvas (over the report) */
+  .fx{position:absolute;inset:0;z-index:6;pointer-events:none;opacity:0;transition:opacity .3s ease;}
+  /* learning scene: keep the wave, shift dialogue lower + clear the bottom-left star */
+  #lsiri .cap{top:21px;}
+  #lsiri .stt{top:21px;}
+  /* picker agent line: match the learning-scene dialogue height */
+  #siriCap{top:21px;}
 </style>
 </head>
 <body>
@@ -259,6 +267,7 @@
       <div class="siri" id="siri">
         <div class="cap" id="siriCap"></div>
         <div class="bar"></div>
+        <button class="glit" id="pglit" title="Talk to Glim">✦</button>
       </div>
     </div>
 
@@ -275,7 +284,7 @@
             <span class="node" data-i="4">4</span><span class="link" data-l="4"></span>
             <span class="node" data-i="5">5</span>
           </span>
-          <span class="brand" style="font-size:16px;"><span class="b-planet" style="font-size:15px;">🪐</span>Glim</span>
+          <span class="back" style="display:inline-flex;align-items:center;gap:6px;"><span style="font-size:15px;">⚙️</span>Settings</span>
         </div>
         <div class="content">
           <div class="q" id="qbox" style="display:none;">
@@ -298,12 +307,12 @@
             </div>
           </div>
         </div>
-        <div class="siri lsiri" id="lsiri">
-          <div class="stt" id="stt"></div>
-          <div class="cap" id="lcap"></div>
-          <div class="bar"></div>
-          <button class="glit" id="glit" title="Speak">✦</button>
-        </div>
+      </div>
+      <div class="siri lsiri" id="lsiri">
+        <div class="stt" id="stt"></div>
+        <div class="cap" id="lcap"></div>
+        <div class="bar"></div>
+        <button class="glit" id="glit" title="Speak">✦</button>
       </div>
     </div>
 
@@ -324,6 +333,9 @@
         <button class="btn" onclick="goPick()">Home</button>
       </div>
     </div>
+
+    <!-- celebration particles -->
+    <canvas class="fx" id="fx"></canvas>
 
   </div></div>
   <p class="note">POC · Mars learning scene: one-pane reading + question · bottom voice dialogue (ASR->STT) · no mic button · Socratic scaffolding (no direct answers, self-explanation, contingent hints) · stars light up and Exp is earned on completion.</p>
@@ -354,6 +366,9 @@
     introTimers.push(setTimeout(()=>siri.classList.add('idle'), 10600)); // dim after speaking
   }
   window.addEventListener('load', runIntro);
+  // picker Agent star (bottom-left) — tap to hear the intro again
+  const pglit=document.getElementById('pglit');
+  if(pglit) pglit.onclick=runIntro;
   const lbg=document.getElementById('lbg'), lsiri=document.getElementById('lsiri'), lcap=document.getElementById('lcap'),
         stt=document.getElementById('stt'), qbox=document.getElementById('qbox'), qlabel=document.getElementById('qlabel'), qtext=document.getElementById('qtext'),
         glit=document.getElementById('glit'),
@@ -363,9 +378,20 @@
 
   function lsay(t){ lsiri.classList.remove('idle'); lcap.innerHTML=t; lcap.classList.add('show'); }
   function lhide(){ lcap.classList.remove('show'); }
-  // user STT: bright cyan bold quotes
-  function userSTT(t){ stt.innerHTML='<span class="asr">🎙 Speech recognized</span>“'+t+'”'; stt.classList.add('show'); }
-  function clearSTT(){ stt.classList.remove('show'); }
+  // user STT: bright cyan bold quotes, typed word-by-word (as if the student is speaking)
+  function userSTT(t, done){
+    stt.classList.remove('small'); stt.classList.add('show');
+    const words=t.split(' '); let built='', i=0;
+    stt.innerHTML='“”';
+    const step=()=>{
+      built += (i===0?'':' ')+words[i]; i++;
+      stt.innerHTML='“'+built+'”';
+      if(i<words.length){ lt.push(setTimeout(step, 170)); }
+      else if(done){ lt.push(setTimeout(done, 300)); }
+    };
+    step();
+  }
+  function clearSTT(){ stt.classList.remove('show','small'); }
   function reveal(id){ const h=document.getElementById(id); if(!h)return; h.classList.add('on','pulse'); setTimeout(()=>h.classList.remove('pulse'),1500); }
   function fadeIn(el){ el.style.display='block'; requestAnimationFrame(()=>el.classList.add('show')); }
   function setStep(n){
@@ -379,19 +405,19 @@
   // script: each star tap advances one turn — user STT -> Agent reply
   const TURNS=[
     { me:"Umm... maybe it lands with airbags?",
-      ai:'Nice start! Airbags are for a <span class="lead">light</span> rover — what about a <span class="lead">heavy</span> one? Look again at the highlighted part.',
+      ai:'Airbags are for a <span class="lead">light</span> rover. What about a <span class="lead">heavy</span> one?',
       fx:()=>{ reveal('m-dep'); reveal('m-light'); reveal('m-ab'); } },
     { me:"Oh— a heavy rover uses the sky crane.",
-      ai:'Right! But <span class="lead">why</span> do you think so? Where in the text does it say that?',
+      ai:'Right! But <span class="lead">why</span>? Where does the text say so?',
       fx:()=>{ reveal('m-heavy'); reveal('m-sky'); setStep(2); } },
     { me:"It says it's too heavy for airbags, so a crane lowers it.",
-      ai:'Exactly — you got there with evidence. Now let us go a bit deeper.',
+      ai:'Exactly — good evidence. Let us go deeper.',
       fx:()=>{ setStep(3); qlabel.textContent='Question 2 · Inference'; qtext.textContent='Why is landing on Mars so difficult?'; } },
     { me:"Hmm, is it because Mars is really far away?",
-      ai:'Distance matters, but what about the <span class="lead">landing itself</span>? Re-read the line about Mars thin air.',
+      ai:'Distance matters — but what about the <span class="lead">landing</span>? Re-read the thin-air line.',
       fx:()=>{ reveal('m-air'); } },
     { me:"The air is so thin that it can't slow the spacecraft down.",
-      ai:'Perfect! You reasoned from the facts all the way to the cause.',
+      ai:'Perfect — from facts to cause.',
       fx:()=>{ setStep(5); lt.push(setTimeout(finish, 1600)); } }
   ];
 
@@ -419,17 +445,60 @@
     lt.push(setTimeout(()=>{ canSpeak=true; }, t+400));
   }
 
-  // bottom-left star (speak) -> user STT -> Agent reply. No answer choices.
+  // bottom-left star (speak) -> user STT (word-by-word) -> 1.5s pause -> Agent reply fades in
   glit.onclick=()=>{
     if(!canSpeak) return;
     if(turnIdx>=TURNS.length) return;
     const turn=TURNS[turnIdx++];
+    canSpeak=false;                          // lock until the Agent has replied
     lhide();
-    userSTT(turn.me);                       // user speech shown as STT
-    lt.push(setTimeout(()=>{ if(turn.fx) turn.fx(); lsay(turn.ai); }, 900));  // Agent replies after a beat
+    userSTT(turn.me, ()=>{                    // after the user finishes "speaking"
+      lt.push(setTimeout(()=>{                // wait 1.5s, then Agent responds
+        stt.classList.add('small');           // user's line shrinks & slides up
+        if(turn.fx) turn.fx();
+        lsay(turn.ai);                         // Agent reply fades in
+        canSpeak=true;
+      }, 1500));
+    });
   };
 
-  function finish(){ lhide(); clearSTT(); glit.classList.add('hidden'); document.getElementById('done').classList.add('on'); }
+  function finish(){ lhide(); clearSTT(); glit.classList.add('hidden'); document.getElementById('done').classList.add('on'); celebrate(); }
+
+  // celebration confetti — fires together with the report popup
+  function celebrate(){
+    if(window.matchMedia && matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+    const cv=document.getElementById('fx'), scr=cv.parentElement, r=scr.getBoundingClientRect();
+    cv.width=r.width; cv.height=r.height;
+    const ctx=cv.getContext('2d');
+    const colors=['#FFB25A','#FFE7A8','#5B8CFF','#8FD3FF','#37d6b3','#B778FF','#FFFFFF'];
+    const N=170, P=[];
+    for(let i=0;i<N;i++){
+      const left=i<N/2;
+      P.push({
+        x:left?cv.width*0.05:cv.width*0.95, y:cv.height*0.99,
+        vx:left?(2+Math.random()*8):-(2+Math.random()*8),
+        vy:-(10+Math.random()*9), g:0.22+Math.random()*0.12,
+        s:4+Math.random()*6, rot:Math.random()*6.28, vr:(Math.random()-0.5)*0.35,
+        col:colors[(Math.random()*colors.length)|0], life:0, max:80+Math.random()*45,
+        rect:Math.random()<0.55
+      });
+    }
+    cv.style.opacity=1;
+    (function tick(){
+      ctx.clearRect(0,0,cv.width,cv.height); let alive=false;
+      P.forEach(p=>{
+        if(p.life++>p.max) return; alive=true;
+        p.vy+=p.g; p.x+=p.vx; p.y+=p.vy; p.rot+=p.vr;
+        const a=Math.max(0,1-p.life/p.max);
+        ctx.save(); ctx.globalAlpha=a; ctx.translate(p.x,p.y); ctx.rotate(p.rot); ctx.fillStyle=p.col;
+        if(p.rect) ctx.fillRect(-p.s/2,-p.s/2,p.s,p.s*1.7);
+        else { ctx.beginPath(); ctx.arc(0,0,p.s/2,0,6.28); ctx.fill(); }
+        ctx.restore();
+      });
+      if(alive) requestAnimationFrame(tick);
+      else { cv.style.opacity=0; ctx.clearRect(0,0,cv.width,cv.height); }
+    })();
+  }
 </script>
 </body>
 </html>
