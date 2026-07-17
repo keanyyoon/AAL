@@ -38,7 +38,7 @@ a{color:#8FD3FF;} a:hover{color:#FFB25A;}
   <sc-if value="{{ isPick }}" hint-placeholder-val="{{ true }}">
   <div data-screen-label="Session Picker" style="position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;padding:26px 34px;overflow:hidden;">
     <div style="display:flex;align-items:center;justify-content:space-between;">
-      <div style="font-family:Fraunces,Georgia,serif;font-size:22px;letter-spacing:.02em;display:flex;align-items:center;gap:8px;"><span style="font-size:20px;line-height:1;">🪐</span>Glim</div>
+      <div style="font-family:Fraunces,Georgia,serif;font-size:22px;letter-spacing:.02em;display:flex;align-items:center;gap:8px;"><span style="font-size:20px;line-height:1;">🪐</span>AI Learning</div>
       <div style="font-family:ui-monospace,Menlo,monospace;font-size:12.5px;color:#8C95AE;letter-spacing:.06em;display:flex;align-items:center;gap:12px;"><span style="position:relative;display:inline-flex;width:22px;height:22px;align-items:center;justify-content:center;"><span style="font-size:18px;line-height:1;">📡</span><span style="position:absolute;top:-1px;right:-2px;width:6px;height:6px;border-radius:50%;background:#FF8A5B;box-shadow:0 0 6px 1px rgba(255,138,91,.85);"></span></span><span>Youngmin · <span style="color:#FFB25A;">✦ 743</span></span></div>
     </div>
     <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:#8C95AE;margin:20px 0 12px;">Today's Picks</div>
@@ -54,7 +54,7 @@ a{color:#8FD3FF;} a:hover{color:#FFB25A;}
       </div>
       <div onClick="{{ onStartMars }}" style="flex:1;min-width:0;border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:12px;min-height:250px;cursor:pointer;transition:border-color .2s,box-shadow .2s,opacity .2s;backdrop-filter:blur(10px);background:linear-gradient(100deg, rgba(4,7,14,.92) 0%, rgba(4,7,14,.74) 42%, rgba(4,7,14,.34) 75%, rgba(4,7,14,.18) 100%), linear-gradient(180deg, rgba(3,5,11,0) 55%, rgba(3,5,11,.78) 100%), url('card-mars.jpeg') right center / cover no-repeat, #0a0f1e;border:1px solid rgba(150,170,220,.18);opacity:.82;" style-hover="border-color:rgba(255,178,90,.6);box-shadow:0 0 26px rgba(255,178,90,.22);opacity:1;">
         <div style="width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:27px;background:rgba(10,14,26,.55);border:1px solid rgba(255,255,255,.14);">🛰</div>
-        <div style="font-size:23px;font-weight:300;line-height:1.25;">The Hard Landing on <em style="font-family:Fraunces,Georgia,serif;font-style:italic;color:#cdd6ff;">Mars.</em></div>
+        <div style="font-size:23px;font-weight:300;line-height:1.25;">The Hard Landing on <em style="font-family:Fraunces,Georgia,serif;font-style:italic;color:#cdd6ff;">Mars</em></div>
         <div style="font-family:ui-monospace,Menlo,monospace;font-size:12.5px;color:#8C95AE;">Mars Exploration · Meaning · Logic · ~12 min</div>
         <div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:10px;">
           <div style="display:flex;flex-direction:column;gap:6px;"><span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.06em;color:#37d6b3;">✓ Completed</span><span style="display:inline-flex;gap:4px;"><i style="font-style:normal;font-size:12px;color:#FFB25A;">✦</i><i style="font-style:normal;font-size:12px;color:#FFB25A;">✦</i><i style="font-style:normal;font-size:12px;color:#FFB25A;">✦</i><i style="font-style:normal;font-size:12px;color:#FFB25A;">✦</i><i style="font-style:normal;font-size:12px;color:#2b3352;">✦</i></span></div>
@@ -65,11 +65,11 @@ a{color:#8FD3FF;} a:hover{color:#FFB25A;}
     <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:#8C95AE;margin:34px 0 12px;">Explore More</div>
     <div data-hidescroll="true" style="display:flex;gap:16px;overflow-x:auto;margin:-14px -34px 72px;padding:14px 34px;">
       <sc-for list="{{ moreCards }}" as="c" hint-placeholder-count="5">
-        <div style="flex:0 0 200px;background:rgba(16,21,36,.62);border:1px solid rgba(150,170,220,.14);border-radius:16px;padding:16px;backdrop-filter:blur(8px);display:flex;flex-direction:column;gap:8px;min-height:150px;cursor:pointer;transition:border-color .2s,box-shadow .2s;" style-hover="border-color:rgba(255,178,90,.5);box-shadow:0 0 22px rgba(255,178,90,.16);">
-          <div style="width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:19px;background:rgba(30,38,60,.7);border:1px solid rgba(150,170,220,.14);">{{ c.ico }}</div>
-          <div style="font-size:15px;font-weight:300;">{{ c.t1 }} <em style="font-family:Fraunces,Georgia,serif;font-style:italic;">{{ c.t2 }}</em></div>
+        <div style="{{ c.st }}" style-hover="border-color:rgba(255,178,90,.5);box-shadow:0 0 22px rgba(255,178,90,.16);">
+          <div style="font-size:15px;font-weight:300;margin-top:auto;">{{ c.t1 }} <em style="font-family:Fraunces,Georgia,serif;font-style:italic;">{{ c.t2 }}</em></div>
           <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#8C95AE;">{{ c.field }}</div>
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:auto;"><span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:2px;color:#FFB25A;text-shadow:0 0 7px rgba(255,178,90,.5);">{{ c.stars }}</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#FFB25A;text-shadow:0 0 8px rgba(255,178,90,.4);">{{ c.exp }}</span></div>
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.06em;color:#FFB25A;opacity:.85;margin-top:auto;margin-bottom:-4px;">{{ c.level }}</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;"><span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:2px;color:#FFB25A;text-shadow:0 0 7px rgba(255,178,90,.5);">{{ c.stars }}</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#FFB25A;text-shadow:0 0 8px rgba(255,178,90,.4);">{{ c.exp }}</span></div>
         </div>
       </sc-for>
     </div>
@@ -86,7 +86,6 @@ a{color:#8FD3FF;} a:hover{color:#FFB25A;}
 
   <sc-if value="{{ isLoad }}" hint-placeholder-val="{{ false }}">
   <div data-screen-label="Loading — Tutor Video" style="position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:26px 34px;overflow:hidden;">
-    <div style="position:absolute;top:24px;left:34px;font-family:Fraunces,Georgia,serif;font-size:20px;display:flex;align-items:center;gap:8px;"><span style="font-size:18px;">🪐</span>Glim</div>
     <div style="position:absolute;top:30px;right:34px;font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.22em;color:#8C95AE;text-transform:uppercase;display:flex;align-items:center;gap:8px;"><span style="width:7px;height:7px;border-radius:50%;background:#79E4FF;box-shadow:0 0 8px 2px rgba(121,228,255,.6);animation:grec 1.6s ease-in-out infinite;"></span>Mic always on</div>
     <div style="position:relative;width:520px;max-width:58vw;aspect-ratio:16/9;border-radius:20px;border:1px solid rgba(255,178,90,.45);box-shadow:0 0 40px rgba(255,178,90,.18), 0 24px 60px rgba(0,0,0,.55);background:#000;overflow:hidden;">
       <video ref="{{ videoRef }}" src="tutor_intro.mp4" playsInline="{{ true }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity .6s ease;"></video>
@@ -159,6 +158,21 @@ a{color:#8FD3FF;} a:hover{color:#FFB25A;}
                 </div>
               </sc-for>
             </div>
+          </sc-if>
+
+          <sc-if value="{{ actCards }}" hint-placeholder-val="{{ false }}">
+            <div style="{{ titleSt }}">{{ actTitle }}</div>
+            <div style="display:flex;gap:12px;">
+              <sc-for list="{{ hintCards }}" as="h" hint-placeholder-count="0">
+                <div onClick="{{ h.tap }}" style="flex:1;min-width:0;aspect-ratio:2/3;perspective:700px;cursor:pointer;">
+                  <div style="{{ h.innerSt }}">
+                    <div style="{{ h.backSt }}"><div style="font-size:26px;color:#FFB25A;text-shadow:0 0 12px rgba(255,178,90,.6);">✦</div><div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.14em;color:#c7d0ea;margin-top:8px;">{{ h.backLabel }}</div></div>
+                    <div style="{{ h.frontSt }}"><div style="font-family:Fraunces,Georgia,serif;font-size:19px;color:#ffe1b0;text-align:center;line-height:1.3;">{{ h.word }}</div><div style="{{ h.qSt }}">?</div><div style="{{ h.transSt }}">{{ h.trans }}</div></div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+            <div style="{{ cardAnswerSt }}">{{ answerText }}</div>
           </sc-if>
 
           <sc-if value="{{ actChoice }}" hint-placeholder-val="{{ false }}">
@@ -259,7 +273,7 @@ class Component extends DCLogic {
     stage: 1, reveal: 0, para2On: false, para3On: false, paraGlow: 0,
     hl: {}, pulse: -1, tapArmed: false,
     tutorLine: '', tutorShow: false, sttText: '', sttShow: false, sttSmall: false,
-    micReady: false, recording: false, thinking: false, answerText: '', answerShow: false, voiceTurn: 1, titleVis: true, coverState: {},
+    micReady: false, recording: false, thinking: false, answerText: '', answerShow: false, voiceTurn: 1, titleVis: true, coverState: {}, cardStates: [0,0,0], cardsArmed: false,
     choiceState: {}, orderIds: ['B','C','A'], orderSel: -1, orderLock: false, dragIdx: -1, dragDY: 0, dragTarget: -1,
     bankChosen: '', bankWrong: {}, blankFilled: false,
     done: false
@@ -340,7 +354,7 @@ class Component extends DCLogic {
     this.setState({
       view: 'learn', stage: 1, reveal: 0, para2On: false, para3On: false, paraGlow: 0, hl: {}, pulse: -1,
       tapArmed: false, tutorLine: '', tutorShow: false, sttText: '', sttShow: false, sttSmall: false,
-      micReady: false, recording: false, thinking: false, answerText: '', answerShow: false, voiceTurn: 1, titleVis: true, coverState: {}, choiceState: {}, orderIds: ['B','C','A'], orderSel: -1,
+      micReady: false, recording: false, thinking: false, answerText: '', answerShow: false, voiceTurn: 1, titleVis: true, coverState: {}, cardStates: [0,0,0], cardsArmed: false, choiceState: {}, orderIds: ['B','C','A'], orderSel: -1,
       orderLock: false, bankChosen: '', bankWrong: {}, blankFilled: false, done: false
     });
     this.orderTries = 0;
@@ -467,7 +481,7 @@ class Component extends DCLogic {
     this.pendingNext = 0; this._turn2Queued = false;
     this.setState({ stage: n, sttShow: false, sttSmall: false, choiceState: {}, answerShow: false, answerText: '', voiceTurn: 1, titleVis: true });
     if (n >= 4) this.setState({ hl: {} }); // clear the speaking-step sentence highlights
-    if (n === 4) this.s3Tries = 0;
+    if (n === 4) { this.s3Tries = 0; this._cardSummaryDone = false; this._c1Done = false; this._c2Done = false; this._awaitMore = false; }
     if (n === 2) { this.coverTries = 0; this.coverDone = false; this.setState({ coverState: {} }); }
     if (n === 1) {
       this.tutorSay('자, 먼저 물어볼게. 이 글은 무엇에 관한 글일까?');
@@ -478,14 +492,21 @@ class Component extends DCLogic {
       this.tutorSay('이 글은 비디오 게임에 관한 글이야. 그럼, 어떤 비디오 게임에 대해 말하고 싶은 것 같아?');
       this.setState({ micReady: true });
     } else if (n === 4) {
-      this.setState({ para2On: true, paraGlow: 2 });
+      this.setState({ para2On: true, paraGlow: 2, cardStates: [0, 0, 0], cardsArmed: false });
       this.after(300, () => this.setState({ reveal: 3 }));
       this.after(1000, () => this.setState({ reveal: 4 }));
       this.after(1700, () => this.setState({ reveal: 5 }));
-      this.tutorSay('새로 나온 단락에 불이 켜졌지? 천천히 읽어봐. 이 단락에서는 비디오 게임이 좋다고 말했어, 나쁘다고 말했어?');
+      this.tutorSay('이 단락의 핵심 내용이 뭔지 말해볼래?');
+      this.after(3000, () => {
+        this.setState({ tutorShow: false });
+        this.typeWords('음... 잘 모르겠어', t => this.setState({ sttText: t, sttShow: true }), () => this.after(1000, () => {
+          this.setState({ sttShow: false, cardsArmed: true });
+          this.tutorSay('그럼 힌트 카드 1을 선택해서 힌트를 확인해봐봐');
+        }));
+      });
     } else if (n === 5) {
       this.setState({ paraGlow: 0 });
-      this.tutorSay('그럼 이번엔, 이 단락의 해석을 글에 나온 순서대로 배열해봐.');
+      this.tutorSay('그럼 이번엔, 이 단락의 해석을 순서대로 배열해줄래?');
     } else if (n === 6) {
       this.tutorSay('자, 그러면 생각해보자. 이 단락에서 글쓴이가 가장 하고 싶은 말이 뭘까? 골라봐.');
     } else if (n === 7) {
@@ -526,7 +547,52 @@ class Component extends DCLogic {
     }
   }
 
-  // stage 4 order
+  // stage 4 hint cards (flip)
+  HINTS = [
+    { w: 'Imagination', t: '상상력' },
+    { w: 'love of play', t: '놀이 욕구' },
+    { w: 'mental health', t: '정신 건강' }
+  ];
+  cardTap(i) {
+    if (this.state.stage !== 4 || !this.state.cardsArmed) return;
+    this._awaitMore = false;
+    const cs = this.state.cardStates.slice();
+    if (cs[i] >= 2) return;
+    cs[i]++;
+    this.setState({ cardStates: cs });
+    if (cs[i] === 1) {
+      this.tutorSay('힌트가 나왔네! 카드를 한 번 더 누르면 단어의 뜻도 볼 수 있어.');
+    } else if (cs[i] === 2) {
+      if (!this._c1Done) {
+        this._c1Done = true;
+        this.studentSay('상상력을 자극한다', '상상력 자극', () => {
+          this.tutorSay('좋아! 그리고 또 다른건? 더 있을거 같아.');
+          this._awaitMore = true;
+          this.after(5000, () => { if (this._awaitMore && this.state.stage === 4) this.tutorSay('잘 몰라도 괜찮아. 다른 힌트카드를 눌러볼래?'); });
+        });
+      } else if (!this._c2Done) {
+        this._c2Done = true;
+        this.studentSay('상상력과 놀이욕구를 자극하는게 ... 그래서 뭐에 좋다는걸까?', '상상력·놀이 욕구 자극', () => {
+          this.tutorSay('오오 거의 다 맞췄어! 마지막 힌트 카드를 봐볼래?');
+        });
+      } else if (!this._cardSummaryDone) {
+        this._cardSummaryDone = true;
+        this.studentSay('아! 상상력과 놀이 욕구를 자극해서 정신 건강에 좋다는 거구나!', '상상력·놀이 욕구 자극\n→ 정신 건강에 도움', () => {
+          this.tutorSay('완벽해! 그게 바로 이 단락의 핵심이야.');
+          this.hlOn(3);
+          this.pendingNext = 5;
+        });
+      }
+    }
+  }
+  studentSay(line, summary, then) { // bottom STT + summarized answer under the cards
+    this.setState({ tutorShow: false });
+    this.typeWords(line, t => this.setState({ sttText: t, sttShow: true }), () => this.after(1000, () => {
+      this.setState({ sttShow: false, answerText: summary, answerShow: true });
+      then();
+    }));
+  }
+  // stage 5 order
   ORDER_TEXT = {
     A: '정신 건강 측면에서 게임의 장점이 더 인정받아야 한다.',
     B: '아이의 놀이·상상력 욕구와 연결된다.',
@@ -661,7 +727,7 @@ class Component extends DCLogic {
     1: { step: 'Step 1 · Topic', type: 'Speak 🎙', title: '주제 말하기', prompt: '' },
     2: { step: 'Step 2 · Cover', type: 'Choose 🖼', title: '표지 이미지 고르기', prompt: '' },
     3: { step: 'Step 3 · Point of view', type: 'Speak 🎙', title: '관점 말하기', prompt: '' },
-    4: { step: 'Step 4 · Tone', type: 'Choose', prompt: '불이 켜진 새 단락에서, 비디오 게임은 좋다고 했을까 나쁘다고 했을까?' },
+    4: { step: 'Step 4 · Meaning', type: 'Flip 🃏', title: '의미 찾기', prompt: '' },
     5: { step: 'Step 5 · Order', type: 'Arrange', prompt: '해석 문장을 글에 나온 순서대로 배열해봐.' },
     6: { step: 'Step 6 · Main claim', type: 'Choose', prompt: '이 단락에서 글쓴이가 가장 하고 싶은 말은?' },
     7: { step: 'Step 7 · Evidence', type: 'Point 👆', prompt: '「폭력은 존재하지 않는다」라고 말한 문장을 지문에서 직접 짚어봐.' },
@@ -731,12 +797,24 @@ class Component extends DCLogic {
       borderRadius: '12px', padding: '12px 16px', background: 'rgba(16,22,40,.72)', color: state === 'right' ? '#c7fff0' : '#e7ecfb', fontSize: '14.5px', cursor: 'pointer', transition: 'border-color .2s, box-shadow .2s', lineHeight: 1.5,
       boxShadow: state === 'right' ? '0 0 16px rgba(80,220,170,.3)' : state === 'wrong' ? '0 0 14px rgba(255,90,90,.25)' : 'none',
       animation: state === 'wrong' ? 'gshake .45s ease' : 'none', fontFamily: 'inherit' });
-    const choiceOpts = s.stage === 4
-      ? [ { t: 'a. 좋다 (positive)', tap: () => this.choiceTap(4, 'a', true), st: optBase(s.choiceState['a']) },
-          { t: 'b. 나쁘다 (negative)', tap: () => this.choiceTap(4, 'b', false), st: optBase(s.choiceState['b']) } ]
-      : [ { t: '게임은 폭력적이므로, 성인이 되기 전에 하지 말아야 한다.', tap: () => this.choiceTap(6, 'x', false), st: optBase(s.choiceState['x']) },
-          { t: '게임할 때 자극되는 상상력·놀이 욕구가 정신 건강에 도움된다.', tap: () => this.choiceTap(6, 'y', true), st: optBase(s.choiceState['y']) },
-          { t: '폭력과 게임은 동일하다.', tap: () => this.choiceTap(6, 'z', false), st: optBase(s.choiceState['z']) } ];
+    const choiceOpts = [
+      { t: '게임은 폭력적이므로, 성인이 되기 전에 하지 말아야 한다.', tap: () => this.choiceTap(6, 'x', false), st: optBase(s.choiceState['x']) },
+      { t: '게임할 때 자극되는 상상력·놀이 욕구가 정신 건강에 도움된다.', tap: () => this.choiceTap(6, 'y', true), st: optBase(s.choiceState['y']) },
+      { t: '폭력과 게임은 동일하다.', tap: () => this.choiceTap(6, 'z', false), st: optBase(s.choiceState['z']) } ];
+    const hintCards = this.HINTS.map((h, i) => {
+      const st = (s.cardStates || [0,0,0])[i];
+      return {
+        backLabel: 'HINT ' + (i + 1), word: h.w, trans: h.t,
+        tap: () => this.cardTap(i),
+        innerSt: { position: 'relative', width: '100%', height: '100%', transformStyle: 'preserve-3d', transition: 'transform .6s ease', transform: st >= 1 ? 'rotateY(180deg)' : 'none' },
+        backSt: { position: 'absolute', inset: 0, backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', borderRadius: '12px', border: '1px solid rgba(255,178,90,.45)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+          background: 'repeating-linear-gradient(45deg, rgba(255,178,90,.10) 0 7px, transparent 7px 14px), repeating-linear-gradient(-45deg, rgba(91,140,255,.10) 0 7px, transparent 7px 14px), radial-gradient(80px 110px at 50% 50%, #1a2340, #10162a)',
+          boxShadow: s.cardsArmed ? '0 0 16px rgba(255,178,90,.22)' : 'none' },
+        frontSt: { position: 'absolute', inset: 0, backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: 'rotateY(180deg)', borderRadius: '12px', border: '1px solid rgba(120,230,190,.5)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '8px', padding: '10px', background: 'linear-gradient(180deg, #141b33, #0b1122)' },
+        qSt: { display: st === 1 ? 'flex' : 'none', alignItems: 'center', justifyContent: 'center', width: '58px', height: '30px', borderRadius: '7px', background: 'rgba(140,149,174,.28)', border: '1px solid rgba(150,170,220,.3)', color: '#c7d0ea', fontSize: '16px', fontWeight: 600 },
+        transSt: { display: st >= 2 ? 'block' : 'none', fontSize: '14px', color: '#79E4FF', textShadow: '0 0 10px rgba(120,220,255,.4)' }
+      };
+    });
     const coverCards = this.COVERS.map(c => {
       const cst = s.coverState[c.k];
       return { label: c.k + ' · ' + c.label, tap: () => this.coverTap(c.k),
@@ -782,13 +860,19 @@ class Component extends DCLogic {
       pk05St: Object.assign({}, pkBase, { opacity: s.pkFace === 5 ? 1 : 0 }),
       pk01St: Object.assign({}, pkBase, { opacity: s.pkFace === 1 ? 1 : 0 }),
       moreCards: [
-        { ico: '🕵️', t1: 'The Missing', t2: 'Painting.', field: 'Mystery · 15 min', stars: '✦✦✦✦', exp: '+12' },
-        { ico: '🎬', t1: 'Behind the', t2: 'Screen.', field: 'Film & Media · 12 min', stars: '✦✦✦', exp: '+9' },
-        { ico: '⚽', t1: 'The Perfect', t2: 'Kick.', field: 'Sports · 9 min', stars: '✦✦', exp: '+6' },
-        { ico: '🎸', t1: 'How Music', t2: 'Moves Us.', field: 'Music & Arts · 11 min', stars: '✦✦✦', exp: '+9' },
-        { ico: '🏛', t1: 'Lost', t2: 'Cities.', field: 'History · 12 min', stars: '✦✦', exp: '+6' },
-        { ico: '🐘', t1: 'Animal', t2: 'Minds.', field: 'Animals & Nature · 10 min', stars: '✦✦', exp: '+6' }
-      ],
+        { ico: '🕵️', t1: 'The Missing', t2: 'Painting', field: 'Mystery · 15 min', stars: '✦✦✦✦', exp: '+12', bg: 'thumb_painting.jpeg', level: 'High Challenge' },
+        { ico: '🎬', t1: 'Behind the', t2: 'Screen', field: 'Film & Media · 12 min', stars: '✦✦✦', exp: '+9', bg: 'thumb_screen.jpeg', zoom: 'auto 145%', level: 'Challenge' },
+        { ico: '⚽', t1: 'The Perfect', t2: 'Kick', field: 'Sports · 9 min', stars: '✦✦', exp: '+6', bg: 'thumb_kick.jpeg', level: 'Easy' },
+        { ico: '🎸', t1: 'How Music', t2: 'Moves Us', field: 'Music & Arts · 11 min', stars: '✦✦✦', exp: '+9', bg: 'thumb_music.jpeg', level: 'Challenge' },
+        { ico: '🏛', t1: 'Lost', t2: 'Cities', field: 'History · 12 min', stars: '✦✦', exp: '+6', bg: 'thumb_temple.jpeg', level: 'Easy' },
+        { ico: '🐘', t1: 'Animal', t2: 'Minds', field: 'Animals & Nature · 10 min', stars: '✦✦', exp: '+6', bg: 'thumb_animal.jpeg', level: 'Easy' }
+      ].map(c => Object.assign(c, { st: {
+        flex: '0 0 200px', borderRadius: '16px', padding: '16px', backdropFilter: 'blur(8px)', display: 'flex', flexDirection: 'column', gap: '8px', minHeight: '150px', cursor: 'pointer', transition: 'border-color .2s, box-shadow .2s',
+        border: '1px solid rgba(150,170,220,.14)',
+        background: c.bg
+          ? "linear-gradient(180deg, rgba(4,7,14,.66) 0%, rgba(4,7,14,.55) 45%, rgba(3,5,11,.88) 100%), url('" + c.bg + "') center/" + (c.zoom || 'cover') + " no-repeat, #0a0f1e"
+          : 'rgba(16,21,36,.62)'
+      } })),
       videoRef: el => { this.vid = el; }, video2Ref: el => { this.vid2 = el; }, fxRef: el => { this.fx = el; },
       unmuteShow: s.unmuteShow, onUnmute: this.onUnmute, onSkip: this.onSkip, onMic: this.onMic,
       loadCap: s.loadCap,
@@ -803,8 +887,9 @@ class Component extends DCLogic {
       actTitle: (s.stage === 3 && s.voiceTurn === 2) ? '상상력 보태기' : (act.title || ''), actPromptShow: !!act.prompt,
       titleSt: { fontFamily: 'inherit', fontSize: '26px', fontWeight: 400, color: '#fff', marginBottom: '14px', opacity: s.titleVis ? 1 : 0, transition: 'opacity .45s ease' },
       answerText: s.answerText,
+      cardAnswerSt: { whiteSpace: 'pre-line', fontSize: '23px', fontWeight: 600, color: '#79E4FF', textShadow: '0 0 18px rgba(120,220,255,.4)', marginTop: '22px', lineHeight: 1.45, opacity: s.answerShow ? 1 : 0, transform: s.answerShow ? 'none' : 'translateY(8px)', transition: 'opacity .8s ease, transform .8s ease' },
       answerSt: { whiteSpace: 'pre-line', fontSize: '34px', fontWeight: 600, color: '#79E4FF', textShadow: '0 0 22px rgba(120,220,255,.4)', marginTop: '26px', lineHeight: 1.4, opacity: s.answerShow ? 1 : 0, transform: s.answerShow ? 'none' : 'translateY(8px)', transition: 'opacity .8s ease, transform .8s ease' },
-      actMic: s.stage === 1 || s.stage === 3, actCovers: s.stage === 2, coverCards, actChoice: s.stage === 4 || s.stage === 6, actOrder: s.stage === 5, actTap: s.stage === 7, actBank: s.stage === 8,
+      actMic: s.stage === 1 || s.stage === 3, actCovers: s.stage === 2, coverCards, actCards: s.stage === 4, hintCards, actChoice: s.stage === 6, actOrder: s.stage === 5, actTap: s.stage === 7, actBank: s.stage === 8,
       micSt: { width: '78px', height: '78px', borderRadius: '50%', border: 'none', fontSize: '32px', cursor: s.micReady ? 'pointer' : 'default',
         background: s.recording ? 'radial-gradient(circle at 40% 35%, #ffd6d6, #ff6e6e 70%)' : 'radial-gradient(circle at 40% 35%, #FFF6E2, #FFB25A 70%)',
         boxShadow: s.recording ? '0 0 24px 6px rgba(255,110,110,.5)' : (s.micReady ? '0 0 22px 6px rgba(255,178,90,.5)' : '0 0 10px 2px rgba(255,178,90,.2)'),
