@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,400;1,600&amp;display=swap">
+<style>
+body{margin:0;background:#010206;}
+a{color:#8FD3FF;} a:hover{color:#FFB25A;}
+@keyframes gtwinkle{0%,100%{opacity:.2;}50%{opacity:.9;}}
+@keyframes gbreathe{0%,100%{transform:scale(.92);}50%{transform:scale(1.08);}}
+@keyframes gsiriwave{0%,100%{transform:translateX(-5%) scaleY(.85);opacity:.85;}50%{transform:translateX(5%) scaleY(1.2);opacity:1;}}
+@keyframes gsiriline{0%,100%{opacity:.5;transform:scaleX(.92);}50%{opacity:1;transform:scaleX(1);}}
+@keyframes gglit{0%,100%{transform:scale(.85) rotate(0deg);opacity:.82;}50%{transform:scale(1.18) rotate(8deg);opacity:1;}}
+@keyframes gsweep{0%{transform:translateX(-120%);}100%{transform:translateX(220%);}}
+@keyframes gshake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}50%{transform:translateX(5px);}75%{transform:translateX(-3px);}}
+@keyframes gldot{0%,100%{opacity:.25;}50%{opacity:1;}}
+@keyframes grec{0%,100%{opacity:1;}50%{opacity:.25;}}
+@keyframes gtwk{0%,100%{opacity:.65;}50%{opacity:1;}}
+[data-hidescroll]{scrollbar-width:none;-ms-overflow-style:none;}
+[data-hidescroll]::-webkit-scrollbar{display:none;width:0;height:0;}
+</style>
+</helmet>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#0a0f1e"></rect><text x="50" y="62" font-size="34" text-anchor="middle" fill="#FFB25A">✦</text></svg></template>
+<div style="min-height:100vh;background:#010206;color:#EAEDF6;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-weight:300;display:flex;flex-direction:column;align-items:center;padding:20px 14px 40px;">
+<div style="width:100%;max-width:1306px;aspect-ratio:1306/826;border-radius:28px;padding:13px;background:linear-gradient(160deg,#0c1020,#05070f);border:1px solid #1b2338;box-shadow:0 30px 80px rgba(0,0,0,.55);">
+<div style="position:relative;width:100%;height:100%;border-radius:16px;overflow:hidden;background:#03050B;">
+  <div style="position:absolute;inset:0;z-index:0;overflow:hidden;background:radial-gradient(700px 420px at 84% 4%, #0c1226 0%, rgba(6,9,17,0) 55%),radial-gradient(700px 520px at 6% 100%, #0a1020 0%, rgba(3,5,11,0) 60%),linear-gradient(160deg,#05070F,#03050B);">{{ starfield }}</div>
+  <div style="position:absolute;left:-25%;bottom:-40%;width:120%;height:130%;z-index:0;pointer-events:none;background:linear-gradient(46deg, rgba(255,178,90,0) 36%, rgba(255,178,90,.20) 47%, rgba(255,215,150,.26) 50%, rgba(120,170,255,.20) 55%, rgba(91,140,255,0) 66%);filter:blur(34px);transform:rotate(-4deg);"></div>
+
+  <sc-if value="{{ isPick }}" hint-placeholder-val="{{ true }}">
+  <div data-screen-label="Session Picker" style="position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;padding:26px 34px;overflow:hidden;">
+    <div style="display:flex;align-items:center;justify-content:space-between;">
+      <div style="font-family:Fraunces,Georgia,serif;font-size:22px;letter-spacing:.02em;display:flex;align-items:center;gap:8px;"><span style="font-size:20px;line-height:1;">🪐</span>AI Learning</div>
+      <div style="font-family:ui-monospace,Menlo,monospace;font-size:12.5px;color:#8C95AE;letter-spacing:.06em;display:flex;align-items:center;gap:12px;"><span style="position:relative;display:inline-flex;width:22px;height:22px;align-items:center;justify-content:center;"><span style="font-size:18px;line-height:1;">📡</span><span style="position:absolute;top:-1px;right:-2px;width:6px;height:6px;border-radius:50%;background:#FF8A5B;box-shadow:0 0 6px 1px rgba(255,138,91,.85);"></span></span><span>Youngmin · <span style="color:#FFB25A;">✦ 743</span></span></div>
+    </div>
+    <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:#8C95AE;margin:20px 0 12px;">Today's Picks</div>
+    <div style="display:flex;gap:16px;">
+      <div onClick="{{ onStartVG }}" style="flex:1;min-width:0;border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:12px;min-height:250px;cursor:pointer;transition:border-color .2s,box-shadow .2s;backdrop-filter:blur(10px);background:linear-gradient(100deg, rgba(4,7,14,.92) 0%, rgba(4,7,14,.72) 42%, rgba(4,7,14,.28) 72%, rgba(4,7,14,.12) 100%), linear-gradient(180deg, rgba(3,5,11,0) 55%, rgba(3,5,11,.72) 100%), url('card-vg.png') right center / cover no-repeat, #0a0f1e;border:1px solid rgba(255,178,90,.34);box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 18px 44px rgba(0,0,0,.4);" style-hover="border-color:rgba(255,178,90,.6);box-shadow:0 0 26px rgba(255,178,90,.22);">
+        <div style="width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:27px;background:rgba(10,14,26,.55);border:1px solid rgba(255,255,255,.18);">🎮</div>
+        <div style="font-size:23px;font-weight:300;line-height:1.25;">Should Kids Play <em style="font-family:Fraunces,Georgia,serif;font-style:italic;color:#cdd6ff;">Violent Video Games?</em></div>
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:12.5px;color:#8C95AE;">Video Games · Meaning · Logic · ~14 min</div>
+        <div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:10px;">
+          <div style="display:flex;flex-direction:column;gap:6px;"><span style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.06em;color:#FFB25A;opacity:.85;">High Challenge · New</span><span style="display:inline-flex;gap:4px;"><i style="font-style:normal;font-size:12px;color:#FFB25A;text-shadow:0 0 7px rgba(255,178,90,.7);animation:gtwk 2.6s ease-in-out infinite;">✦</i><i style="font-style:normal;font-size:12px;color:#FFB25A;text-shadow:0 0 7px rgba(255,178,90,.7);animation:gtwk 2.6s ease-in-out infinite;">✦</i><i style="font-style:normal;font-size:12px;color:#FFB25A;text-shadow:0 0 7px rgba(255,178,90,.7);animation:gtwk 2.6s ease-in-out infinite;">✦</i><i style="font-style:normal;font-size:12px;color:#FFB25A;text-shadow:0 0 7px rgba(255,178,90,.7);animation:gtwk 2.6s ease-in-out infinite;">✦</i><i style="font-style:normal;font-size:12px;color:#2b3352;">✦</i></span></div>
+          <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px;color:#FFB25A;text-shadow:0 0 8px rgba(255,178,90,.45);">Exp. +14</span>
+        </div>
+      </div>
+      <div onClick="{{ onStartMars }}" style="flex:1;min-width:0;border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:12px;min-height:250px;cursor:pointer;transition:border-color .2s,box-shadow .2s,opacity .2s;backdrop-filter:blur(10px);background:linear-gradient(100deg, rgba(4,7,14,.92) 0%, rgba(4,7,14,.74) 42%, rgba(4,7,14,.34) 75%, rgba(4,7,14,.18) 100%), linear-gradient(180deg, rgba(3,5,11,0) 55%, rgba(3,5,11,.78) 100%), url('card-mars.jpeg') right center / cover no-repeat, #0a0f1e;border:1px solid rgba(150,170,220,.18);opacity:.82;" style-hover="border-color:rgba(255,178,90,.6);box-shadow:0 0 26px rgba(255,178,90,.22);opacity:1;">
+        <div style="width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:27px;background:rgba(10,14,26,.55);border:1px solid rgba(255,255,255,.14);">🛰</div>
+        <div style="font-size:23px;font-weight:300;line-height:1.25;">The Hard Landing on <em style="font-family:Fraunces,Georgia,serif;font-style:italic;color:#cdd6ff;">Mars</em></div>
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:12.5px;color:#8C95AE;">Mars Exploration · Meaning · Logic · ~12 min</div>
+        <div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:10px;">
+          <div style="display:flex;flex-direction:column;gap:6px;"><span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.06em;color:#37d6b3;">✓ Completed</span><span style="display:inline-flex;gap:4px;"><i style="font-style:normal;font-size:12px;color:#FFB25A;">✦</i><i style="font-style:normal;font-size:12px;color:#FFB25A;">✦</i><i style="font-style:normal;font-size:12px;color:#FFB25A;">✦</i><i style="font-style:normal;font-size:12px;color:#FFB25A;">✦</i><i style="font-style:normal;font-size:12px;color:#2b3352;">✦</i></span></div>
+          <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px;color:#FFB25A;text-shadow:0 0 8px rgba(255,178,90,.45);">Exp. +12 earned</span>
+        </div>
+      </div>
+    </div>
+    <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:#8C95AE;margin:34px 0 12px;">Explore More</div>
+    <div data-hidescroll="true" style="display:flex;gap:16px;overflow-x:auto;margin:-14px -34px 72px;padding:14px 34px;">
+      <sc-for list="{{ moreCards }}" as="c" hint-placeholder-count="5">
+        <div style="{{ c.st }}" style-hover="border-color:rgba(255,178,90,.5);box-shadow:0 0 22px rgba(255,178,90,.16);">
+          <div style="font-size:15px;font-weight:300;margin-top:auto;">{{ c.t1 }} <em style="font-family:Fraunces,Georgia,serif;font-style:italic;">{{ c.t2 }}</em></div>
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#8C95AE;">{{ c.field }}</div>
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.06em;color:#FFB25A;opacity:.85;margin-top:auto;margin-bottom:-4px;">{{ c.level }}</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;"><span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:2px;color:#FFB25A;text-shadow:0 0 7px rgba(255,178,90,.5);">{{ c.stars }}</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#FFB25A;text-shadow:0 0 8px rgba(255,178,90,.4);">{{ c.exp }}</span></div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="position:absolute;left:0;right:0;bottom:0;z-index:4;pointer-events:none;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:150px;">
+      <div style="{{ introCapSt }}">{{ introCap }}</div>
+      <div style="position:relative;width:100%;height:66px;">
+        <div style="position:absolute;inset:0;filter:blur(16px);background:radial-gradient(52% 140% at 24% 100%, rgba(255,150,40,.95), transparent 68%),radial-gradient(48% 150% at 46% 100%, rgba(90,140,255,.95), transparent 68%),radial-gradient(50% 150% at 66% 100%, rgba(70,215,255,.9), transparent 70%),radial-gradient(48% 150% at 86% 100%, rgba(183,120,255,.85), transparent 70%);animation:gsiriwave 3.2s ease-in-out infinite;"></div>
+        <div style="position:absolute;left:6%;right:6%;bottom:0;height:3px;border-radius:3px;background:linear-gradient(90deg,rgba(255,150,40,0),rgba(255,200,120,1),rgba(70,215,255,1),rgba(120,140,255,0));animation:gsiriline 3.2s ease-in-out infinite;"></div>
+      </div>
+      <img src="tutor05.png" alt="Glim tutor" title="Talk to Glim" onClick="{{ onIntro }}" style="{{ pk05St }}"><img src="tutor01.png" alt="Glim tutor" title="Talk to Glim" onClick="{{ onIntro }}" style="{{ pk01St }}">
+    </div>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isLoad }}" hint-placeholder-val="{{ false }}">
+  <div data-screen-label="Loading — Tutor Video" style="position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:26px 34px;overflow:hidden;">
+    <div style="position:absolute;top:30px;right:34px;font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.22em;color:#8C95AE;text-transform:uppercase;display:flex;align-items:center;gap:8px;"><span style="width:7px;height:7px;border-radius:50%;background:#79E4FF;box-shadow:0 0 8px 2px rgba(121,228,255,.6);animation:grec 1.6s ease-in-out infinite;"></span>Mic always on</div>
+    <div style="position:relative;width:520px;max-width:58vw;aspect-ratio:16/9;border-radius:20px;border:1px solid rgba(255,178,90,.45);box-shadow:0 0 40px rgba(255,178,90,.18), 0 24px 60px rgba(0,0,0,.55);background:#000;overflow:hidden;">
+      <video ref="{{ videoRef }}" src="tutor_intro.mp4" playsInline="{{ true }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity .6s ease;"></video>
+      <video ref="{{ video2Ref }}" src="tutor_reply.mp4" preload="auto" playsInline="{{ true }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s ease;"></video>
+      <sc-if value="{{ unmuteShow }}" hint-placeholder-val="{{ false }}">
+        <button onClick="{{ onUnmute }}" style="position:absolute;left:50%;bottom:14px;transform:translateX(-50%);border:1px solid rgba(255,255,255,.35);background:rgba(6,9,17,.72);color:#EAEDF6;border-radius:999px;padding:8px 16px;font-size:13px;cursor:pointer;backdrop-filter:blur(6px);">🔊 소리 켜기</button>
+      </sc-if>
+    </div>
+    <div style="{{ loadCapSt }}">{{ loadCap }}</div>
+    <div style="{{ loadSttSt }}">{{ loadStt }}</div>
+    <div onClick="{{ onSkip }}" title="" style="position:absolute;top:0;right:0;bottom:0;width:16%;z-index:8;cursor:default;"></div>
+    <div onClick="{{ onBack }}" title="" style="position:absolute;top:0;left:0;bottom:0;width:16%;z-index:8;cursor:default;"></div>
+    <button onClick="{{ onSkip }}" style="position:absolute;right:30px;bottom:24px;border:none;background:transparent;color:#5d668433;color:rgba(140,149,174,.55);font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;">Skip ▸</button>
+    <div style="position:absolute;left:0;right:0;bottom:0;pointer-events:none;height:66px;">
+      <div style="position:absolute;inset:0;filter:blur(16px);opacity:.8;background:radial-gradient(52% 140% at 24% 100%, rgba(255,150,40,.85), transparent 68%),radial-gradient(48% 150% at 46% 100%, rgba(90,140,255,.85), transparent 68%),radial-gradient(50% 150% at 66% 100%, rgba(70,215,255,.8), transparent 70%),radial-gradient(48% 150% at 86% 100%, rgba(183,120,255,.75), transparent 70%);animation:gsiriwave 3.2s ease-in-out infinite;"></div>
+      <div style="position:absolute;left:6%;right:6%;bottom:0;height:3px;border-radius:3px;background:linear-gradient(90deg,rgba(255,150,40,0),rgba(255,200,120,1),rgba(70,215,255,1),rgba(120,140,255,0));animation:gsiriline 3.2s ease-in-out infinite;"></div>
+    </div>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isLoad2 }}" hint-placeholder-val="{{ false }}">
+  <div data-screen-label="Loading — Advanced Session" style="position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:26px 34px;overflow:hidden;">
+    <div style="position:relative;border-radius:22px;padding:5px;background:linear-gradient(160deg, rgba(255,178,90,.55), rgba(91,140,255,.4), rgba(255,178,90,.2));box-shadow:0 0 60px rgba(255,178,90,.22), 0 24px 60px rgba(0,0,0,.55);">
+      <video ref="{{ advVideoRef }}" src="tutor_adv_loading.mp4" playsInline="{{ true }}" preload="auto" style="display:block;width:480px;max-width:56vw;aspect-ratio:16/9;object-fit:cover;border-radius:18px;background:transparent;"></video>
+    </div>
+    <div style="{{ loadCapSt }}">{{ loadCap }}</div>
+    <button onClick="{{ onSkip2 }}" style="position:absolute;right:30px;bottom:24px;border:none;background:transparent;color:rgba(140,149,174,.55);font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;">Skip ▸</button>
+    <div style="position:absolute;left:0;right:0;bottom:0;pointer-events:none;height:66px;">
+      <div style="position:absolute;inset:0;filter:blur(16px);opacity:.8;background:radial-gradient(52% 140% at 24% 100%, rgba(255,150,40,.85), transparent 68%),radial-gradient(48% 150% at 46% 100%, rgba(90,140,255,.85), transparent 68%),radial-gradient(50% 150% at 66% 100%, rgba(70,215,255,.8), transparent 70%),radial-gradient(48% 150% at 86% 100%, rgba(183,120,255,.75), transparent 70%);animation:gsiriwave 3.2s ease-in-out infinite;"></div>
+      <div style="position:absolute;left:6%;right:6%;bottom:0;height:3px;border-radius:3px;background:linear-gradient(90deg,rgba(255,150,40,0),rgba(255,200,120,1),rgba(70,215,255,1),rgba(120,140,255,0));animation:gsiriline 3.2s ease-in-out infinite;"></div>
+    </div>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isLearn }}" hint-placeholder-val="{{ false }}">
+  <div data-screen-label="Learning Scene — Video Games" style="position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;padding:22px 30px 0;overflow:hidden;background:linear-gradient(180deg, rgba(3,5,11,.66) 0%, rgba(3,5,11,.74) 60%, rgba(2,3,8,.9) 100%), url('learn_bg.png') center/cover no-repeat;">
+    <div onClick="{{ onNextBeat }}" style="position:absolute;top:60px;right:0;bottom:170px;width:26px;z-index:9;cursor:default;"></div>
+    <div onClick="{{ onPrevBeat }}" style="position:absolute;top:60px;left:0;bottom:170px;width:26px;z-index:9;cursor:default;"></div>
+    <div style="display:flex;align-items:center;justify-content:space-between;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#8C95AE;flex:none;">
+      <span onClick="{{ onBack }}" style="cursor:pointer;color:#c7cee6;">⟵ Previous</span>
+      <span style="display:inline-flex;align-items:center;">
+        <sc-for list="{{ steps }}" as="st" hint-placeholder-count="7">
+          <span style="display:inline-flex;align-items:center;"><span onClick="{{ st.go }}" style="{{ st.nodeSt }}">{{ st.label }}</span><span style="{{ st.linkSt }}"><span style="{{ st.linkSweepSt }}"></span></span></span>
+        </sc-for>
+      </span>
+      <span style="display:inline-flex;align-items:center;gap:6px;color:#c7cee6;"><span style="font-size:15px;">⚙️</span>Settings</span>
+    </div>
+    <div style="flex:1;display:flex;gap:18px;min-height:0;padding:14px 0 150px;">
+      <div ref="{{ passRef }}" data-hidescroll="true" style="flex:1.12;min-width:0;overflow-y:auto;">
+        <div style="background:rgba(8,11,20,.70);border:1px solid rgba(150,170,220,.20);border-radius:16px;padding:20px 24px;backdrop-filter:blur(10px);transition:opacity .8s ease;min-height:1000px;">
+          <sc-if value="{{ notAdv }}" hint-placeholder-val="{{ true }}">
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#8C95AE;margin-bottom:8px;">Reading · Opinion</div>
+          <div style="font-family:Fraunces,Georgia,serif;font-size:22px;font-weight:400;margin-bottom:12px;">Should Kids Play <em style="font-style:italic;color:#cdd6ff;">Violent Video Games?</em></div>
+          <div style="font-size:16.5px;line-height:2.0;color:#EEF1F9;margin:0;">
+            <sc-for list="{{ sents1 }}" as="s" hint-placeholder-count="2"><span onClick="{{ s.tap }}" style="{{ s.st }}">{{ s.t }} </span></sc-for>
+          </div>
+          <div style="{{ para2St }}">
+            <sc-for list="{{ sents2 }}" as="s" hint-placeholder-count="3"><span onClick="{{ s.tap }}" style="{{ s.st }}">{{ s.t }} </span></sc-for>
+          </div>
+          <div style="{{ para3St }}">
+            <sc-for list="{{ sents3 }}" as="s" hint-placeholder-count="6"><span onClick="{{ s.tap }}" style="{{ s.st }}">{{ s.t }} </span></sc-for>
+          </div>
+          <div style="{{ para4St }}">
+            <sc-for list="{{ sents4 }}" as="s" hint-placeholder-count="0"><span onClick="{{ s.tap }}" style="{{ s.st }}">{{ s.t }} </span></sc-for>
+          </div>
+          </sc-if>
+          <sc-if value="{{ isAdv }}" hint-placeholder-val="{{ false }}">
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#8C95AE;margin-bottom:8px;">Reading · Opinion · Session 2</div>
+          <div style="font-family:Fraunces,Georgia,serif;font-size:22px;font-weight:400;margin-bottom:12px;">The Other Side: <em style="font-style:italic;color:#cdd6ff;">Gaming Addiction.</em></div>
+          <div style="font-size:16.5px;line-height:2.0;color:#EEF1F9;margin:0;">
+            <sc-for list="{{ advSents1 }}" as="s" hint-placeholder-count="0"><span style="{{ s.st }}">{{ s.t }} </span></sc-for><span style="{{ advBlankSt }}">{{ advBlankText }}</span>
+          </div>
+          <div style="{{ advPara2St }}">
+            <sc-for list="{{ advSents2 }}" as="s" hint-placeholder-count="0"><span style="{{ s.st }}">{{ s.t }} </span></sc-for>
+          </div>
+          <div style="{{ advPara3St }}">
+            <sc-for list="{{ advSents3 }}" as="s" hint-placeholder-count="0"><span style="{{ s.st }}">{{ s.t }} </span></sc-for>
+          </div>
+          </sc-if>
+        </div>
+      </div>
+      <div data-hidescroll="true" style="flex:.88;min-width:0;display:flex;flex-direction:column;overflow-y:auto;">
+        <div style="{{ actCardSt }}">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+            <span style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#8C95AE;">{{ actStep }}</span>
+            <span style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#FFB25A;border:1px solid rgba(255,178,90,.4);border-radius:999px;padding:4px 10px;">{{ actType }}</span>
+          </div>
+          <sc-if value="{{ actMic }}" hint-placeholder-val="{{ false }}">
+            <div style="{{ titleSt }}">{{ actTitle }}</div>
+            <div style="{{ answerSt }}">{{ answerText }}</div>
+          </sc-if>
+          <sc-if value="{{ actPromptShow }}" hint-placeholder-val="{{ true }}">
+            <div style="font-size:16.5px;line-height:1.65;color:#fff;margin-bottom:16px;word-break:keep-all;">{{ actPrompt }}</div>
+          </sc-if>
+
+          <sc-if value="{{ actCovers }}" hint-placeholder-val="{{ false }}">
+            <div style="{{ titleSt }}">{{ actTitle }}</div>
+            <div style="display:flex;gap:12px;">
+              <sc-for list="{{ coverCards }}" as="c" hint-placeholder-count="0">
+                <div onClick="{{ c.tap }}" style="{{ c.st }}">
+                  <div style="{{ c.imgSt }}"></div>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ actCards }}" hint-placeholder-val="{{ false }}">
+            <div style="{{ titleSt }}">{{ actTitle }}</div>
+            <div style="display:flex;gap:12px;">
+              <sc-for list="{{ hintCards }}" as="h" hint-placeholder-count="0">
+                <div onClick="{{ h.tap }}" style="flex:1;min-width:0;aspect-ratio:2/3;perspective:700px;cursor:pointer;">
+                  <div style="{{ h.innerSt }}">
+                    <div style="{{ h.backSt }}"><div style="font-size:26px;color:#FFB25A;text-shadow:0 0 12px rgba(255,178,90,.6);">✦</div><div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.14em;color:#c7d0ea;margin-top:8px;">{{ h.backLabel }}</div></div>
+                    <div style="{{ h.frontSt }}"><div style="font-family:Fraunces,Georgia,serif;font-size:19px;color:#ffe1b0;text-align:center;line-height:1.3;">{{ h.word }}</div><div style="{{ h.qSt }}">?</div><div style="{{ h.transSt }}">{{ h.trans }}</div></div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+            <div style="{{ cardAnswerSt }}">{{ answerText }}</div>
+          </sc-if>
+
+          <sc-if value="{{ actSort }}" hint-placeholder-val="{{ false }}">
+            <div style="{{ titleSt }}">{{ actTitle }}</div>
+            <div style="display:flex;flex-direction:column;gap:18px;">
+              <div ref="{{ oZoneRef }}" style="{{ oZoneSt }}">
+                <span style="position:absolute;left:18px;top:50%;transform:translateY(-50%);font-family:inherit;font-weight:700;font-size:24px;color:#37d6b3;">O</span>
+                <div style="display:flex;flex-direction:column;align-items:flex-start;gap:6px;margin-left:44px;">
+                  <sc-for list="{{ oPlaced }}" as="p" hint-placeholder-count="0"><span style="font-size:12.5px;color:#c7fff0;background:rgba(55,214,179,.14);border:1px solid rgba(120,230,190,.4);border-radius:8px;padding:6px 10px;line-height:1.4;word-break:keep-all;">{{ p.t }}</span></sc-for>
+                </div>
+              </div>
+              <div style="display:flex;gap:12px;justify-content:center;min-height:204px;">
+                <sc-for list="{{ sortCards }}" as="o" hint-placeholder-count="0">
+                  <button onPointerDown="{{ o.down }}" style="{{ o.st }}"><span style="line-height:1.5;">{{ o.t }}</span></button>
+                </sc-for>
+              </div>
+              <div ref="{{ xZoneRef }}" style="{{ xZoneSt }}">
+                <span style="position:absolute;left:18px;top:50%;transform:translateY(-50%);font-family:inherit;font-weight:700;font-size:24px;color:#ff8a8a;">X</span>
+                <div style="display:flex;flex-direction:column;align-items:flex-start;gap:6px;margin-left:44px;">
+                  <sc-for list="{{ xPlaced }}" as="p" hint-placeholder-count="0"><span style="font-size:12.5px;color:#ffd6d6;background:rgba(255,110,110,.12);border:1px solid rgba(255,140,140,.4);border-radius:8px;padding:6px 10px;line-height:1.4;word-break:keep-all;">{{ p.t }}</span></sc-for>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ actChoice }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <sc-for list="{{ choiceOpts }}" as="o" hint-placeholder-count="2">
+                <button onClick="{{ o.tap }}" style="{{ o.st }}">{{ o.t }}</button>
+              </sc-for>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ actOrder }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <sc-for list="{{ orderTiles }}" as="o" hint-placeholder-count="3">
+                <button onPointerDown="{{ o.down }}" style="{{ o.st }}"><span style="color:#5d6a8f;margin-right:10px;">⠿</span>{{ o.t }}</button>
+              </sc-for>
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-top:6px;">
+                <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#8C95AE;">타일을 위아래로 드래그해서 순서를 바꿔봐</span>
+                <button onClick="{{ onCheckOrder }}" style="border:none;border-radius:10px;padding:10px 18px;font-family:ui-monospace,Menlo,monospace;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;color:#2a1c05;background:linear-gradient(180deg,#FFE7A8,#FFB25A);box-shadow:0 0 18px 2px rgba(255,178,90,.35);">Check</button>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ actSpot }}" hint-placeholder-val="{{ false }}">
+            <div style="{{ titleSt }}">{{ actTitle }}</div>
+            <div onClick="{{ onSpot }}" style="position:relative;width:100%;border-radius:12px;overflow:hidden;cursor:pointer;border:1px solid rgba(150,170,220,.25);">
+              <img src="spot_wrong.png" alt="find the wrong part" draggable="{{ false }}" style="width:100%;display:block;user-select:none;">
+              <sc-for list="{{ spotCircles }}" as="c" hint-placeholder-count="0"><span style="{{ c.st }}"></span></sc-for>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ actTap }}" hint-placeholder-val="{{ false }}">
+            <div style="{{ titleSt }}">{{ actTitle }}</div>
+            <div style="display:flex;align-items:center;gap:14px;background:rgba(16,22,40,.6);border:1px dashed rgba(150,170,220,.3);border-radius:12px;padding:16px 18px;">
+              <span style="font-size:26px;">👆</span>
+              <span style="font-size:14px;color:#c7d0ea;line-height:1.6;word-break:keep-all;">왼쪽 지문에서 문장을 직접 짚어봐.</span>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ actCycle }}" hint-placeholder-val="{{ false }}">
+            <div style="{{ titleSt }}">{{ actTitle }}</div>
+            <div style="position:relative;display:grid;grid-template-columns:1fr 1fr;gap:26px 38px;margin-bottom:22px;">
+              <div style="position:absolute;left:50%;top:25%;transform:translate(-50%,-50%);z-index:2;color:#FFB25A;font-size:30px;line-height:1;pointer-events:none;text-shadow:0 0 12px rgba(255,178,90,.5);">→</div>
+              <div style="position:absolute;left:75%;top:50%;transform:translate(-50%,-50%);z-index:2;color:#FFB25A;font-size:30px;line-height:1;pointer-events:none;text-shadow:0 0 12px rgba(255,178,90,.5);">↓</div>
+              <div style="position:absolute;left:50%;top:75%;transform:translate(-50%,-50%);z-index:2;color:#FFB25A;font-size:30px;line-height:1;pointer-events:none;text-shadow:0 0 12px rgba(255,178,90,.5);">←</div>
+              <div style="position:absolute;left:25%;top:50%;transform:translate(-50%,-50%);z-index:2;color:#FFB25A;font-size:30px;line-height:1;pointer-events:none;text-shadow:0 0 12px rgba(255,178,90,.5);">↑</div>
+              <sc-for list="{{ cycSlots }}" as="sl" hint-placeholder-count="0">
+                <div ref="{{ sl.slotRef }}" style="{{ sl.st }}"><span style="{{ sl.numSt }}">{{ sl.num }}</span><span style="{{ sl.labelSt }}">{{ sl.t }}</span></div>
+              </sc-for>
+            </div>
+            <div style="display:flex;gap:10px;">
+              <sc-for list="{{ cycTiles }}" as="o" hint-placeholder-count="0">
+                <button onPointerDown="{{ o.down }}" style="{{ o.st }}"><span style="line-height:1.45;word-break:keep-all;text-shadow:0 1px 6px rgba(0,0,0,.9);">{{ o.t }}</span></button>
+              </sc-for>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ actBank }}" hint-placeholder-val="{{ false }}">
+            <div style="{{ titleSt }}">{{ actTitle }}</div>
+            <div style="display:flex;flex-direction:column;gap:14px;">
+              <div style="background:rgba(16,22,40,.6);border:1px solid rgba(150,170,220,.2);border-radius:12px;padding:16px 18px;font-size:16px;line-height:1.8;color:#EEF1F9;">이 비디오 게임을 평범한 놀이로 다루면, 게임은 <span style="{{ blankSt }}">{{ blankText }}</span>.</div>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;">
+                <sc-for list="{{ bankWords }}" as="w" hint-placeholder-count="4">
+                  <button onClick="{{ w.tap }}" style="{{ w.st }}">{{ w.t }}</button>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+        <div style="{{ thinkSt }}"><span style="width:5px;height:5px;border-radius:50%;background:#8FD3FF;animation:gldot 1.2s ease-in-out infinite;"></span><span style="width:5px;height:5px;border-radius:50%;background:#8FD3FF;animation:gldot 1.2s ease-in-out infinite .2s;"></span><span style="width:5px;height:5px;border-radius:50%;background:#8FD3FF;animation:gldot 1.2s ease-in-out infinite .4s;"></span><span style="margin-left:6px;">Tutor is thinking…</span></div>
+      </div>
+    </div>
+    <div style="position:absolute;left:0;right:0;bottom:0;z-index:4;pointer-events:none;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:158px;">
+      <div style="{{ sttSt }}">{{ sttText }}</div>
+      <div style="{{ tutorSt }}">{{ tutorLine }}</div>
+      <div style="position:relative;width:100%;height:66px;">
+        <div style="position:absolute;inset:0;filter:blur(16px);background:radial-gradient(52% 140% at 24% 100%, rgba(255,150,40,.95), transparent 68%),radial-gradient(48% 150% at 46% 100%, rgba(90,140,255,.95), transparent 68%),radial-gradient(50% 150% at 66% 100%, rgba(70,215,255,.9), transparent 70%),radial-gradient(48% 150% at 86% 100%, rgba(183,120,255,.85), transparent 70%);animation:gsiriwave 3.2s ease-in-out infinite;"></div>
+        <div style="position:absolute;left:6%;right:6%;bottom:0;height:3px;border-radius:3px;background:linear-gradient(90deg,rgba(255,150,40,0),rgba(255,200,120,1),rgba(70,215,255,1),rgba(120,140,255,0));animation:gsiriline 3.2s ease-in-out infinite;"></div>
+      </div>
+      <img src="tutor01.png" alt="Glim tutor" style="{{ avatar1St }}"><img src="tutor03.png" alt="Glim tutor listening" style="{{ avatar3St }}">
+      <div style="position:absolute;right:30px;bottom:16px;z-index:6;font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.2em;color:rgba(140,149,174,.8);text-transform:uppercase;display:flex;align-items:center;gap:7px;"><span style="width:7px;height:7px;border-radius:50%;background:#79E4FF;box-shadow:0 0 8px 2px rgba(121,228,255,.6);animation:grec 1.6s ease-in-out infinite;"></span>Mic on</div>
+    </div>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isDone }}" hint-placeholder-val="{{ false }}">
+  <div data-screen-label="Learning Report" data-hidescroll="true" style="position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow-y:auto;background:radial-gradient(600px 400px at 50% 40%, rgba(255,178,90,.12), rgba(3,5,11,.92) 70%);backdrop-filter:blur(4px);padding:24px;">
+    <div style="font-size:40px;margin-bottom:2px;color:#FFB25A;text-shadow:0 0 18px rgba(255,178,90,.7);">✦</div>
+    <h2 style="font-family:Fraunces,Georgia,serif;font-size:26px;font-weight:400;margin:4px 0 2px;">You lit your own <em style="font-style:italic;">light</em> again</h2>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:12px 0 16px;">
+      <span style="display:inline-flex;align-items:center;gap:5px;line-height:1;font-family:ui-monospace,Menlo,monospace;font-size:12.5px;background:rgba(255,194,75,.12);border:1px solid rgba(255,194,75,.4);color:#FFB25A;border-radius:999px;padding:8px 14px;">Exp. +14</span>
+      <span style="display:inline-flex;align-items:center;gap:5px;line-height:1;font-family:ui-monospace,Menlo,monospace;font-size:12.5px;background:rgba(255,194,75,.12);border:1px solid rgba(255,194,75,.4);color:#FFB25A;border-radius:999px;padding:8px 14px;">🔥 6-day streak</span>
+      <span style="display:inline-flex;align-items:center;gap:5px;line-height:1;font-family:ui-monospace,Menlo,monospace;font-size:12.5px;background:rgba(255,194,75,.12);border:1px solid rgba(255,194,75,.4);color:#FFB25A;border-radius:999px;padding:8px 14px;">✦ 3 stars lit</span>
+    </div>
+    <div style="width:100%;max-width:480px;background:rgba(10,14,26,.72);border:1px solid rgba(150,170,220,.22);border-radius:18px;padding:20px 22px;margin:0 auto 6px;backdrop-filter:blur(10px);text-align:left;box-shadow:0 20px 50px rgba(0,0,0,.45);">
+      <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#8C95AE;margin-bottom:8px;text-align:center;">Today's Learning Report</div>
+      <div style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px dashed rgba(150,170,220,.14);">
+        <div style="width:26px;height:26px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex:none;background:rgba(255,194,75,.18);color:#FFB25A;">✓</div>
+        <div><b style="font-size:13.5px;">What you learned</b><div style="font-size:13px;color:#c7d0ea;margin-top:2px;line-height:1.5;">You traced the writer's claim — that violent games <em>deserve more credit</em> — and found the evidence sentence yourself.</div></div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px dashed rgba(150,170,220,.14);">
+        <div style="width:26px;height:26px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex:none;background:rgba(55,214,179,.18);color:#37d6b3;">↑</div>
+        <div><b style="font-size:13.5px;">What improved</b><div style="font-size:13px;color:#c7d0ea;margin-top:2px;line-height:1.5;">Evidence pointed — 2 last time → <b style="color:#37d6b3;">4 today</b>. You rebuilt the paragraph's logic in the right order.</div></div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;">
+        <div style="width:26px;height:26px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex:none;background:rgba(91,140,255,.18);color:#5B8CFF;">→</div>
+        <div><b style="font-size:13.5px;">To work on next</b><div style="font-size:13px;color:#c7d0ea;margin-top:2px;line-height:1.5;">Next session we read the other side — game <em>addiction</em> — and you will build your own conclusion.</div></div>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;justify-content:center;margin-top:12px;">
+      <button onClick="{{ onBack }}" style="border:none;border-radius:12px;padding:13px 24px;font-family:ui-monospace,Menlo,monospace;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;color:#2a1c05;background:linear-gradient(180deg,#FFE7A8,#FFB25A);box-shadow:0 0 22px 2px rgba(255,178,90,.4);">Home</button>
+    </div>
+  </div>
+  </sc-if>
+
+  <canvas ref="{{ fxRef }}" style="position:absolute;inset:0;z-index:6;pointer-events:none;opacity:0;transition:opacity .3s ease;width:100%;height:100%;"></canvas>
+</div>
+</div>
+<p style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#8C95AE;margin-top:14px;text-align:center;letter-spacing:.03em;max-width:1000px;line-height:1.6;">POC · Scenario 2 (Video Games, 1차시) · picker → tutor-video loading (mic always on) → B-layout learning scene (text left · activity right · tutoring bottom) · tutor replies generated live in Korean (Socratic, no direct answers).</p>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1360,&quot;height&quot;:980},&quot;useClaude&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behavior&quot;},&quot;skipToLearn&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Review&quot;},&quot;muteVideo&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Review&quot;}}">
+class Component extends DCLogic {
+  state = {
+    view: 'pick', introCap: '', introShow: false, pkFace: 5,
+    loadCap: '', loadCapShow: false, loadStt: '', loadSttShow: false, unmuteShow: false,
+    stage: 1, reveal: 0, para2On: false, para3On: false, para4On: false, paraGlow: 0,
+    hl: {}, pulse: -1, tapArmed: false,
+    tutorLine: '', tutorShow: false, sttText: '', sttShow: false, sttSmall: false,
+    micReady: false, recording: false, thinking: false, answerText: '', answerShow: false, voiceTurn: 1, titleVis: true, coverState: {}, cardStates: [0,0,0], cardsArmed: false,
+    choiceState: {}, orderIds: ['B','C','A'], orderSel: -1, orderLock: false, dragIdx: -1, dragDY: 0, dragTarget: -1, sortPlaced: {}, sortWrong: {}, sortDrag: null, sortDX: 0, sortDY: 0, spotCircles: [],
+    advReveal: 0, advBlank: false, cycPlaced: {}, cycWrong: {}, cycDrag: null, cycDX: 0, cycDY: 0,
+    bankChosen: '', bankWrong: {}, blankFilled: false,
+    done: false
+  };
+  tm = []; orderTries = 0; exited = false;
+
+  componentDidMount() {
+    this.runIntro();
+    if (this.props.skipToLearn) this.startLearn();
+  }
+  componentWillUnmount() { this.clearTm(); }
+  clearTm() { this.tm.forEach(clearTimeout); this.tm = []; }
+  after(ms, fn) { this.tm.push(setTimeout(fn, ms)); }
+
+  // ---------- picker ----------
+  runIntro() {
+    this.setState({ pkFace: 5 });
+    this.after(500, () => this.setState({ introCap: '영민아 오늘은 너가 좋아하는 컨텐츠를 가져왔어', introShow: true }));
+    this.after(3800, () => this.setState({ introShow: false }));
+    this.after(4600, () => this.setState({ introCap: '바로 비디오게임과 화성탐사에 대한 건데 시작해볼까?', introShow: true, pkFace: 1 }));
+    this.after(9800, () => this.setState({ introShow: false }));
+  }
+
+  // ---------- loading ----------
+  startVG = () => {
+    this.clearTm(); this.exited = false;
+    this.setState({ view: 'load', loadCap: '', loadCapShow: false, loadStt: '', loadSttShow: false, unmuteShow: false });
+    this.after(150, () => { this.playVideo(); if (this.vid2) { this.vid2.style.opacity = 0; this.vid2.load(); } });
+    this.capSeq([[400, '좋았어! 문제 풀 때 내가 영어로 말하는 게 좋아?'], [2800, '아니면 한국어로 말하는 게 좋아? 골라줄래?']]);
+    this.after(30000, () => this.videoDone()); // fallback if intro 'ended' never fires
+  }
+  playVideo() {
+    const v = this.vid; if (!v) return;
+    v.muted = !!this.props.muteVideo;
+    v.onended = () => this.videoDone();
+    const p = v.play();
+    if (p && p.catch) p.catch(() => { v.muted = true; v.play().catch(()=>{}); this.setState({ unmuteShow: true }); });
+  }
+  onUnmute = () => { if (this.vid) { this.vid.muted = false; } this.setState({ unmuteShow: false }); }
+  capSeq(lines) {
+    lines.forEach(([t, line]) => this.after(t, () => { if (this.state.view === 'load') this.setState({ loadCap: line, loadCapShow: true }); }));
+  }
+  videoDone() {
+    if (this.exited || this.state.view !== 'load') return;
+    this.exited = true;
+    const v = this.vid; if (v) v.pause(); // hold on last frame while the student speaks
+    this.setState({ loadCapShow: false });
+    this.after(1000, () => this.typeWords('우리 한글로 대화하자', t => this.setState({ loadStt: t, loadSttShow: true }), () => this.after(1000, () => this.playReply())));
+  }
+  playReply() {
+    const v2 = this.vid2; if (!v2 || this.state.view !== 'load') { this.startLearn(); return; }
+    const go = () => { if (this.state.view === 'load') { this.setState({ loadCapShow: false }); this.after(1000, () => this.startLearn()); } };
+    v2.onended = go;
+    v2.muted = this.vid ? this.vid.muted : false;
+    const p = v2.play();
+    if (p && p.catch) p.catch(() => { v2.muted = true; v2.play().catch(go); });
+    // crossfade inside the fixed frame — no flicker, no size change
+    v2.style.opacity = 1; if (this.vid) this.vid.style.opacity = 0;
+    this.setState({ loadSttShow: false, loadStt: '' });
+    this.capSeq([[300, '그래! 나도 한국어로 대화하는 거 좋아.'], [3000, '한글과 영어 섞어서 말해도 되니까 편하게 말해줘.'], [6800, '이제 시작해보자']]);
+    this.after(25000, () => { if (this.state.view === 'load') this.startLearn(); }); // fallback
+  }
+  onSkip = () => { this.exited = true; if (this.vid) this.vid.pause(); this.startLearn(); }
+
+  typeWords(text, put, done) {
+    const words = text.split(' '); let built = '', i = 0;
+    const step = () => {
+      built += (i === 0 ? '' : ' ') + words[i]; i++;
+      put('“' + built + '”');
+      if (i < words.length) this.after(180, step); else if (done) this.after(320, done);
+    };
+    step();
+  }
+
+  // ---------- learn ----------
+  startLearn = () => {
+    this.clearTm();
+    this.setState({
+      view: 'learn', stage: 1, reveal: 0, para2On: false, para3On: false, para4On: false, paraGlow: 0, hl: {}, pulse: -1,
+      tapArmed: false, tutorLine: '', tutorShow: false, sttText: '', sttShow: false, sttSmall: false,
+      micReady: false, recording: false, thinking: false, answerText: '', answerShow: false, voiceTurn: 1, titleVis: true, coverState: {}, cardStates: [0,0,0], cardsArmed: false, choiceState: {}, orderIds: ['B','C','A'], orderSel: -1,
+      orderLock: false, bankChosen: '', bankWrong: {}, blankFilled: false, done: false
+    });
+    this.orderTries = 0;
+    this.after(900, () => this.setState({ reveal: 1 }));
+    this.after(1700, () => this.setState({ reveal: 2 }));
+    this.pendingNext = 0;
+    this.after(3000, () => { this.tutorSay('자, 먼저 물어볼게. 이 글은 무엇에 관한 글일까?'); this.setState({ micReady: true }); });
+  }
+  goPick = () => { this.clearTm(); this.setState({ view: 'pick', done: false }); this.runIntro(); }
+
+  tutorSay(t) { this.setState({ tutorLine: t, tutorShow: true }); }
+  hlOn(idx) {
+    const hl = Object.assign({}, this.state.hl); hl[idx] = true;
+    this.setState({ hl, pulse: idx });
+    this.after(1500, () => { if (this.state.pulse === idx) this.setState({ pulse: -1 }); });
+  }
+
+  // voice turns
+  ANSWERS = { 1: '비디오 게임', 3: '폭력적인 비디오 게임', '3b': '게임과 현실 구분을 못해서\n나쁠것이다', 10: '중독 (addiction)' };
+  MOCKS = {
+    1: '음… 비디오 게임? 비디오 게임에 관한 글 같아!',
+    3: '폭력적인 비디오 게임! 사람들이 나쁘다고 말하는 거.',
+    '3b': '글쎄, 게임과 현실 구분을 못해서 나쁘다고 생각하나?',
+    10: '음… 게임을 멈추기 힘들다고 했으니까… 중독? addiction!'
+  };
+  FALLBACKS = {
+    1: '맞아, 정확하게 찾아냈네. 독해력이 금방 늘고 있어!',
+    3: '그렇지, 사람들이 나쁘다고 말하고 있네. 그럼 사람들은 왜 그 게임들이 나쁘다고 생각할까?',
+    '3b': '오, 그럴듯한 추측이야. 정말 그런지 이어지는 단락에서 같이 확인해보자!',
+    10: '정답! 이제 논쟁의 중심은 「addiction — 중독」이야. 빈칸이 채워진 거 보이지?'
+  };
+  GOALS = {
+    '3b': "학생이 '사람들이 폭력적 게임을 나쁘게 보는 이유'에 대한 가설(게임과 현실을 구분 못한다)을 냈다. 상상력을 칭찬하며 인정하고, 다음 단락에서 확인해보자고 짧게 유도한다."
+  };
+  COVERS = [
+    { k: 'A', img: 'cover_a_game.png', label: 'VIOLENT VIDEO GAMES' },
+    { k: 'B', img: 'cover_b_puzzle.png', label: 'PUZZLE FUN' },
+    { k: 'C', img: 'cover_c_soccer.png', label: 'WORLD CUP RECAP' }
+  ];
+  coverTap(k) {
+    if (this.state.stage !== 2 || this.coverDone) return;
+    const cs = Object.assign({}, this.state.coverState);
+    if (k === 'A') {
+      this.coverDone = true;
+      cs['A'] = 'right'; this.setState({ coverState: cs });
+      this.tutorSay('맞아, 비디오 게임 얘기지! 표지를 제대로 골랐어.');
+      this.pendingNext = 3;
+    } else {
+      this.coverTries++;
+      cs[k] = 'wrong'; this.setState({ coverState: cs });
+      if (this.coverTries >= 2) {
+        this.coverDone = true;
+        const c2 = { A: 'right' }; this.setState({ coverState: c2 });
+        this.tutorSay('이 글은 「violent video games」 — 폭력적인 비디오 게임 얘기야. 그래서 표지 A가 어울려. 계속 가보자!');
+        this.hlOn(0);
+        this.pendingNext = 3;
+      } else {
+        if (k === 'B') this.tutorSay('게임은 맞는데, 이 글이 말하는 게임 종류를 다시 봐. 첫 문장에서 「violent」를 찾아봐!');
+        else this.tutorSay('음, 축구 얘기는 없었지? 첫 문장을 다시 읽고 골라봐.');
+        this.hlOn(0);
+        this.after(700, () => { const c3 = Object.assign({}, this.state.coverState); delete c3[k]; this.setState({ coverState: c3 }); });
+      }
+    }
+  }
+  onMic = () => {
+    const { micReady, recording, stage, voiceTurn } = this.state;
+    if (!micReady || recording) return;
+    const key = (stage === 3 && voiceTurn === 2) ? '3b' : String(stage);
+    const mock = this.MOCKS[key]; if (!mock) return;
+    this.setState({ recording: true, micReady: false, tutorShow: false, sttSmall: false });
+    this.typeWords(mock, t => this.setState({ sttText: t, sttShow: true }), () => {
+      if (key === '10') this.after(2000, () => this.reactToVoice(key, mock)); // let the full utterance linger
+      else this.reactToVoice(key, mock);
+    });
+  }
+  startTurn2() { // dissolve the panel title into the imagination turn
+    if (!this._turn2Queued) return;
+    this._turn2Queued = false;
+    this.setState({ titleVis: false });
+    this.after(450, () => this.setState({ voiceTurn: 2, titleVis: true, answerShow: false, answerText: '', micReady: true }));
+  }
+  async reactToVoice(key, said) {
+    this.setState({ recording: false, thinking: true, sttShow: false, answerText: this.ANSWERS[key] || said, answerShow: true });
+    const t0 = Date.now();
+    let reply = this.FALLBACKS[key];
+    if (key === '3b' && this.props.useClaude !== false && window.claude && window.claude.complete) { // other replies are scripted verbatim
+      try {
+        const sys = "너는 'Glim'의 소크라틱 문해력 AI 튜터야. 11~15세 학생 '영민'과 한국어 반말로 대화해. 규칙: (1) 정답을 직접 알려주지 않는다 (2) 학생의 발화를 먼저 인정한다 (3) 다음 사고를 여는 짧은 발문 하나로 끝낸다 (4) 반드시 한국어 반말, 1~2문장, 이모지 금지. 지문(영문): \"Violent video games are still blamed for real violence, though that link has never been proven. Today, the real question is whether kids should be allowed to play them at all.\"";
+        const out = await window.claude.complete({ system: sys, max_tokens: 200, messages: [{ role: 'user', content: '[단계 목표] ' + this.GOALS[key] + '\n[학생 발화] "' + said + '"\n튜터의 다음 한 마디(1~2문장, 반말):' }] });
+        if (out && out.trim()) reply = out.trim().replace(/^["“]|["”]$/g, '');
+      } catch (e) {}
+    }
+    if (this.state.view !== 'learn') return;
+    const wait = Math.max(0, 1100 - (Date.now() - t0));
+    this.after(wait, () => {
+      this.setState({ thinking: false });
+      this.tutorSay(reply);
+      if (key === '3') { this.hlOn(0); this._turn2Queued = true; this.after(2600, () => this.startTurn2()); }
+      else if (key === '1') { this.pendingNext = 2; }
+      else if (key === '10') { this.setState({ advBlank: true }); this.pendingNext = 11; }
+      else { this.pendingNext = 4; } // '3b' → next problem on right-edge click
+    });
+  }
+
+  jumpStage(n) { // demo: pagination click jumps straight to that step
+    if (this.state.view !== 'learn') return;
+    this.clearTm();
+    this.pendingNext = 0;
+    const st = { micReady: false, recording: false, thinking: false, tutorShow: false, sttShow: false, sttSmall: false, tapArmed: false, orderSel: -1, bankChosen: '', bankWrong: {}, blankFilled: false, paraGlow: 0, coverState: {} };
+    if (n >= 4) { st.para2On = true; st.reveal = Math.max(this.state.reveal, 5); }
+    if (n >= 6) { st.para3On = true; st.reveal = 11; }
+    if (n >= 9) { st.para4On = true; st.reveal = 15; } else st.para4On = false;
+    if (n >= 10) { st.advReveal = 11; st.advBlank = n >= 11; st.hl = {}; } else { st.advReveal = 0; st.advBlank = false; }
+    st.cycPlaced = {}; st.cycWrong = {}; st.cycDrag = null; st.cycDX = 0; st.cycDY = 0;
+    if (n < 4) { st.para2On = false; st.para3On = false; st.reveal = 2; }
+    else if (n < 6) { st.para3On = false; st.reveal = Math.min(this.state.reveal, 5) < 5 ? 5 : Math.min(this.state.reveal, 5); }
+    if (n === 5) { st.orderIds = ['B','C','A']; st.orderLock = false; this.orderTries = 0; }
+    st.sortPlaced = {}; st.sortWrong = {}; st.sortDrag = null; st.sortDX = 0; st.sortDY = 0; st.spotCircles = []; this._spotDone = false;
+    this.setState(st);
+    this.setupStage(n);
+  }
+  prevBeat = () => { // demo: left-edge click goes back one step (stage 1 → back to loading scene)
+    if (this.state.view !== 'learn') return;
+    if (this.state.stage > 1) this.jumpStage(this.state.stage - 1);
+    else this.startVG();
+  }
+  nextBeat = () => {
+    if (this.state.view !== 'learn') return;
+    if (this._turn2Queued) { this.startTurn2(); return; } // fast-forward into the imagination turn
+    if (this.state.micReady && !this.state.recording) { this.onMic(); return; }
+    if (this.pendingNext) { const n = this.pendingNext; this.pendingNext = 0; this.setupStage(n); }
+  }
+  setupStage(n) {
+    this.pendingNext = 0; this._turn2Queued = false;
+    this.setState({ stage: n, sttShow: false, sttSmall: false, choiceState: {}, answerShow: false, answerText: '', voiceTurn: 1, titleVis: true });
+    if (n >= 4) this.setState({ hl: {} }); // clear the speaking-step sentence highlights
+    if (n === 4) { this.s3Tries = 0; this._cardSummaryDone = false; this._c1Done = false; this._c2Done = false; this._awaitMore = false; }
+    if (n === 2) { this.coverTries = 0; this.coverDone = false; this.setState({ coverState: {} }); }
+    if (n === 1) {
+      this.tutorSay('자, 먼저 물어볼게. 이 글은 무엇에 관한 글일까?');
+      this.setState({ micReady: true });
+    } else if (n === 2) {
+      this.tutorSay('이 글이 잡지 기사라면, 표지에 어떤 사진이 어울릴까? 골라볼래?');
+    } else if (n === 3) {
+      this.tutorSay('이 글은 비디오 게임에 관한 글이야. 그럼, 어떤 비디오 게임에 대해 말하고 싶은 것 같아?');
+      this.setState({ micReady: true });
+    } else if (n === 4) {
+      this.setState({ para2On: true, paraGlow: 2, cardStates: [0, 0, 0], cardsArmed: false });
+      this.after(300, () => this.setState({ reveal: 3 }));
+      this.after(1000, () => this.setState({ reveal: 4 }));
+      this.after(1700, () => this.setState({ reveal: 5 }));
+      this.tutorSay('이 단락의 핵심 내용이 뭔지 말해볼래?');
+      this.after(3000, () => {
+        this.setState({ tutorShow: false });
+        this.typeWords('음... 잘 모르겠어', t => this.setState({ sttText: t, sttShow: true }), () => this.after(1000, () => {
+          this.setState({ sttShow: false, cardsArmed: true });
+          this.tutorSay('그럼 힌트 카드 1을 선택해서 힌트를 확인해봐봐');
+        }));
+      });
+    } else if (n === 5) {
+      this.setState({ paraGlow: 0 });
+      this.tutorSay('그럼 이번엔, 이 단락의 해석을 순서대로 배열해줄래?');
+    } else if (n === 6) {
+      this.setState({ para3On: true, paraGlow: 3, sortPlaced: {}, sortDrag: null });
+      [6,7,8,9,10,11].forEach((r, i) => this.after(300 + i * 520, () => this.setState({ reveal: r })));
+      this.tutorSay('세번째 단락을 읽고, 카드 내용이 글과 맞으면 O, 글에 없으면 X 영역으로 카드를 옮겨봐.');
+    } else if (n === 7) {
+      this._spotDone = false; this._spotSeq = 0;
+      this.setState({ spotCircles: [] });
+      this.tutorSay('이번엔 그림 퀴즈야! 이 그림에서 글의 내용과 맞지 않는 부분을 찾아서 눌러봐.');
+    } else if (n === 8) {
+      this.setState({ para3On: true, paraGlow: 3 });
+      [6,7,8,9,10,11].forEach((r, i) => this.after(300 + i * 620, () => this.setState({ reveal: r })));
+      this.tutorSay('새로운 단락을 읽어보자. 글쓴이가 「폭력은 존재하지 않는다」라고 말했어. 그 문장이 어디에 있지? 직접 짚어봐.');
+      this.after(4800, () => this.setState({ paraGlow: 0, tapArmed: true }));
+    } else if (n === 10) {
+      this.setState({ advReveal: 0, advBlank: false, cycPlaced: {}, cycWrong: {}, cycDrag: null, hl: {} });
+      [1, 2, 3, 4, 5, 6].forEach((r, i) => this.after(300 + i * 480, () => this.setState({ advReveal: r })));
+      this.after(3400, () => this.tutorSay('자, 이제 다른 친구가 쓴, 비디오 게임을 반대하는 글을 읽어보자.'));
+      this.after(5400, () => this.setState({ tutorShow: false }));
+      this.after(5850, () => {
+        this.tutorSay('첫 단락의 빈칸에 알맞은 표현을 직접 말해볼래?');
+        this.setState({ micReady: true });
+      });
+    } else if (n === 11) {
+      this.setState({ advReveal: 11, advBlank: true, cycPlaced: {}, cycWrong: {}, cycDrag: null });
+      this.tutorSay('세번째 단락은 게임으로 인한 악순환을 설명하고 있어.\n순서도로 내용을 한번 더 정리해볼까? 그림을 알맞은 자리에 놓아봐.');
+    } else if (n === 12) {
+      this.finish(); return;
+    } else if (n === 9) {
+      this.setState({ para4On: true, paraGlow: 4 });
+      [12, 13, 14, 15].forEach((r, i) => this.after(300 + i * 520, () => this.setState({ reveal: r })));
+      this.after(900, () => { if (this.passEl) this.passEl.scrollTo({ top: this.passEl.scrollHeight, behavior: 'smooth' }); });
+      this.tutorSay('마지막 단락이 나왔어. 잘 읽고 — 글쓴이의 결론이 되도록, 빈칸에 알맞은 말을 채워볼래?');
+      this.after(5200, () => { if (this.state.stage === 9) this.setState({ paraGlow: 0 }); });
+      this._bankTries = 0;
+    }
+  }
+
+  // stage 3 & 5 choices
+  choiceTap(stage, key, correct) {
+    if (this.state.stage !== stage) return;
+    const cs = Object.assign({}, this.state.choiceState);
+    if (correct) {
+      cs[key] = 'right'; this.setState({ choiceState: cs });
+      if (stage === 4) {
+        this.tutorSay('그래! 「deserve more credit」 — 은근히 게임 편을 들어주고 있지.');
+        this.hlOn(2);
+        this.pendingNext = 5;
+      } else {
+        this.tutorSay('바로 그거야. 놀이와 상상력이 정신 건강을 돕는다 — 그게 이 단락의 핵심 주장이야.');
+        this.hlOn(3);
+        this.pendingNext = 7;
+      }
+    } else {
+      cs[key] = 'wrong'; this.setState({ choiceState: cs });
+      if (stage === 4) {
+        this.s3Tries = (this.s3Tries || 0) + 1;
+        if (this.s3Tries >= 2) this.tutorSay("deserve more credit 의미는 '더 많은 인정을 받을 자격이 있다' 라는 뜻이야. 다시 골라볼래?");
+        else this.tutorSay('정말? 첫 문장의 「deserve more credit than they get」이 무슨 뜻일지 생각해보고 답을 다시 골라보자.');
+        this.hlOn(2);
+      }
+      else { this.tutorSay('음, 문단을 다시 봐봐. 불이 켜진 문장이 힌트야.'); this.hlOn(3); }
+      this.after(600, () => { const c2 = Object.assign({}, this.state.choiceState); delete c2[key]; this.setState({ choiceState: c2 }); });
+    }
+  }
+
+  // stage 4 hint cards (flip)
+  HINTS = [
+    { w: 'Imagination', t: '상상력' },
+    { w: 'love of play', t: '놀이 욕구' },
+    { w: 'mental health', t: '정신 건강' }
+  ];
+  cardTap(i) {
+    if (this.state.stage !== 4 || !this.state.cardsArmed) return;
+    this._awaitMore = false;
+    const cs = this.state.cardStates.slice();
+    if (cs[i] >= 2) return;
+    cs[i]++;
+    this.setState({ cardStates: cs });
+    if (cs[i] === 1) {
+      this.tutorSay('힌트가 나왔네! 카드를 한 번 더 누르면 단어의 뜻도 볼 수 있어.');
+    } else if (cs[i] === 2) {
+      if (!this._c1Done) {
+        this._c1Done = true;
+        this.studentSay('상상력을 자극한다', '상상력 자극', () => {
+          this.tutorSay('좋아! 그리고 또 다른건? 더 있을거 같아.');
+          this._awaitMore = true;
+          this.after(5000, () => { if (this._awaitMore && this.state.stage === 4) this.tutorSay('잘 몰라도 괜찮아. 다른 힌트카드를 눌러볼래?'); });
+        });
+      } else if (!this._c2Done) {
+        this._c2Done = true;
+        this.studentSay('상상력과 놀이욕구를 자극하는게 ... 그래서 뭐에 좋다는걸까?', '상상력·놀이 욕구 자극', () => {
+          this.tutorSay('오오 거의 다 맞췄어! 마지막 힌트 카드를 봐볼래?');
+        });
+      } else if (!this._cardSummaryDone) {
+        this._cardSummaryDone = true;
+        this.studentSay('아! 상상력과 놀이 욕구를 자극해서 정신 건강에 좋다는 거구나!', '상상력·놀이 욕구 자극\n→ 정신 건강에 도움', () => {
+          this.tutorSay('완벽해! 그게 바로 이 단락의 핵심이야.');
+          this.hlOn(3);
+          this.pendingNext = 5;
+        });
+      }
+    }
+  }
+  // stage 6 O/X sort
+  SORT = [
+    { k: 'a', t: '폭력적인 게임은 [경찰과 도둑] 같은 놀이와 비슷하다.', bg: 'card_police_thief.jpg', ans: 'O',
+      ok: '맞아! 글에서 cops-and-robbers, 경찰과 도둑 놀이랑 비슷하다고 했지.',
+      no: '정말? 단락에서 「cops-and-robbers」가 나온 문장을 다시 읽어봐.' },
+    { k: 'b', t: '폭력적 게임을 하면 감정 조절하는 데 도움이 된다.', bg: 'card_meditation.jpg', ans: 'O',
+      ok: '그렇지! 화 같은 어려운 감정을 안전하게 느끼게 해준다고 했어.',
+      no: '음, 「hard emotions like anger」 부분을 다시 봐볼래?' },
+    { k: 'c', t: '게임을 하면 학교 성적이 오른다', bg: 'card_exam.jpg', ans: 'X',
+      ok: '잘했어! 성적 얘기는 이 글 어디에도 없었지.',
+      no: '어? 이 단락에 성적 얘기가 있었나? 다시 한번 찾아봐.' }
+  ];
+  sortDown(k, e) {
+    if (this.state.stage !== 6 || this.state.sortPlaced[k]) return;
+    e.preventDefault();
+    const startX = e.clientX, startY = e.clientY;
+    this._sd = { k, startX, startY };
+    this.setState({ sortDrag: k, sortDX: 0, sortDY: 0 });
+    const mv = ev => { if (this._sd) this.setState({ sortDX: ev.clientX - startX, sortDY: ev.clientY - startY }); };
+    const up = ev => {
+      window.removeEventListener('pointermove', mv);
+      window.removeEventListener('pointerup', up);
+      if (!this._sd) return;
+      this._sd = null;
+      let zone = null;
+      const inside = (el) => { if (!el) return false; const r = el.getBoundingClientRect(); return ev.clientX >= r.left && ev.clientX <= r.right && ev.clientY >= r.top && ev.clientY <= r.bottom; };
+      if (inside(this.oEl)) zone = 'O'; else if (inside(this.xEl)) zone = 'X';
+      const card = this.SORT.find(c => c.k === k);
+      const hintIdx = { a: 7, b: 8 }[k];
+      if (zone && zone === card.ans) {
+        const sp = Object.assign({}, this.state.sortPlaced); sp[k] = zone;
+        const hl = Object.assign({}, this.state.hl);
+        if (hintIdx !== undefined) delete hl[hintIdx]; // clear the wrong-drop hint highlight
+        this.setState({ sortPlaced: sp, sortDrag: null, sortDX: 0, sortDY: 0, hl });
+        if (Object.keys(sp).length === this.SORT.length) {
+          this.tutorSay('전부 맞았어! 글에 있는 내용과 없는 내용을 정확하게 구분했네. 대단한걸?');
+          this.pendingNext = 7;
+        } else this.tutorSay(card.ok);
+      } else {
+        this.setState({ sortDrag: null, sortDX: 0, sortDY: 0 });
+        if (zone) { const sw = Object.assign({}, this.state.sortWrong); sw[k] = true; this.setState({ sortWrong: sw }); this.after(500, () => { const s2 = Object.assign({}, this.state.sortWrong); delete s2[k]; this.setState({ sortWrong: s2 }); }); this.tutorSay(card.no); if (hintIdx !== undefined) this.hlOn(hintIdx); }
+      }
+    };
+    window.addEventListener('pointermove', mv);
+    window.addEventListener('pointerup', up);
+  }
+  // stage 7 spot-the-wrong (image)
+  SPOT_FACES = [{ x: 34, y: 33 }, { x: 61, y: 38 }];
+  onSpot = e => {
+    if (this.state.stage !== 7 || this._spotDone) return;
+    const r = e.currentTarget.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width * 100, y = (e.clientY - r.top) / r.height * 100;
+    const hit = this.SPOT_FACES.some(f => Math.hypot(x - f.x, y - f.y) < 14);
+    if (hit) {
+      this._spotDone = true;
+      this.setState({ spotCircles: this.SPOT_FACES.map(f => ({ x: f.x, y: f.y, ok: true })) });
+      this.tutorSay('바로 그거야! 글에서는 「게임이 화 같은 어려운 감정을 안전하게 느끼게 해준다」고 했는데,\n가운데 두 친구는 오히려 진짜 화를 내며 싸우고 있잖아. 정확하게 찾았어!');
+      this.hlOn(8);
+      this.pendingNext = 8;
+    } else {
+      const id = ++this._spotSeq;
+      this.setState({ spotCircles: this.state.spotCircles.concat({ x, y, ok: false, id }) });
+      this.after(900, () => this.setState({ spotCircles: this.state.spotCircles.filter(c => c.id !== id) }));
+      this.hlOn(8);
+      this.tutorSay('음, 거긴 글과 어긋나는 부분이 아니야. 불이 켜진 문장을 봐 — 게임은 화를 「안전하게」 느끼게 해준다고 했지. 그런데 그림에서 화를 안전하게 다루지 못하는 친구가 있지 않아?');
+    }
+  }
+  studentSay(line, summary, then) { // bottom STT + summarized answer under the cards
+    this.setState({ tutorShow: false });
+    this.typeWords(line, t => this.setState({ sttText: t, sttShow: true }), () => this.after(1000, () => {
+      this.setState({ sttShow: false, answerText: summary, answerShow: true });
+      then();
+    }));
+  }
+  // stage 5 order
+  ORDER_TEXT = {
+    A: '정신 건강 측면에서 게임의 장점이 더 인정받아야 한다.',
+    B: '아이의 놀이·상상력 욕구와 연결된다.',
+    C: '아이들은 충분히 성장했기 때문에, 상상과 진짜 세계의 차이를 안다.'
+  };
+  tileDown(i, e) {
+    if (this.state.orderLock || this.state.stage !== 5) return;
+    e.preventDefault();
+    try { e.currentTarget.setPointerCapture && e.currentTarget.releasePointerCapture(e.pointerId); } catch (err) {}
+    const rowH = e.currentTarget.offsetHeight + 10;
+    this._drag = { from: i, startY: e.clientY, rowH };
+    this.setState({ dragIdx: i, dragDY: 0, dragTarget: i });
+    const mv = ev => {
+      if (!this._drag) return;
+      const dy = ev.clientY - this._drag.startY;
+      const t = Math.max(0, Math.min(this.state.orderIds.length - 1, this._drag.from + Math.round(dy / this._drag.rowH)));
+      this.setState({ dragDY: dy, dragTarget: t });
+    };
+    const up = () => {
+      window.removeEventListener('pointermove', mv);
+      window.removeEventListener('pointerup', up);
+      if (!this._drag) return;
+      const from = this._drag.from, t = this.state.dragTarget;
+      const ids = this.state.orderIds.slice();
+      const moved = ids.splice(from, 1)[0]; ids.splice(t, 0, moved);
+      this._drag = null;
+      this.setState({ orderIds: ids, dragIdx: -1, dragDY: 0, dragTarget: -1 });
+    };
+    window.addEventListener('pointermove', mv);
+    window.addEventListener('pointerup', up);
+  }
+  onCheckOrder = () => {
+    if (this.state.stage !== 5 || this.state.orderLock) return;
+    const ok = this.state.orderIds.join('') === 'ABC';
+    if (ok) {
+      this.setState({ orderLock: true });
+      this.tutorSay('완벽해! 주장 → 이유 → 뒷받침. 글의 흐름을 제대로 따라갔어.');
+      this.pendingNext = 6;
+    } else {
+      this.orderTries++;
+      if (this.orderTries >= 2) {
+        this.setState({ orderIds: ['A','B','C'], orderLock: true, orderSel: -1 });
+        this.tutorSay('괜찮아, 같이 맞춰보자. 글에 나온 순서는 이거야 — 다시 한번 읽어봐.');
+        this.pendingNext = 6;
+      } else {
+        this.tutorSay('순서가 조금 달라. 단락을 처음부터 다시 읽어볼래?');
+      }
+    }
+  }
+
+  // stage 6 sentence tap
+  sentTap(idx) {
+    if (this.state.stage !== 8 || !this.state.tapArmed) return;
+    if (idx === 5 || idx === 6) {
+      this.setState({ tapArmed: false });
+      this.hlOn(5); this.hlOn(6);
+      this.tutorSay('바로 그거야. 「무섭거나 다치는 사람이 없으면 폭력이 아니다」 — 근거를 정확히 짚었어.');
+      this.pendingNext = 9;
+    } else {
+      this.hlOn(idx);
+      this.after(2000, () => {
+        if (this.state.hl[idx] && this.state.stage === 8) {
+          const hl = Object.assign({}, this.state.hl); delete hl[idx];
+          this.setState({ hl, pulse: this.state.pulse === idx ? -1 : this.state.pulse });
+        }
+      });
+      this.tutorSay('그 문장도 중요하지만, 「폭력은 존재하지 않는다」는 말과는 달라. 다시 찾아볼까?');
+    }
+  }
+
+  // stage 7 word bank
+  BANK = ['다 똑같다', '다 다르다', '건강하다', '위험하다'];
+  bankTap(w) {
+    if (this.state.stage !== 9 || this.state.blankFilled) return;
+    if (w === '건강하다') {
+      this.setState({ bankChosen: w, blankFilled: true });
+      this.tutorSay('맞아 — healthy! 네가 글의 결론을 직접 완성했어. 잘했어, 영민아. 이제 심화 학습으로 가보자!');
+      this.after(3200, () => this.startAdvLoad());
+    } else {
+      const bw = Object.assign({}, this.state.bankWrong); bw[w] = true;
+      this.setState({ bankWrong: bw });
+      this._bankTries = (this._bankTries || 0) + 1;
+      if (this._bankTries >= 2) {
+        this.hlOn(14);
+        this.tutorSay('불이 켜진 마지막 문장을 봐 — 「violent video games can be ___」. 글쓴이가 게임을 뭐라고 했지?');
+      } else {
+        this.tutorSay('음, 글쓴이가 마지막에 게임을 뭐라고 다루자고 했는지 다시 떠올려봐.');
+      }
+    }
+  }
+
+  // ---------- advanced (2차시) ----------
+  startAdvLoad = () => {
+    this.clearTm();
+    this.setState({ view: 'load2', tutorShow: false, sttShow: false, loadCap: '', loadCapShow: false });
+    this.after(200, () => {
+      const v = this.advVid; if (!v) return;
+      v.onended = () => this.advVideoDone();
+      const p = v.play();
+      if (p && p.catch) p.catch(() => { v.muted = true; v.play().catch(() => {}); });
+    });
+    this.after(600, () => this.setState({ loadCap: '지금부터는 진짜 어려운 문제야. 하지만 영민은 할 수 있을거야. 함께 해보자!', loadCapShow: true }));
+    this.after(14000, () => this.advVideoDone()); // fallback if 'ended' never fires
+  }
+  advVideoDone() {
+    if (this.state.view !== 'load2') return;
+    this.setState({ loadCapShow: false });
+    this.after(400, () => this.startAdv());
+  }
+  startAdv = () => {
+    if (this.state.view === 'learn') return;
+    this.clearTm();
+    this.setState({ view: 'learn' });
+    this.setupStage(10);
+  }
+  ADV_SENTS = [
+    { p: 1, t: 'Many people blame violent video games for real violence, but research has never proven it.' },
+    { p: 1, t: 'Now, the debate is about' },
+    { p: 2, t: "Kids' and teens' brains are still growing, so many cannot control their gaming habits well." },
+    { p: 2, t: 'They find it hard to stop playing games.' },
+    { p: 2, t: 'The World Health Organization recognizes gaming disorder as a real health condition.' },
+    { p: 2, t: 'About 8.5 percent of young gamers are fully addicted.' },
+    { p: 3, t: 'Some kids use games to escape from problems.' },
+    { p: 3, t: 'They spend less time with family and friends.' },
+    { p: 3, t: 'As they become more lonely, they play even more games.' },
+    { p: 3, t: 'This creates a harmful cycle.' },
+    { p: 3, t: "For this reason, violent video games can be dangerous to young people's mental health." }
+  ];
+  CYCLE = [
+    { k: 1, t: '문제에서 도피하고 싶다', img: 'cyc1_escape.jpg' },
+    { k: 2, t: '게임을 한다', img: 'cyc2_play.jpg' },
+    { k: 3, t: '가족, 친구와 보내는 시간이 줄어든다', img: 'cyc3_family.jpg' },
+    { k: 4, t: '외로움을 느낀다', img: 'cyc4_lonely.jpg' }
+  ];
+  cycDown(k, e) {
+    if (this.state.stage !== 11 || this.state.cycPlaced[k]) return;
+    e.preventDefault();
+    const startX = e.clientX, startY = e.clientY;
+    this._cd = { k };
+    this.setState({ cycDrag: k, cycDX: 0, cycDY: 0 });
+    const mv = ev => { if (this._cd) this.setState({ cycDX: ev.clientX - startX, cycDY: ev.clientY - startY }); };
+    const up = ev => {
+      window.removeEventListener('pointermove', mv);
+      window.removeEventListener('pointerup', up);
+      if (!this._cd) return;
+      this._cd = null;
+      const inside = el => { if (!el) return false; const r = el.getBoundingClientRect(); return ev.clientX >= r.left && ev.clientX <= r.right && ev.clientY >= r.top && ev.clientY <= r.bottom; };
+      let slot = 0;
+      [2, 3, 4].forEach(n => { if (inside(this['cyc' + n + 'El'])) slot = n; });
+      if (slot === k) {
+        const cp = Object.assign({}, this.state.cycPlaced); cp[k] = true;
+        this.setState({ cycPlaced: cp, cycDrag: null, cycDX: 0, cycDY: 0 });
+        if (Object.keys(cp).length === 3) {
+          this.tutorSay('완벽해! 도피 → 게임 → 단절 → 외로움, 그리고 다시 게임으로. 악순환의 고리를 네가 직접 완성했어.');
+          this.hlOn(109); // 'This creates a harmful cycle.' (adv idx 9)
+          this.pendingNext = 12;
+        } else {
+          this.tutorSay('맞아, 그 다음 장면이야! 이어서 나머지도 놓아봐.');
+        }
+      } else {
+        this.setState({ cycDrag: null, cycDX: 0, cycDY: 0 });
+        if (slot) {
+          const cw = Object.assign({}, this.state.cycWrong); cw[k] = true;
+          this.setState({ cycWrong: cw });
+          this.after(500, () => { const c2 = Object.assign({}, this.state.cycWrong); delete c2[k]; this.setState({ cycWrong: c2 }); });
+          this.tutorSay('음, 그 자리가 아니야. 세번째 단락의 문장 순서를 다시 따라가봐!');
+        }
+      }
+    };
+    window.addEventListener('pointermove', mv);
+    window.addEventListener('pointerup', up);
+  }
+  finish() {
+    this.setState({ stage: 12, done: true, view: 'done', tutorShow: false, sttShow: false });
+    this.after(250, () => this.celebrate());
+  }
+  celebrate() {
+    const cv = this.fx; if (!cv) return;
+    const r = cv.parentElement.getBoundingClientRect();
+    cv.width = r.width; cv.height = r.height;
+    const ctx = cv.getContext('2d');
+    const colors = ['#FFB25A','#FFE7A8','#5B8CFF','#8FD3FF','#37d6b3','#B778FF','#FFFFFF'];
+    const N = 170, P = [];
+    for (let i = 0; i < N; i++) {
+      const left = i < N / 2;
+      P.push({ x: left ? cv.width * .05 : cv.width * .95, y: cv.height * .99,
+        vx: left ? (2 + Math.random() * 8) : -(2 + Math.random() * 8),
+        vy: -(10 + Math.random() * 9), g: .22 + Math.random() * .12,
+        s: 4 + Math.random() * 6, rot: Math.random() * 6.28, vr: (Math.random() - .5) * .35,
+        col: colors[(Math.random() * colors.length) | 0], life: 0, max: 80 + Math.random() * 45, rect: Math.random() < .55 });
+    }
+    cv.style.opacity = 1;
+    const tick = () => {
+      ctx.clearRect(0, 0, cv.width, cv.height); let alive = false;
+      P.forEach(p => {
+        if (p.life++ > p.max) return; alive = true;
+        p.vy += p.g; p.x += p.vx; p.y += p.vy; p.rot += p.vr;
+        const a = Math.max(0, 1 - p.life / p.max);
+        ctx.save(); ctx.globalAlpha = a; ctx.translate(p.x, p.y); ctx.rotate(p.rot); ctx.fillStyle = p.col;
+        if (p.rect) ctx.fillRect(-p.s / 2, -p.s / 2, p.s, p.s * 1.7);
+        else { ctx.beginPath(); ctx.arc(0, 0, p.s / 2, 0, 6.28); ctx.fill(); }
+        ctx.restore();
+      });
+      if (alive) requestAnimationFrame(tick);
+      else { cv.style.opacity = 0; ctx.clearRect(0, 0, cv.width, cv.height); }
+    };
+    tick();
+  }
+
+  // ---------- render ----------
+  SENTS = [
+    { p: 1, t: 'Violent video games are still blamed for real violence, though that link has never been proven.' },
+    { p: 1, t: 'Today, the real question is whether kids should be allowed to play them at all.' },
+    { p: 2, t: 'When it comes to mental health, violent video games deserve more credit than they get.' },
+    { p: 2, t: "Like all games, they tap into a child's love of play and imagination." },
+    { p: 2, t: 'By the time kids are old enough for “Teen”-rated games, most already know the difference between pretend and real life.' },
+    { p: 3, t: "Dr. Michael says violent play doesn't exist." },
+    { p: 3, t: 'If kids are playing and nobody is scared or hurt, it is not violence.' },
+    { p: 3, t: "The mild violence in kids' video games is not so different from cops-and-robbers or dodgeball." },
+    { p: 3, t: 'Violent video games also give kids a safe way to feel hard emotions like anger.' },
+    { p: 3, t: 'Educator Jane says kids who explore tough themes through play often become less aggressive elsewhere.' },
+    { p: 3, t: 'Play helps them “gain mastery over confusion or fear.”' },
+    { p: 4, t: 'Not every child benefits the same way.' },
+    { p: 4, t: 'Supervision still matters.' },
+    { p: 4, t: "A game is only one part of a child's emotional life." },
+    { p: 4, t: 'But treated as normal play, violent video games can be healthy.' }
+  ];
+  ACT = {
+    1: { step: 'Step 1 · Topic', type: 'Speak 🎙', title: '주제 말하기', prompt: '' },
+    2: { step: 'Step 2 · Cover', type: 'Choose 🖼', title: '표지 이미지 고르기', prompt: '' },
+    3: { step: 'Step 3 · Point of view', type: 'Speak 🎙', title: '관점 말하기', prompt: '' },
+    4: { step: 'Step 4 · Meaning', type: 'Flip 🃏', title: '의미 찾기', prompt: '' },
+    5: { step: 'Step 5 · Order', type: 'Arrange', prompt: '해석 문장을 글에 나온 순서대로 배열해봐.' },
+    6: { step: 'Step 6 · Judge', type: 'Sort O·X', title: '내용 판단', prompt: '' },
+    7: { step: 'Step 7 · Spot it', type: 'Find 🔍', title: '틀린 부분 찾기', prompt: '' },
+    8: { step: 'Step 8 · Evidence', type: 'Point 👆', title: '문장 찾기', prompt: '' },
+    9: { step: 'Step 9 · Conclusion', type: 'Fill', title: '결론 완성', prompt: '' },
+    10: { step: 'Step 10 · Inference', type: 'Speak 🎙', title: '빈칸 추론', prompt: '' },
+    11: { step: 'Step 11 · Cycle', type: 'Drag 🔄', title: '악순환 정리', prompt: '' }
+  };
+
+  mkAdvSent(i) {
+    const s = this.state;
+    const hl = s.hl[100 + i], pulse = s.pulse === 100 + i;
+    return { t: this.ADV_SENTS[i].t, st: {
+      opacity: (s.stage >= 11 ? true : i < s.advReveal) ? 1 : 0, transition: 'opacity .8s ease, background .4s ease, color .4s ease',
+      borderRadius: '3px', padding: '0',
+      background: pulse ? 'rgba(255,178,90,.55)' : (hl ? 'rgba(255,178,90,.16)' : 'transparent'),
+      color: pulse ? '#3a2405' : (hl ? '#ffe1b0' : '#EEF1F9')
+    } };
+  }
+  sentStyle(idx) {
+    const s = this.state;
+    const vis = idx < s.reveal;
+    const hl = s.hl[idx], pulse = s.pulse === idx;
+    const tappable = s.stage === 8 && s.tapArmed && this.SENTS[idx].p === 3;
+    return {
+      opacity: vis ? 1 : 0, transition: 'opacity .8s ease, background .4s ease, color .4s ease, box-shadow .4s ease',
+      borderRadius: '3px', padding: '0', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone',
+      background: pulse ? 'rgba(255,178,90,.55)' : (hl ? 'rgba(255,178,90,.16)' : 'transparent'),
+      color: pulse ? '#3a2405' : (hl ? '#ffe1b0' : '#EEF1F9'),
+      boxShadow: pulse ? '0 0 14px rgba(255,178,90,.5)' : 'none',
+      cursor: tappable ? 'pointer' : 'default'
+    };
+  }
+  paraStyle(n, on) {
+    const glow = this.state.paraGlow === n;
+    // constant padding/margins so the glow never reflows the text (no linebreak shift)
+    return {
+      fontSize: '16.5px', lineHeight: '2.0', margin: '6px -10px 0', display: on ? 'block' : 'none',
+      borderRadius: '10px', padding: '8px 10px',
+      background: glow ? 'rgba(255,178,90,.07)' : 'transparent',
+      boxShadow: glow ? 'inset 0 0 0 1px rgba(255,178,90,.35), 0 0 22px rgba(255,178,90,.12)' : 'none',
+      transition: 'background .8s ease, box-shadow .8s ease'
+    };
+  }
+
+  renderVals() {
+    const s = this.state;
+    if (!this._stars) {
+      const arr = [];
+      for (let i = 0; i < 110; i++) {
+        const big = Math.random() < .3, z = big ? 2 : (Math.random() < .5 ? 1.5 : 1);
+        arr.push(React.createElement('div', { key: i, style: {
+          position: 'absolute', borderRadius: '50%', background: '#eaf0ff', width: z + 'px', height: z + 'px',
+          left: (Math.random() * 100) + '%', top: (Math.random() * 100) + '%',
+          boxShadow: big ? '0 0 4px 1px rgba(205,225,255,.75)' : 'none',
+          animation: 'gtwinkle ' + (2.4 + Math.random() * 3.6).toFixed(1) + 's ease-in-out infinite ' + (-Math.random() * 6).toFixed(1) + 's'
+        } }));
+      }
+      this._stars = arr;
+    }
+    const act = this.ACT[s.stage] || this.ACT[9];
+    const capBase = { wordBreak: 'keep-all', overflowWrap: 'break-word', fontSize: '18.5px', fontWeight: 300, color: '#EAEDF6', margin: '0 170px 8px', textAlign: 'center', padding: '0 24px', transition: 'opacity .6s ease, transform .6s ease', textShadow: '0 2px 20px rgba(0,0,0,.75)', position: 'relative', zIndex: 5, lineHeight: 1.5 };
+    const steps = [];
+    for (let i = 1; i <= 11; i++) {
+      const done = i < s.stage, cur = i === s.stage;
+      steps.push({
+        label: done ? '✓' : String(i),
+        go: () => this.jumpStage(i),
+        nodeSt: { boxSizing: 'border-box', width: '24px', height: '24px', borderRadius: '50%', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'ui-monospace,Menlo,monospace', fontSize: '11px', transition: 'all .3s', cursor: 'pointer',
+          color: cur ? '#1a1206' : (done ? '#37d6b3' : '#7f89a6'),
+          background: cur ? 'radial-gradient(circle at 40% 35%,#FFF3D6,#FFB25A)' : 'rgba(10,14,26,.6)',
+          border: cur ? '1.5px solid transparent' : '1.5px solid #2c3a5e',
+          boxShadow: cur ? '0 0 8px 1px rgba(255,178,90,.45)' : 'none' },
+        linkSt: { width: i === 11 ? '0' : '14px', height: '2px', display: i === 11 ? 'none' : 'inline-block', position: 'relative', overflow: 'hidden', background: done ? 'linear-gradient(90deg,#37d6b3,#FFB25A)' : '#2c3a5e' },
+        linkSweepSt: { position: 'absolute', inset: 0, display: done ? 'block' : 'none', background: 'linear-gradient(90deg,transparent,rgba(255,255,255,.85),transparent)', animation: 'gsweep 1.8s linear infinite' }
+      });
+    }
+    const mkSent = idx => ({ t: this.SENTS[idx].t, st: this.sentStyle(idx), tap: () => this.sentTap(idx) });
+    const optBase = state => ({ textAlign: 'left', border: '1px solid ' + (state === 'right' ? 'rgba(120,230,190,.7)' : state === 'wrong' ? 'rgba(255,110,110,.75)' : 'rgba(150,170,220,.22)'),
+      borderRadius: '12px', padding: '12px 16px', background: 'rgba(16,22,40,.72)', color: state === 'right' ? '#c7fff0' : '#e7ecfb', fontSize: '14.5px', cursor: 'pointer', transition: 'border-color .2s, box-shadow .2s', lineHeight: 1.5,
+      boxShadow: state === 'right' ? '0 0 16px rgba(80,220,170,.3)' : state === 'wrong' ? '0 0 14px rgba(255,90,90,.25)' : 'none',
+      animation: state === 'wrong' ? 'gshake .45s ease' : 'none', fontFamily: 'inherit' });
+    const choiceOpts = [
+      { t: '게임은 폭력적이므로, 성인이 되기 전에 하지 말아야 한다.', tap: () => this.choiceTap(6, 'x', false), st: optBase(s.choiceState['x']) },
+      { t: '게임할 때 자극되는 상상력·놀이 욕구가 정신 건강에 도움된다.', tap: () => this.choiceTap(6, 'y', true), st: optBase(s.choiceState['y']) },
+      { t: '폭력과 게임은 동일하다.', tap: () => this.choiceTap(6, 'z', false), st: optBase(s.choiceState['z']) } ];
+    const hintCards = this.HINTS.map((h, i) => {
+      const st = (s.cardStates || [0,0,0])[i];
+      return {
+        backLabel: 'HINT ' + (i + 1), word: h.w, trans: h.t,
+        tap: () => this.cardTap(i),
+        innerSt: { position: 'relative', width: '100%', height: '100%', transformStyle: 'preserve-3d', transition: 'transform .6s ease', transform: st >= 1 ? 'rotateY(180deg)' : 'none' },
+        backSt: { position: 'absolute', inset: 0, backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', borderRadius: '12px', border: '1px solid rgba(255,178,90,.45)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+          background: 'repeating-linear-gradient(45deg, rgba(255,178,90,.10) 0 7px, transparent 7px 14px), repeating-linear-gradient(-45deg, rgba(91,140,255,.10) 0 7px, transparent 7px 14px), radial-gradient(80px 110px at 50% 50%, #1a2340, #10162a)',
+          boxShadow: s.cardsArmed ? '0 0 16px rgba(255,178,90,.22)' : 'none' },
+        frontSt: { position: 'absolute', inset: 0, backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: 'rotateY(180deg)', borderRadius: '12px', border: '1px solid rgba(120,230,190,.5)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '8px', padding: '10px', background: 'linear-gradient(180deg, #141b33, #0b1122)' },
+        qSt: { display: st === 1 ? 'flex' : 'none', alignItems: 'center', justifyContent: 'center', width: '58px', height: '30px', borderRadius: '7px', background: 'rgba(140,149,174,.28)', border: '1px solid rgba(150,170,220,.3)', color: '#c7d0ea', fontSize: '16px', fontWeight: 600 },
+        transSt: { display: st >= 2 ? 'block' : 'none', fontSize: '14px', color: '#79E4FF', textShadow: '0 0 10px rgba(120,220,255,.4)' }
+      };
+    });
+    const coverCards = this.COVERS.map(c => {
+      const cst = s.coverState[c.k];
+      return { label: c.k + ' · ' + c.label, tap: () => this.coverTap(c.k),
+        imgSt: { width: '100%', aspectRatio: '1/1', borderRadius: '9px', background: "url('" + c.img + "') center/cover no-repeat #10162a" },
+        st: { flex: 1, minWidth: 0, padding: '7px', borderRadius: '13px', cursor: 'pointer', background: 'rgba(16,22,40,.72)', transition: 'border-color .2s, box-shadow .2s',
+          border: '1px solid ' + (cst === 'right' ? 'rgba(120,230,190,.7)' : cst === 'wrong' ? 'rgba(255,110,110,.75)' : 'rgba(150,170,220,.22)'),
+          boxShadow: cst === 'right' ? '0 0 18px rgba(80,220,170,.35)' : cst === 'wrong' ? '0 0 14px rgba(255,90,90,.3)' : 'none',
+          animation: cst === 'wrong' ? 'gshake .45s ease' : 'none' } };
+    });
+    const orderTiles = s.orderIds.map((id, i) => {
+      const dragging = s.dragIdx === i;
+      const target = s.dragIdx !== -1 && s.dragTarget === i && !dragging;
+      return {
+        t: this.ORDER_TEXT[id],
+        down: e => this.tileDown(i, e),
+        st: Object.assign(optBase(undefined), {
+          border: dragging ? '1px solid rgba(255,178,90,.85)' : (target ? '1px dashed rgba(255,178,90,.6)' : (s.orderLock ? '1px solid rgba(120,230,190,.5)' : '1px solid rgba(150,170,220,.22)')),
+          boxShadow: dragging ? '0 10px 26px rgba(0,0,0,.5), 0 0 16px rgba(255,178,90,.3)' : 'none',
+          cursor: s.orderLock ? 'default' : (dragging ? 'grabbing' : 'grab'),
+          touchAction: 'none', userSelect: 'none', position: 'relative',
+          transform: dragging ? 'translateY(' + s.dragDY + 'px) scale(1.02)' : 'none',
+          zIndex: dragging ? 5 : 1,
+          transition: dragging ? 'box-shadow .15s' : 'transform .2s ease, border-color .2s, box-shadow .2s'
+        })
+      };
+    });
+    const bankWords = this.BANK.map(w => ({
+      t: w, tap: () => this.bankTap(w),
+      st: { border: '1px solid ' + (s.bankChosen === w ? 'rgba(120,230,190,.7)' : 'rgba(150,170,220,.28)'), borderRadius: '999px', padding: '10px 18px',
+        background: s.bankChosen === w ? 'rgba(55,214,179,.16)' : 'rgba(16,22,40,.72)', color: s.bankChosen === w ? '#c7fff0' : '#e7ecfb',
+        fontSize: '14px', cursor: 'pointer', opacity: s.bankWrong[w] ? .35 : 1, transition: 'all .25s', fontFamily: 'inherit' }
+    }));
+    const pkBase = { position: 'absolute', left: '22px', bottom: 0, zIndex: 6, pointerEvents: 'auto', cursor: 'pointer', height: '112px', filter: 'drop-shadow(0 6px 16px rgba(0,0,0,.5))', transition: 'opacity .8s ease' };
+    const listening = (s.recording || s.micReady) && (s.stage === 1 || s.stage === 3);
+    const avBase = { position: 'absolute', left: '20px', bottom: 0, height: '132px', zIndex: 6, filter: 'drop-shadow(0 6px 18px rgba(0,0,0,.5))', pointerEvents: 'none', transition: 'opacity .4s ease' };
+    return {
+      starfield: this._stars,
+      isPick: s.view === 'pick', isLoad: s.view === 'load', isLoad2: s.view === 'load2', isLearn: s.view === 'learn', isDone: s.view === 'done',
+      onSkip2: () => { if (this.advVid) this.advVid.pause(); this.startAdv(); },
+      advVideoRef: el => { this.advVid = el; },
+      isAdv: s.stage >= 10, notAdv: s.stage < 10,
+      onStartVG: this.startVG, onNextBeat: this.nextBeat, onPrevBeat: this.prevBeat,
+      onStartMars: () => { window.location.href = 'Glim_POC_Scenario1_LearningFlow_EN.html#learn'; }, onIntro: () => { this.clearTm(); this.runIntro(); }, onBack: this.goPick,
+      introCap: s.introCap,
+      introCapSt: Object.assign({}, capBase, { margin: '0 0 -6px', opacity: s.introShow ? 1 : 0, transform: s.introShow ? 'none' : 'translateY(6px)' }),
+      pk05St: Object.assign({}, pkBase, { opacity: s.pkFace === 5 ? 1 : 0 }),
+      pk01St: Object.assign({}, pkBase, { opacity: s.pkFace === 1 ? 1 : 0 }),
+      moreCards: [
+        { ico: '🕵️', t1: 'The Missing', t2: 'Painting', field: 'Mystery · 15 min', stars: '✦✦✦✦', exp: '+12', bg: 'thumb_painting.jpeg', level: 'High Challenge' },
+        { ico: '🎬', t1: 'Behind the', t2: 'Screen', field: 'Film & Media · 12 min', stars: '✦✦✦', exp: '+9', bg: 'thumb_screen.jpeg', zoom: 'auto 145%', level: 'Challenge' },
+        { ico: '⚽', t1: 'The Perfect', t2: 'Kick', field: 'Sports · 9 min', stars: '✦✦', exp: '+6', bg: 'thumb_kick.jpeg', level: 'Easy' },
+        { ico: '🎸', t1: 'How Music', t2: 'Moves Us', field: 'Music & Arts · 11 min', stars: '✦✦✦', exp: '+9', bg: 'thumb_music.jpeg', level: 'Challenge' },
+        { ico: '🏛', t1: 'Lost', t2: 'Cities', field: 'History · 12 min', stars: '✦✦', exp: '+6', bg: 'thumb_temple.jpeg', level: 'Easy' },
+        { ico: '🐘', t1: 'Animal', t2: 'Minds', field: 'Animals & Nature · 10 min', stars: '✦✦', exp: '+6', bg: 'thumb_animal.jpeg', level: 'Easy' }
+      ].map(c => Object.assign(c, { st: {
+        flex: '0 0 200px', borderRadius: '16px', padding: '16px', backdropFilter: 'blur(8px)', display: 'flex', flexDirection: 'column', gap: '8px', minHeight: '150px', cursor: 'pointer', transition: 'border-color .2s, box-shadow .2s',
+        border: '1px solid rgba(150,170,220,.14)',
+        background: c.bg
+          ? "linear-gradient(180deg, rgba(4,7,14,.66) 0%, rgba(4,7,14,.55) 45%, rgba(3,5,11,.88) 100%), url('" + c.bg + "') center/" + (c.zoom || 'cover') + " no-repeat, #0a0f1e"
+          : 'rgba(16,21,36,.62)'
+      } })),
+      videoRef: el => { this.vid = el; }, video2Ref: el => { this.vid2 = el; }, fxRef: el => { this.fx = el; },
+      unmuteShow: s.unmuteShow, onUnmute: this.onUnmute, onSkip: this.onSkip, onMic: this.onMic,
+      loadCap: s.loadCap,
+      loadCapSt: { wordBreak: 'keep-all', overflowWrap: 'break-word', fontSize: '19px', fontWeight: 300, color: '#EAEDF6', textAlign: 'center', margin: '22px 0 0', minHeight: '30px', padding: '0 60px', transition: 'opacity .6s ease, transform .6s ease', opacity: s.loadCapShow ? 1 : 0, transform: s.loadCapShow ? 'none' : 'translateY(6px)', textShadow: '0 2px 20px rgba(0,0,0,.75)', lineHeight: 1.55 },
+      loadStt: s.loadStt,
+      loadSttSt: { fontSize: '20px', fontWeight: 800, color: '#79E4FF', textAlign: 'center', margin: '10px 0 0', minHeight: '28px', textShadow: '0 0 16px rgba(120,220,255,.55), 0 2px 16px rgba(0,0,0,.7)', opacity: s.loadSttShow ? 1 : 0, transition: 'opacity .45s ease', letterSpacing: '.01em', position: 'relative', zIndex: 5 },
+      steps,
+      sents1: [0, 1].map(mkSent), sents2: [2, 3, 4].map(mkSent), sents3: [5, 6, 7, 8, 9, 10].map(mkSent), sents4: [11, 12, 13, 14].map(mkSent),
+      para2St: this.paraStyle(2, s.para2On), para3St: this.paraStyle(3, s.para3On), para4St: this.paraStyle(4, s.para4On),
+      passRef: el => { this.passEl = el; },
+      advSents1: [0, 1].map(i => this.mkAdvSent(i)), advSents2: [2, 3, 4, 5].map(i => this.mkAdvSent(i)), advSents3: [6, 7, 8, 9, 10].map(i => this.mkAdvSent(i)),
+      advPara2St: { fontSize: '16.5px', lineHeight: 2.0, margin: '14px 0 0' },
+      advPara3St: { fontSize: '16.5px', lineHeight: 2.0, margin: '14px 0 0', display: s.stage >= 11 ? 'block' : 'none' },
+      advBlankText: s.advBlank ? 'addiction.' : '\u00a0',
+      advBlankSt: { display: 'inline-block', minWidth: '110px', textAlign: 'center', borderBottom: '2px solid ' + (s.advBlank ? 'rgba(120,230,190,.7)' : 'rgba(255,178,90,.6)'), color: s.advBlank ? '#c7fff0' : '#ffe1b0', fontWeight: s.advBlank ? 600 : 300, transition: 'all .3s', opacity: s.advReveal >= 2 ? 1 : 0 },
+      cycSlots: [0, 1, 3, 2].map(i => { // DOM order 1,2,4,3 → clockwise cycle in the 2×2 grid
+        const c = this.CYCLE[i], filled = c.k === 1 || s.cycPlaced[c.k];
+        return { num: c.k, t: filled ? c.t : '', slotRef: el => { this['cyc' + c.k + 'El'] = el; },
+          numSt: filled
+            ? { position: 'absolute', top: '5px', left: '8px', zIndex: 2, fontFamily: 'ui-monospace,Menlo,monospace', fontSize: '11px', color: '#FFE7A8', textShadow: '0 1px 4px rgba(0,0,0,.9)' }
+            : { fontFamily: 'ui-monospace,Menlo,monospace', fontSize: '22px', color: '#5d6a8f' },
+          labelSt: { display: filled ? 'block' : 'none', position: 'absolute', left: 0, right: 0, bottom: 0, padding: '14px 6px 6px', fontSize: '10.5px', lineHeight: 1.35, color: '#fff', textAlign: 'center', wordBreak: 'keep-all', background: 'linear-gradient(180deg, rgba(4,6,14,0), rgba(4,6,14,.88))', borderRadius: '0 0 11px 11px', textShadow: '0 1px 4px rgba(0,0,0,.9)' },
+          st: { position: 'relative', minWidth: 0, aspectRatio: '16/10', borderRadius: '12px', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center',
+            border: filled ? '1px solid rgba(255,178,90,.55)' : (s.cycDrag ? '1.5px dashed rgba(255,178,90,.65)' : '1px dashed rgba(150,170,220,.35)'),
+            background: filled ? "url('" + c.img + "') center/cover no-repeat, #10162a" : 'rgba(16,22,40,.5)',
+            boxShadow: filled ? '0 0 14px rgba(255,178,90,.2)' : 'none', transition: 'border-color .2s, background .3s' } };
+      }),
+      cycTiles: [this.CYCLE[3], this.CYCLE[1], this.CYCLE[2]].filter(c => !s.cycPlaced[c.k]).map(c => {
+        const dragging = s.cycDrag === c.k, wrong = s.cycWrong[c.k];
+        return { t: c.t, down: e => this.cycDown(c.k, e),
+          st: { flex: '0 1 calc((100% - 20px) / 3)', width: 'calc((100% - 20px) / 3)', minWidth: 0, height: '128px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-end', textAlign: 'center', borderRadius: '12px', padding: '10px 8px', fontSize: '12px', color: '#fff', fontFamily: 'inherit', wordBreak: 'keep-all', lineHeight: 1.45,
+            background: "linear-gradient(180deg, rgba(6,9,20,.1) 0%, rgba(6,9,20,.25) 55%, rgba(4,6,14,.8) 100%), url('" + c.img + "') center/cover no-repeat, #10162a",
+            border: dragging ? '1px solid rgba(255,178,90,.85)' : (wrong ? '1px solid rgba(255,110,110,.75)' : '1px solid rgba(150,170,220,.28)'),
+            boxShadow: dragging ? '0 12px 28px rgba(0,0,0,.55), 0 0 16px rgba(255,178,90,.3)' : 'none',
+            cursor: dragging ? 'grabbing' : 'grab', touchAction: 'none', userSelect: 'none', position: 'relative',
+            transform: dragging ? 'translate(' + s.cycDX + 'px,' + s.cycDY + 'px) scale(1.03)' : 'none',
+            zIndex: dragging ? 6 : 1, animation: wrong ? 'gshake .45s ease' : 'none',
+            transition: dragging ? 'box-shadow .15s' : 'transform .2s ease, border-color .2s' } };
+      }),
+      actCardSt: { background: 'rgba(8,11,20,.62)', border: '1px solid rgba(150,170,220,.18)', borderRadius: '16px', padding: '18px 20px', backdropFilter: 'blur(8px)', transition: 'opacity .5s ease', opacity: s.reveal > 1 ? 1 : 0, minHeight: '1000px', flex: 'none' },
+      actStep: act.step, actType: act.type, actPrompt: act.prompt,
+      actTitle: (s.stage === 3 && s.voiceTurn === 2) ? '상상력 보태기' : (act.title || ''), actPromptShow: !!act.prompt,
+      titleSt: { fontFamily: 'inherit', fontSize: '26px', fontWeight: 400, color: '#fff', marginBottom: '14px', opacity: s.titleVis ? 1 : 0, transition: 'opacity .45s ease' },
+      answerText: s.answerText,
+      cardAnswerSt: { wordBreak: 'keep-all', whiteSpace: 'pre-line', fontSize: '23px', fontWeight: 600, color: '#79E4FF', textShadow: '0 0 18px rgba(120,220,255,.4)', marginTop: '22px', lineHeight: 1.45, opacity: s.answerShow ? 1 : 0, transform: s.answerShow ? 'none' : 'translateY(8px)', transition: 'opacity .8s ease, transform .8s ease' },
+      answerSt: { wordBreak: 'keep-all', whiteSpace: 'pre-line', fontSize: '34px', fontWeight: 600, color: '#79E4FF', textShadow: '0 0 22px rgba(120,220,255,.4)', marginTop: '26px', lineHeight: 1.4, opacity: s.answerShow ? 1 : 0, transform: s.answerShow ? 'none' : 'translateY(8px)', transition: 'opacity .8s ease, transform .8s ease' },
+      actMic: s.stage === 1 || s.stage === 3 || s.stage === 10, actCycle: s.stage === 11, actCovers: s.stage === 2, coverCards, actCards: s.stage === 4, hintCards, actChoice: false, actSort: s.stage === 6, actOrder: s.stage === 5, actSpot: s.stage === 7, actTap: s.stage === 8, actBank: s.stage === 9,
+      onSpot: this.onSpot,
+      spotCircles: (s.spotCircles || []).map(c => ({ st: {
+        position: 'absolute', left: c.x + '%', top: c.y + '%', width: '18%', aspectRatio: '1/1', transform: 'translate(-50%,-50%)', borderRadius: '50%', pointerEvents: 'none',
+        border: c.ok ? '3px solid #FFB25A' : '3px solid rgba(255,110,110,.9)',
+        boxShadow: c.ok ? '0 0 18px rgba(255,178,90,.65), inset 0 0 14px rgba(255,178,90,.3)' : '0 0 12px rgba(255,110,110,.5)',
+        transition: 'opacity .3s', animation: c.ok ? 'gtwk 2.2s ease-in-out infinite' : 'none' } })),
+      oZoneRef: el => { this.oEl = el; }, xZoneRef: el => { this.xEl = el; },
+      oPlaced: this.SORT.filter(c => s.sortPlaced[c.k] === 'O').map(c => ({ t: c.t })),
+      xPlaced: this.SORT.filter(c => s.sortPlaced[c.k] === 'X').map(c => ({ t: c.t })),
+      sortCards: this.SORT.filter(c => !s.sortPlaced[c.k]).map(c => {
+        const dragging = s.sortDrag === c.k, wrong = s.sortWrong[c.k];
+        return { t: c.t, down: e => this.sortDown(c.k, e),
+          st: { flex: '0 0 136px', width: '136px', height: '204px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-end', gap: '8px',
+            textAlign: 'center', borderRadius: '12px', padding: '10px 8px', fontSize: '12px', color: '#e7ecfb', fontFamily: 'inherit', wordBreak: 'keep-all', overflowWrap: 'break-word', textWrap: 'pretty',
+            background: c.bg
+              ? "linear-gradient(180deg, rgba(6,9,20,.12) 0%, rgba(6,9,20,.30) 55%, rgba(4,6,14,.78) 100%), url('" + c.bg + "') center/cover no-repeat, #0b1122"
+              : 'repeating-linear-gradient(45deg, rgba(255,178,90,.06) 0 7px, transparent 7px 14px), linear-gradient(180deg, #141b33, #0b1122)',
+            textShadow: c.bg ? '0 1px 6px rgba(0,0,0,.85)' : 'none',
+            border: dragging ? '1px solid rgba(255,178,90,.85)' : (wrong ? '1px solid rgba(255,110,110,.75)' : '1px solid rgba(150,170,220,.28)'),
+            boxShadow: dragging ? '0 12px 28px rgba(0,0,0,.55), 0 0 16px rgba(255,178,90,.3)' : 'none',
+            cursor: dragging ? 'grabbing' : 'grab', touchAction: 'none', userSelect: 'none', position: 'relative',
+            transform: dragging ? 'translate(' + s.sortDX + 'px,' + s.sortDY + 'px) scale(1.03)' : 'none',
+            zIndex: dragging ? 6 : 1, animation: wrong ? 'gshake .45s ease' : 'none',
+            transition: dragging ? 'box-shadow .15s' : 'transform .2s ease, border-color .2s' } };
+      }),
+      oZoneSt: { position: 'relative', display: 'flex', alignItems: 'center', minHeight: '96px', borderRadius: '12px', padding: '8px 18px',
+        border: s.sortDrag ? '1.5px dashed rgba(55,214,179,.65)' : '1px dashed rgba(55,214,179,.35)',
+        background: 'rgba(55,214,179,.06)', transition: 'border-color .2s' },
+      xZoneSt: { position: 'relative', display: 'flex', alignItems: 'center', minHeight: '96px', borderRadius: '12px', padding: '8px 18px',
+        border: s.sortDrag ? '1.5px dashed rgba(255,120,120,.65)' : '1px dashed rgba(255,120,120,.35)',
+        background: 'rgba(255,110,110,.05)', transition: 'border-color .2s' },
+      micSt: { width: '78px', height: '78px', borderRadius: '50%', border: 'none', fontSize: '32px', cursor: s.micReady ? 'pointer' : 'default',
+        background: s.recording ? 'radial-gradient(circle at 40% 35%, #ffd6d6, #ff6e6e 70%)' : 'radial-gradient(circle at 40% 35%, #FFF6E2, #FFB25A 70%)',
+        boxShadow: s.recording ? '0 0 24px 6px rgba(255,110,110,.5)' : (s.micReady ? '0 0 22px 6px rgba(255,178,90,.5)' : '0 0 10px 2px rgba(255,178,90,.2)'),
+        opacity: s.micReady || s.recording ? 1 : .45,
+        animation: s.micReady && !s.recording ? 'gbreathe 2.6s ease-in-out infinite' : 'none', transition: 'opacity .3s' },
+      micHint: s.recording ? 'Listening…' : (s.micReady ? 'Mic on — 편하게 말해봐' : 'Wait for the tutor'),
+      choiceOpts, orderTiles, onCheckOrder: this.onCheckOrder, bankWords,
+      blankText: s.blankFilled ? s.bankChosen : '\u00a0',
+      blankSt: { display: 'inline-block', minWidth: '86px', textAlign: 'center', borderBottom: '2px solid ' + (s.blankFilled ? 'rgba(120,230,190,.7)' : 'rgba(255,178,90,.6)'), color: s.blankFilled ? '#c7fff0' : '#ffe1b0', fontWeight: s.blankFilled ? 600 : 300, transition: 'all .3s' },
+      thinkSt: { display: s.thinking ? 'flex' : 'none', alignItems: 'center', gap: '5px', marginTop: '12px', fontFamily: 'ui-monospace,Menlo,monospace', fontSize: '11px', color: '#8C95AE', letterSpacing: '.08em' },
+      sttText: s.sttText,
+      sttSt: { wordBreak: 'keep-all', overflowWrap: 'break-word', fontSize: s.sttSmall ? '14.5px' : '19px', fontWeight: s.sttSmall ? 700 : 800, color: '#79E4FF', textAlign: 'center', padding: '0 180px', marginBottom: s.sttSmall ? '10px' : '4px', opacity: s.sttShow ? (s.sttSmall ? .72 : 1) : 0, transform: s.sttShow ? 'none' : 'translateY(6px)', transition: 'opacity .45s ease, transform .45s ease, font-size .5s ease, margin-bottom .5s ease', textShadow: '0 0 16px rgba(120,220,255,.55), 0 2px 16px rgba(0,0,0,.7)', position: 'relative', zIndex: 5, letterSpacing: '.01em' },
+      tutorLine: s.tutorLine,
+      tutorSt: Object.assign({}, capBase, { whiteSpace: 'pre-line', opacity: s.tutorShow ? 1 : 0, transform: s.tutorShow ? 'none' : 'translateY(6px)' }),
+      avatar1St: Object.assign({}, avBase, { opacity: listening ? 0 : 1 }),
+      avatar3St: Object.assign({}, avBase, { opacity: listening ? 1 : 0 })
+    };
+  }
+}
+</script>
+</body>
+</html>

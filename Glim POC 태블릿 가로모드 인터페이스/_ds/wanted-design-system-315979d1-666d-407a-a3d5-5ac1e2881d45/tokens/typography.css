@@ -1,0 +1,36 @@
+/* Wanted Design System — type scale (from the Typography page; 16 text styles).
+   Font: Pretendard JP. Letter-spacing/line-height values are exact from the file. */
+:root{
+--type-title-1:700 32px/1.375 var(--font-core);--ls-title-1:-0.0253em;
+--type-title-2:700 28px/1.358 var(--font-core);--ls-title-2:-0.0236em;
+--type-title-3:700 24px/1.334 var(--font-core);--ls-title-3:-0.023em;
+--type-heading-1:600 22px/1.364 var(--font-core);--ls-heading-1:-0.0194em;
+--type-heading-2:600 20px/1.4 var(--font-core);--ls-heading-2:-0.012em;
+--type-headline-1:600 18px/1.445 var(--font-core);--ls-headline-1:-0.002em;
+--type-headline-2:600 17px/1.412 var(--font-core);--ls-headline-2:0em;
+--type-body-1-normal:400 16px/1.5 var(--font-core);--ls-body-1:0.0057em;
+--type-body-1-reading:400 16px/1.625 var(--font-core);
+--type-body-2-normal:400 15px/1.467 var(--font-core);--ls-body-2:0.0096em;
+--type-body-2-reading:400 15px/1.6 var(--font-core);
+--type-label-1-normal:500 14px/1.429 var(--font-core);--ls-label-1:0.0145em;
+--type-label-1-reading:500 14px/1.571 var(--font-core);
+--type-label-2:500 13px/1.385 var(--font-core);--ls-label-2:0.0194em;
+--type-caption-1:500 12px/1.334 var(--font-core);--ls-caption-1:0.0252em;
+--type-caption-2:500 11px/1.273 var(--font-core);--ls-caption-2:0.0311em;
+}
+.wds-title-1{font:var(--type-title-1);letter-spacing:var(--ls-title-1)}
+.wds-title-2{font:var(--type-title-2);letter-spacing:var(--ls-title-2)}
+.wds-title-3{font:var(--type-title-3);letter-spacing:var(--ls-title-3)}
+.wds-heading-1{font:var(--type-heading-1);letter-spacing:var(--ls-heading-1)}
+.wds-heading-2{font:var(--type-heading-2);letter-spacing:var(--ls-heading-2)}
+.wds-headline-1{font:var(--type-headline-1);letter-spacing:var(--ls-headline-1)}
+.wds-headline-2{font:var(--type-headline-2);letter-spacing:var(--ls-headline-2)}
+.wds-body-1{font:var(--type-body-1-normal);letter-spacing:var(--ls-body-1)}
+.wds-body-1-reading{font:var(--type-body-1-reading);letter-spacing:var(--ls-body-1)}
+.wds-body-2{font:var(--type-body-2-normal);letter-spacing:var(--ls-body-2)}
+.wds-body-2-reading{font:var(--type-body-2-reading);letter-spacing:var(--ls-body-2)}
+.wds-label-1{font:var(--type-label-1-normal);letter-spacing:var(--ls-label-1)}
+.wds-label-1-reading{font:var(--type-label-1-reading);letter-spacing:var(--ls-label-1)}
+.wds-label-2{font:var(--type-label-2);letter-spacing:var(--ls-label-2)}
+.wds-caption-1{font:var(--type-caption-1);letter-spacing:var(--ls-caption-1)}
+.wds-caption-2{font:var(--type-caption-2);letter-spacing:var(--ls-caption-2)}

@@ -1,6 +1,0 @@
-/* Webfonts — the real faces used by the Wanted Design System.
-   Pretendard JP (core UI face) and Wanted Sans (brand face, open-sourced by Wanted). */
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-jp.min.css');
-@import url('https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/static/complete/WantedSans.min.css');
-@import url('https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/complete/WantedSansVariable.min.css');
-:root{--font-core:'Pretendard JP',Pretendard,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;--font-brand:'Wanted Sans','Wanted Sans Variable','Pretendard JP',sans-serif;--font-mono:'SF Mono',ui-monospace,SFMono-Regular,Menlo,monospace;}
