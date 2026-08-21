@@ -30,11 +30,26 @@ html { background:#F3F2FB; }
     .nav-item{font-size:13.5px;font-weight:600;color:#191636;padding:8px 16px;border-radius:999px;cursor:pointer;}
     .nav-item.on{background:#191636;color:#FFFFFF;}
     .lab{font-family:"Space Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;}
-    .choice{display:flex;align-items:flex-start;gap:12px;padding:9px 14px;border:1.5px solid #191636;border-radius:14px;font-size:13px;line-height:1.5;background:#fff;cursor:pointer;}
+    .choice{display:flex;align-items:flex-start;gap:12px;padding:10px 15px;border:1.5px solid #191636;border-radius:14px;font-size:13.5px;line-height:1.55;background:#fff;cursor:pointer;}
     .choice:hover{box-shadow:3px 3px 0 #191636;}
-    .cnum{flex-shrink:0;width:23px;height:23px;border-radius:50%;border:1.5px solid #191636;display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:700;margin-top:0;background:#fff;}
-    .bub-ai{align-self:flex-start;max-width:86%;background:#F1EFFA;border:1.5px solid #191636;border-radius:4px 16px 16px 16px;padding:12px 15px;font-size:13.5px;line-height:1.65;}
-    .bub-me{align-self:flex-end;max-width:80%;background:#5B2EFF;color:#fff;border:1.5px solid #191636;border-radius:16px 4px 16px 16px;padding:12px 15px;font-size:13.5px;line-height:1.65;box-shadow:3px 3px 0 #191636;}
+    .cnum{flex-shrink:0;width:23px;height:23px;border-radius:50%;border:1.5px solid #191636;display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:700;background:#fff;}
+  
+/* --- AgentChat --- */
+
+    *{box-sizing:border-box;}
+    body{margin:0;background:#F3F2FB;color:#191636;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo","Malgun Gothic",sans-serif;}
+    a{color:#5B2EFF;text-decoration:none;} a:hover{color:#FF6B2C;}
+    .disp{font-family:"Bricolage Grotesque","Apple SD Gothic Neo","Malgun Gothic",sans-serif;}
+    .ser{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400;}
+    .mono{font-family:"Space Mono",ui-monospace,Menlo,monospace;}
+    .card{background:#FFFFFF;border:1.5px solid #191636;border-radius:18px;box-shadow:4px 4px 0 #191636;}
+    .nav-item{font-size:13.5px;font-weight:600;color:#191636;padding:8px 16px;border-radius:999px;cursor:pointer;}
+    .nav-item.on{background:#191636;color:#FFFFFF;}
+    .lab{font-family:"Space Mono",ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;}
+    .choice{display:flex;align-items:flex-start;gap:12px;padding:10px 15px;border:1.5px solid #191636;border-radius:14px;font-size:13.5px;line-height:1.55;background:#fff;}
+    .cnum{flex-shrink:0;width:23px;height:23px;border-radius:50%;border:1.5px solid #191636;display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:700;background:#fff;}
+    .qchip{font-size:12px;font-weight:600;background:#FFE14D;border:1.5px solid #191636;border-radius:999px;padding:8px 15px;box-shadow:2.5px 2.5px 0 #191636;cursor:pointer;}
   
 /* --- Thinking --- */
 
@@ -109,12 +124,13 @@ body { margin:0; background:#F3F2FB; color:#191636; }
 
 <div class="wrap">
   <header class="masthead">
-    <div class="kicker">AAL · Creverse AI Biz Div — UI 시안 v2 · 2026.08.20</div>
+    <div class="kicker">AAL · Creverse AI Biz Div — UI 시안 v3 · 2026.08.21</div>
     <h1>AI Agent와 함께하는 <em>Test Prep</em> 학습 경험</h1>
-    <p class="lede">김가을님 학습 플로우 와이어프레임(8/19)과 MVP 화면 정의의 구조를 그대로 따르되, 10대 학습자에게 맞는 에너지의 트렌디한 비주얼 — 라벤더 오프화이트 지면 위 잉크 보더 카드, 바이올렛·탠저린·레몬 팔레트, Bricolage Grotesque 디스플레이 — 로 입힌 핵심 5개 화면입니다. Agent는 답을 주지 않고 소크라틱 발문으로 사고를 이끌며, 모든 상호작용이 완료율·페르소나 반응·학습 패턴 데이터로 로깅되는 구조를 전제로 했습니다.</p>
+    <p class="lede">김가을님 학습 플로우 와이어프레임(8/19)과 MVP 화면 정의의 구조를 따르되, 10대 학습자에게 맞는 트렌디한 비주얼로 입힌 핵심 6개 화면입니다. 학습씬은 지문·문항 센터 정렬의 집중 모드와, 우측 하단 플로팅 Agent 위로 말풍선이 떠오르는 대화 모드 두 장면으로 구성했습니다. Agent는 답을 주지 않고 소크라틱 발문으로 사고를 이끌며, 모든 상호작용이 완료율·페르소나 반응·학습 패턴 데이터로 로깅되는 구조를 전제로 했습니다.</p>
     <div class="flow">
       <span class="step">홈 · 오늘의 학습</span><span class="arr">→</span>
-      <span class="step">Test-Prep + Agent 대화</span><span class="arr">→</span>
+      <span class="step">Test-Prep 집중 풀이</span><span class="arr">→</span>
+      <span class="step">Agent 대화 모드</span><span class="arr">→</span>
       <span class="step">사고하기 캔버스</span><span class="arr">→</span>
       <span class="step">세션 종료 리포트</span><span class="arr">→</span>
       <span class="step">대시보드</span>
@@ -272,13 +288,15 @@ body { margin:0; background:#F3F2FB; color:#191636; }
 </section>
 <section class="shot">
   <div class="shot-head">
-    <h2 class="disp">02 · Test-Prep — Agent와 함께 문제 풀이</h2>
-    <p>지문+문항 패널(좌)과 Agent 소크라틱 대화 패널(우)이 한 화면에서 통합 진행. 오답 판정 대신 발문으로 유도, 비계는 단계 뱃지. 지문 정보(논리·의미·지식 레벨, 유형)와 문항 진행(2/4) 상시 노출.</p>
+    <h2 class="disp">02 · Test-Prep — 집중 풀이 모드</h2>
+    <p>지문+문항이 화면 중앙에 센터 정렬되어 풀이에 집중. Agent(Nova)는 우측 하단 플로팅 버튼으로 대기 — 배지로 개입 신호만 보내고 학습을 주도하지 않는다. 지문 정보(논리·의미·지식, 유형)와 문항 진행(2/4)은 상단에 상시 노출.</p>
   </div>
   <div class="frame-wrap"><div class="frame"><div style="position:relative;width:1440px;height:900px;overflow:hidden;background:#F3F2FB;">
 
   <div style="position:absolute;inset:0;background-image:radial-gradient(#DAD5F0 1.2px, transparent 1.2px);background-size:26px 26px;"></div>
-  <svg style="position:absolute;top:110px;left:26px;" width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2 14.2 9.8 22 12 14.2 14.2 12 22 9.8 14.2 2 12 9.8 9.8Z" stroke="#FF6B2C" stroke-width="1.6" stroke-linejoin="round"/></svg>
+  <svg style="position:absolute;top:150px;left:120px;" width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2 14.2 9.8 22 12 14.2 14.2 12 22 9.8 14.2 2 12 9.8 9.8Z" stroke="#FF6B2C" stroke-width="1.6" stroke-linejoin="round"/></svg>
+  <svg style="position:absolute;top:420px;right:150px;" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2 14.2 9.8 22 12 14.2 14.2 12 22 9.8 14.2 2 12 9.8 9.8Z" stroke="#5B2EFF" stroke-width="1.6" stroke-linejoin="round"/></svg>
+  <svg style="position:absolute;bottom:180px;left:170px;" width="52" height="20" viewBox="0 0 60 20" fill="none"><path d="M2 14 C10 4 16 4 24 12 C32 20 40 18 50 6" stroke="#FFB01F" stroke-width="2" stroke-linecap="round"/></svg>
 
   <div style="position:relative;display:flex;flex-direction:column;height:100%;padding:22px 44px 20px;">
 
@@ -323,16 +341,14 @@ body { margin:0; background:#F3F2FB; color:#191636; }
       </div>
     </div>
 
-    <!-- main split -->
-    <div style="display:flex;gap:20px;margin-top:14px;flex:1;min-height:0;">
-
-      <!-- passage & choices -->
-      <div class="card" style="flex:1.45;display:flex;flex-direction:column;gap:11px;padding:20px 26px;min-height:0;">
+    <!-- centered passage & question -->
+    <div style="flex:1;display:flex;justify-content:center;margin-top:14px;min-height:0;">
+      <div class="card" style="width:880px;max-width:100%;display:flex;flex-direction:column;gap:12px;padding:26px 34px;min-height:0;">
         <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;">
-          <div class="disp" style="font-size:17px;font-weight:700;line-height:1.5;">다음 글의 제목으로 가장 적절한 것은? <span class="mono" style="font-size:11.5px;color:#FF6B2C;font-weight:700;">[3점]</span></div>
+          <div class="disp" style="font-size:17.5px;font-weight:700;line-height:1.5;">다음 글의 제목으로 가장 적절한 것은? <span class="mono" style="font-size:11.5px;color:#FF6B2C;font-weight:700;">[3점]</span></div>
           <div class="lab" style="color:#8E88B5;flex-shrink:0;cursor:pointer;">지문 정보 ▸</div>
         </div>
-        <div style="background:#FAF9FF;border:1.5px solid #E2DEF5;border-radius:14px;padding:14px 18px;font-size:13px;line-height:1.75;color:#2A2650;overflow:auto;">
+        <div style="background:#FAF9FF;border:1.5px solid #E2DEF5;border-radius:14px;padding:16px 20px;font-size:13.5px;line-height:1.8;color:#2A2650;overflow:auto;">
           Habits aren&#39;t bad. We need them to survive. One question to ask is, are you really trying to break a habit, or would you do better by attaching to another one — known as <span class="ser" style="color:#5B2EFF;font-size:15px;">temptation bundling</span>?
           A research project let participants access their audio devices only while at the gym, pairing a tempting habit with one they wanted to build. Participants whose devices were &quot;held hostage&quot; were 51 percent more likely to visit the gym.
           <span style="background:linear-gradient(transparent 45%, #FFE14D 45%);font-weight:600;">And after it was over, nearly two-thirds opted to pay to keep gym-only access for their devices.</span>
@@ -347,51 +363,6 @@ body { margin:0; background:#F3F2FB; color:#191636; }
           <div class="choice"><div class="cnum">3</div><div>Why Smart Businesses Focus on Healthcare Service</div></div>
           <div class="choice" style="opacity:.4;border-style:dashed;box-shadow:none;"><div class="cnum">4</div><div style="text-decoration:line-through;">The Key to Success in Life: Give Up Everyday Hobbies</div></div>
           <div class="choice"><div class="cnum">5</div><div>Pairing Pleasure with Effort: Guiding People to New Behavior</div></div>
-        </div>
-      </div>
-
-      <!-- agent panel -->
-      <div class="card" style="flex:1;display:flex;flex-direction:column;padding:0;overflow:hidden;box-shadow:6px 6px 0 #191636;min-height:0;">
-        <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 18px;border-bottom:1.5px solid #191636;background:#FFF3EC;">
-          <div style="display:flex;align-items:center;gap:11px;">
-            <div style="width:34px;height:34px;border-radius:12px;border:1.5px solid #191636;background:linear-gradient(135deg,#FF6B2C,#FFB01F);display:flex;align-items:center;justify-content:center;transform:rotate(-4deg);">
-              <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="10" r="1.7" fill="#191636"/><circle cx="15" cy="10" r="1.7" fill="#191636"/><path d="M8.5 14.5c1 1.3 2.2 2 3.5 2s2.5-.7 3.5-2" stroke="#191636" stroke-width="1.7" stroke-linecap="round"/></svg>
-            </div>
-            <div style="display:flex;flex-direction:column;">
-              <span class="disp" style="font-size:15px;font-weight:700;">Nova</span>
-              <span class="lab" style="font-size:9px;color:#B5540F;">Socratic Agent</span>
-            </div>
-          </div>
-          <div style="display:flex;background:#fff;border:1.5px solid #191636;border-radius:999px;padding:2px;">
-            <div style="font-size:11.5px;font-weight:700;color:#fff;background:#FF6B2C;padding:5px 13px;border-radius:999px;">자유 대화</div>
-            <div style="font-size:11.5px;font-weight:600;color:#5D5880;padding:5px 13px;border-radius:999px;cursor:pointer;">사고하기</div>
-          </div>
-        </div>
-
-        <div style="flex:1;display:flex;flex-direction:column;gap:10px;padding:16px;overflow:auto;background:#fff;">
-          <div class="lab" style="align-self:center;font-size:9.5px;color:#8E88B5;">예제 2 · 제목 찾기 문항 기준 대화</div>
-          <div class="bub-ai">①을 골랐구나. 그런데 헬스장 이야기가 이 글 <span class="ser" style="color:#5B2EFF;font-size:15px;">전체의 주제</span>일까, 아니면 무언가를 보여주기 위한 <span class="ser" style="color:#FF6B2C;font-size:15px;">예시</span>일까?</div>
-          <div class="bub-me">헬스장은 실험 예시로 나온 것 같아요. 진짜 하고 싶은 말은 습관을 묶는 거…?</div>
-          <div class="bub-ai">좋은 접근이야. 그럼 그 실험이 보여주려는 핵심 아이디어를 한 문장으로 말해볼래? 형광펜으로 칠한 문장이 힌트가 될 거야.</div>
-          <div style="display:flex;flex-direction:column;gap:7px;background:#FFFBEA;border:1.5px dashed #191636;border-radius:14px;padding:12px 14px;">
-            <div class="lab" style="color:#B5540F;">비계 Scaffold</div>
-            <div style="display:flex;gap:8px;flex-wrap:wrap;">
-              <div style="font-size:12px;font-weight:600;border:1.5px solid #191636;border-radius:999px;padding:6px 13px;background:#fff;cursor:pointer;">① 단서 문장 다시 보기</div>
-              <div style="font-size:12px;font-weight:600;border:1.5px solid #191636;border-radius:999px;padding:6px 13px;background:#fff;cursor:pointer;">② 선택지 두 개로 좁히기</div>
-            </div>
-          </div>
-        </div>
-
-        <div style="display:flex;align-items:center;gap:10px;padding:11px 14px;border-top:1.5px solid #191636;background:#F7F6FE;">
-          <div style="flex:1;display:flex;align-items:center;background:#fff;border:1.5px solid #191636;border-radius:999px;padding:11px 16px;">
-            <span style="font-size:13px;color:#8E88B5;">생각을 말하거나 입력해 보세요…</span>
-          </div>
-          <div style="width:42px;height:42px;border-radius:50%;border:1.5px solid #191636;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B2EFF" stroke-width="1.9"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v1a7 7 0 0 0 14 0v-1M12 20v3"/></svg>
-          </div>
-          <div style="width:42px;height:42px;border-radius:50%;border:1.5px solid #191636;background:#5B2EFF;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:3px 3px 0 #191636;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4Z"/></svg>
-          </div>
         </div>
       </div>
     </div>
@@ -413,13 +384,152 @@ body { margin:0; background:#F3F2FB; color:#191636; }
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FFE14D" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </div>
     </div>
-
   </div>
+
+  <!-- Agent floating button (bottom-right) -->
+  <div style="position:absolute;right:44px;bottom:78px;display:flex;flex-direction:column;align-items:center;gap:8px;">
+    <div style="position:relative;width:68px;height:68px;border-radius:24px;border:1.5px solid #191636;background:linear-gradient(135deg,#FF6B2C,#FFB01F);box-shadow:5px 5px 0 #191636;display:flex;align-items:center;justify-content:center;cursor:pointer;transform:rotate(-4deg);">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="10" r="1.7" fill="#191636"/><circle cx="15" cy="10" r="1.7" fill="#191636"/><path d="M8.5 14.5c1 1.3 2.2 2 3.5 2s2.5-.7 3.5-2" stroke="#191636" stroke-width="1.7" stroke-linecap="round"/></svg>
+      <div style="position:absolute;top:-7px;right:-7px;min-width:24px;height:24px;border-radius:50%;background:#FFE14D;border:1.5px solid #191636;display:flex;align-items:center;justify-content:center;">
+        <span class="mono" style="font-size:11px;font-weight:700;color:#191636;">1</span>
+      </div>
+    </div>
+    <span class="mono" style="font-size:10px;font-weight:700;letter-spacing:.14em;background:#fff;border:1.5px solid #191636;border-radius:999px;padding:4px 11px;">NOVA와 대화</span>
+  </div>
+
 </div></div></div>
 </section>
 <section class="shot">
   <div class="shot-head">
-    <h2 class="disp">03 · Agent와 사고하기 — 사고 확장 캔버스</h2>
+    <h2 class="disp">03 · Test-Prep — Agent 대화 모드</h2>
+    <p>플로팅 버튼을 누르면(또는 학생이 말하면) Agent 위로 말풍선 버블이 떠서 대화. 소크라틱 발문 버블 + 음성 인식(STT) 실시간 버블 + 빠른 질문 칩. 지문은 좌측으로 살짝 이동해 근거 문장을 함께 볼 수 있다.</p>
+  </div>
+  <div class="frame-wrap"><div class="frame"><div style="position:relative;width:1440px;height:900px;overflow:hidden;background:#F3F2FB;">
+
+  <div style="position:absolute;inset:0;background-image:radial-gradient(#DAD5F0 1.2px, transparent 1.2px);background-size:26px 26px;"></div>
+
+  <div style="position:relative;display:flex;flex-direction:column;height:100%;padding:22px 44px 20px;">
+
+    <!-- floating pill nav -->
+    <div class="card" style="display:flex;align-items:center;justify-content:space-between;border-radius:999px;padding:10px 12px 10px 24px;">
+      <div style="display:flex;align-items:center;gap:9px;">
+        <div style="width:26px;height:26px;border-radius:9px;background:#5B2EFF;border:1.5px solid #191636;display:flex;align-items:center;justify-content:center;transform:rotate(-6deg);">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2 14.2 9.8 22 12 14.2 14.2 12 22 9.8 14.2 2 12 9.8 9.8Z" fill="#FFE14D"/></svg>
+        </div>
+        <span class="disp" style="font-size:21px;font-weight:800;letter-spacing:-.02em;">AAL</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:2px;">
+        <div class="nav-item">홈</div>
+        <div class="nav-item">대시보드</div>
+        <div class="nav-item on">학습 센터</div>
+        <div class="nav-item">평가 센터</div>
+        <div class="nav-item">내 정보</div>
+        <div class="nav-item">설정</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;border:1.5px solid #191636;border-radius:999px;padding:5px 14px 5px 6px;background:#fff;">
+        <div style="width:24px;height:24px;border-radius:50%;border:1.5px solid #191636;background:linear-gradient(135deg,#8FD3FF,#5B2EFF);"></div>
+        <span style="font-size:13px;font-weight:600;">이지우</span>
+        <span class="mono" style="font-size:11px;font-weight:700;color:#5B2EFF;">Lv.6</span>
+      </div>
+    </div>
+
+    <!-- session sub-bar -->
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-top:14px;">
+      <div style="display:flex;align-items:center;gap:16px;">
+        <div class="lab" style="color:#8E88B5;">Learning Center · Reading · Test-Prep</div>
+        <span class="mono" style="font-size:10.5px;font-weight:700;padding:5px 12px;border-radius:999px;background:#FF6B2C;color:#fff;border:1.5px solid #191636;">NOVA와 대화 중</span>
+      </div>
+      <span class="disp" style="font-size:15px;font-weight:800;color:#5B2EFF;">2<span style="color:#8E88B5;font-weight:600;">/4</span></span>
+    </div>
+
+    <!-- centered passage & question (chat 열림 상태: 좌측으로 살짝 이동) -->
+    <div style="flex:1;display:flex;justify-content:flex-start;margin-top:14px;min-height:0;padding-left:56px;">
+      <div class="card" style="width:820px;max-width:100%;display:flex;flex-direction:column;gap:12px;padding:26px 34px;min-height:0;">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;">
+          <div class="disp" style="font-size:17.5px;font-weight:700;line-height:1.5;">다음 글의 제목으로 가장 적절한 것은? <span class="mono" style="font-size:11.5px;color:#FF6B2C;font-weight:700;">[3점]</span></div>
+          <div class="lab" style="color:#8E88B5;flex-shrink:0;">지문 정보 ▸</div>
+        </div>
+        <div style="background:#FAF9FF;border:1.5px solid #E2DEF5;border-radius:14px;padding:16px 20px;font-size:13.5px;line-height:1.8;color:#2A2650;">
+          Habits aren&#39;t bad. We need them to survive. One question to ask is, are you really trying to break a habit, or would you do better by attaching to another one — known as <span class="ser" style="color:#5B2EFF;font-size:15px;">temptation bundling</span>?
+          A research project let participants access their audio devices only while at the gym, pairing a tempting habit with one they wanted to build. Participants whose devices were &quot;held hostage&quot; were 51 percent more likely to visit the gym.
+          <span style="background:linear-gradient(transparent 45%, #FFE14D 45%);font-weight:600;">And after it was over, nearly two-thirds opted to pay to keep gym-only access for their devices.</span>
+          <span class="mono" style="display:block;margin-top:8px;font-size:10.5px;color:#8E88B5;">* temptation: 유혹 ** hostage: 볼모</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:7px;">
+          <div class="choice" style="background:#EFEBFF;border-color:#5B2EFF;box-shadow:3px 3px 0 #5B2EFF;">
+            <div class="cnum" style="background:#5B2EFF;color:#fff;border-color:#191636;">1</div>
+            <div style="font-weight:500;">Stop Thinking and Just Go to the Gym Now! <span class="mono" style="font-size:10px;font-weight:700;color:#5B2EFF;margin-left:6px;">내 선택</span></div>
+          </div>
+          <div class="choice"><div class="cnum">2</div><div>Avoid Listening to Music While You Work Out</div></div>
+          <div class="choice"><div class="cnum">3</div><div>Why Smart Businesses Focus on Healthcare Service</div></div>
+          <div class="choice" style="opacity:.4;border-style:dashed;"><div class="cnum">4</div><div style="text-decoration:line-through;">The Key to Success in Life: Give Up Everyday Hobbies</div></div>
+          <div class="choice"><div class="cnum">5</div><div>Pairing Pleasure with Effort: Guiding People to New Behavior</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Agent chat layer (bottom-right, bubbles above avatar) ===== -->
+
+  <!-- quick question chips -->
+  <div style="position:absolute;right:52px;top:158px;display:flex;flex-direction:column;align-items:flex-end;gap:9px;">
+    <div class="qchip">이 지문의 핵심 문장이 뭐야?</div>
+    <div class="qchip">선택지 두 개로 좁혀줘</div>
+  </div>
+
+  <!-- agent bubble -->
+  <div style="position:absolute;right:120px;bottom:436px;width:400px;">
+    <div class="card" style="border-radius:18px 18px 4px 18px;padding:15px 19px;font-size:14px;line-height:1.7;box-shadow:5px 5px 0 #191636;">
+      <span class="lab" style="display:block;color:#FF6B2C;margin-bottom:5px;">Nova</span>
+      ①을 골랐구나. 그런데 헬스장 이야기가 이 글 <span class="ser" style="color:#5B2EFF;font-size:16px;">전체의 주제</span>일까, 아니면 무언가를 보여주기 위한 <span class="ser" style="color:#FF6B2C;font-size:16px;">예시</span>일까? 형광펜 문장을 다시 볼까?
+    </div>
+    <!-- bubble tail pointing to avatar -->
+    <svg style="position:absolute;right:-14px;bottom:-16px;" width="34" height="30" viewBox="0 0 34 30" fill="none">
+      <path d="M2 2 C10 16 20 24 32 28 C20 26 8 20 2 12 Z" fill="#fff" stroke="#191636" stroke-width="1.5" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+  <!-- student live speech bubble (STT) -->
+  <div style="position:absolute;right:120px;bottom:330px;width:360px;">
+    <div style="background:#5B2EFF;color:#fff;border:1.5px solid #191636;border-radius:18px 18px 18px 4px;padding:13px 18px;font-size:14px;line-height:1.7;box-shadow:4px 4px 0 #191636;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:5px;">
+        <svg width="26" height="12" viewBox="0 0 26 12" fill="none" stroke="#FFE14D" stroke-width="2" stroke-linecap="round"><path d="M1 6v0M6 3v6M11 1v10M16 3v6M21 5v2M25 6v0"/></svg>
+        <span class="lab" style="color:#CFC4FF;">말하는 중…</span>
+      </div>
+      헬스장은 <strong style="color:#FFE14D;">실험 예시</strong>로 나온 것 같고, 진짜 하려는 말은 <strong style="color:#FFE14D;">습관을 묶는</strong>&nbsp;거…
+    </div>
+  </div>
+
+  <!-- input pill -->
+  <div style="position:absolute;right:120px;bottom:258px;display:flex;align-items:center;gap:9px;">
+    <div style="width:296px;display:flex;align-items:center;background:#fff;border:1.5px solid #191636;border-radius:999px;padding:11px 16px;box-shadow:3px 3px 0 #191636;">
+      <span style="font-size:12.5px;color:#8E88B5;">입력으로 전환해 답할 수도 있어요</span>
+    </div>
+    <div style="width:42px;height:42px;border-radius:50%;border:1.5px solid #191636;background:#5B2EFF;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:3px 3px 0 #191636;">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4Z"/></svg>
+    </div>
+  </div>
+
+  <!-- Agent avatar (active, speaking) -->
+  <div style="position:absolute;right:44px;bottom:78px;display:flex;flex-direction:column;align-items:center;gap:8px;">
+    <div style="position:relative;width:96px;height:96px;border-radius:32px;border:1.5px solid #191636;background:linear-gradient(135deg,#FF6B2C,#FFB01F);box-shadow:6px 6px 0 #191636;display:flex;align-items:center;justify-content:center;transform:rotate(-3deg);">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none"><path d="M8.4 9.7c.35-.9 1.15-.9 1.5 0" stroke="#191636" stroke-width="1.6" stroke-linecap="round"/><path d="M14.1 9.7c.35-.9 1.15-.9 1.5 0" stroke="#191636" stroke-width="1.6" stroke-linecap="round"/><path d="M8 13.5c1.2 1.7 2.6 2.5 4 2.5s2.8-.8 4-2.5" stroke="#191636" stroke-width="1.7" stroke-linecap="round"/></svg>
+      <!-- speaking indicator -->
+      <div style="position:absolute;top:-9px;left:-9px;width:28px;height:28px;border-radius:50%;background:#FFE14D;border:1.5px solid #191636;display:flex;align-items:center;justify-content:center;">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#191636" stroke-width="2"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M6 10v1a6 6 0 0 0 12 0v-1M12 19v2"/></svg>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px;background:#fff;border:1.5px solid #191636;border-radius:999px;padding:5px 13px;">
+      <span style="width:7px;height:7px;border-radius:50%;background:#00B27A;display:inline-block;"></span>
+      <span class="mono" style="font-size:10px;font-weight:700;letter-spacing:.12em;">NOVA · 듣는 중</span>
+    </div>
+  </div>
+
+</div></div></div>
+</section>
+<section class="shot">
+  <div class="shot-head">
+    <h2 class="disp">04 · Agent와 사고하기 — 사고 확장 캔버스</h2>
     <p>원문 문장에서 출발해 사고 도구 6종(잇다·끊다·뒤집다·옮기다·펼치다·좁히다)으로 생각을 연결·확장·반박·수렴. 사고 동작 포인트 획득, Agent가 다음 동작을 코칭.</p>
   </div>
   <div class="frame-wrap"><div class="frame"><div style="position:relative;width:1440px;height:900px;overflow:hidden;background:#F3F2FB;">
@@ -554,7 +664,7 @@ body { margin:0; background:#F3F2FB; color:#191636; }
 </section>
 <section class="shot">
   <div class="shot-head">
-    <h2 class="disp">04 · 세션 종료 리포트</h2>
+    <h2 class="disp">05 · 세션 종료 리포트</h2>
     <p>완료 버튼 = 완료율 KPI + 데이터 자동 로깅. 학생 눈높이 Endorse 톤으로 오늘 배운 것 / 좋아진 점 / 보강할 부분 3블록, KC·사고 포인트·보상·스트릭 스트립.</p>
   </div>
   <div class="frame-wrap"><div class="frame"><div style="position:relative;width:1440px;height:900px;overflow:hidden;background:#F3F2FB;">
@@ -656,7 +766,7 @@ body { margin:0; background:#F3F2FB; color:#191636; }
 </section>
 <section class="shot">
   <div class="shot-head">
-    <h2 class="disp">05 · 대시보드 — 성장 기록</h2>
+    <h2 class="disp">06 · 대시보드 — 성장 기록</h2>
     <p>학습 횟수·완료율·학습 시간·연속 학습·종합 레벨 KPI, 레벨 성장 추이, 논리·의미·지식 3축 포인트, KC 강점/보완 태그, 사고 도구 활용 빈도, 모듈별 진행률.</p>
   </div>
   <div class="frame-wrap"><div class="frame"><div style="position:relative;width:1440px;height:900px;overflow:hidden;background:#F3F2FB;">
